@@ -1,0 +1,44 @@
+.footer {
+  background-color: #186367;
+  color: #bcd2d3;
+
+  &__images {
+    max-width: 1290px;
+  }
+
+  &__sections {
+    margin: 0 auto;
+    max-width: 1290px;
+    display: flex;
+  }
+
+  &__section {
+    flex: 1;
+    padding: 2rem;
+    img {
+      width: 150px;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        margin: 0.5rem 0;
+        a {
+          color: #bcd2d3;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          &:hover {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    margin: 0 auto;
+    max-width: 1290px;
+    padding: 2.5rem;
+    border-top: 1px solid #bcd2d333;
+    text-align: center;
+  }
+}

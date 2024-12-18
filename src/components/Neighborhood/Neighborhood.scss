@@ -1,0 +1,26 @@
+.neighborhood {
+  width: 100%;
+  background: #186367;
+  padding: 4rem 0;
+
+  .safe-zone {
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    .neighborhood-map {
+      display: flex;
+      gap: 2rem;
+
+      .map {
+        flex: 2;
+        height: 300px;
+        background: gray;
+      }
+
+      .details {
+        flex: 1;
+      }
+    }
+  }
+}
