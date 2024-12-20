@@ -2,8 +2,9 @@ import logo from "../../assets/logo.png";
 import footer1 from "../../assets/1.webp";
 import footer2 from "../../assets/2.webp";
 import footer3 from "../../assets/3.webp";
-import "./Footer.scss";
+import { facebookIcon, instagramIcon, linkedInIcon } from "../../assets/icons";
 
+import "./Footer.scss";
 export const Footer = () => {
   return (
     <div className="footer">
@@ -16,10 +17,11 @@ export const Footer = () => {
       </div>
       <div className="footer__sections">
         <div className="footer__section">
-          <img src={logo} alt="" />
+          <img className="footer__logo" src={logo} alt="" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus architecto labore reiciendis, animi saepe vel ab numquam? Sunt rerum ex aliquid, natus dicta
-            reprehenderit, aliquam illum officia vitae consequatur at.
+            Porodica Ćirić već 30 godina uspešno gradi i posluje na tržištu Srbije. Naše građevinske kompanije Ćirić Home Invest i Ćirić gradnja iza sebe imaju više hiljada uspešno
+            realizovanih projekata i zadovoljnih klijenata. Naše dugogodišnje iskustvo čini nas pouzdanim partnerom od poverenja koji ima znanje, stručnost i kadrove za realizaciju
+            svih vrsta građevinskih radova brzo, kvalitetno i po dogovoru.
           </p>
         </div>
         <div className="footer__section">
@@ -41,6 +43,9 @@ export const Footer = () => {
         </div>
         <div className="footer__section">
           <h3>Follow Us</h3>
+          <img className="footer__social-icon" src={facebookIcon} alt="" width="16px" height="16px" />
+          <img className="footer__social-icon" src={instagramIcon} alt="" width="16px" height="16px" />
+          <img className="footer__social-icon" src={linkedInIcon} alt="" width="16px" height="16px" />
         </div>
       </div>
       <div className="footer__copyright">Copyright &#169; Nemanja Savatic</div>

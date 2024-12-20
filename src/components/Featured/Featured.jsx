@@ -1,4 +1,4 @@
-import featuredImage from "../../assets/featured-image.jpg";
+import featuredImage from "../../assets/3.jpg";
 import "./Featured.scss";
 
 export const Featured = () => {

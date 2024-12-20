@@ -6,6 +6,9 @@
   .safe-zone {
     h2 {
       margin-bottom: 2rem;
+      color: #fff;
+      font-size: 36px;
+      font-weight: 500;
     }
 
     .neighborhood-map {
@@ -14,12 +17,48 @@
 
       .map {
         flex: 2;
-        height: 300px;
+        height: 450px;
         background: gray;
       }
 
       .details {
         flex: 1;
+        background-color: #fff;
+        padding: 2rem;
+      }
+    }
+
+    .neighborhood-features {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .feature-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .feature {
+          flex: 1;
+          text-align: center;
+          color: #fff;
+
+          img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+          }
+
+          h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+          }
+        }
       }
     }
   }

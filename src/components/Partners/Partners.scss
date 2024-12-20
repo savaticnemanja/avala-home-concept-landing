@@ -1,0 +1,46 @@
+.partners {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: #f7fbfc;
+  margin-bottom: 8rem;
+
+  &__safe-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: #2d602d;
+    margin-bottom: 1rem;
+  }
+
+  &__scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__logos {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 5s linear infinite;
+  }
+
+  &__logo {
+    height: 100px;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
