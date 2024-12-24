@@ -1,6 +1,4 @@
-import React from "react";
 import { Navigation, Hero, Featured, Featured2, Neighborhood, Plans, Footer, Contact, Partners } from "./components";
-import logo from "./assets/logo.png";
 import "./App.scss";
 
 function App() {
