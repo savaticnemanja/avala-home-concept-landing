@@ -16,8 +16,6 @@ $primary-color: #f05a28;
 
     .logo {
       width: 150px;
-      font-size: 1.5rem;
-      font-weight: bold;
     }
 
     .nav-links {
@@ -31,11 +29,37 @@ $primary-color: #f05a28;
     }
 
     .cta-button {
-      background-color: $primary-color;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      background-color: #ff6b45;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      transition: gap 0.3s ease;
       cursor: pointer;
+      border: 0px;
+      color: #fff;
+
+      &:hover {
+        gap: 0.75rem;
+        background-color: #29454e;
+        color: #bcd2d3;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    padding: 0 1rem;
+
+    .safe-zone {
+      .nav-links {
+        display: none;
+      }
+
+      .cta-button {
+        padding: 0.5rem 0.8rem;
+      }
     }
   }
 }

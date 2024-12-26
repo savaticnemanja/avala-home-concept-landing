@@ -1,0 +1,44 @@
+.specifications {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 4rem 0 0 0;
+
+  &__features {
+    display: flex;
+    align-items: first baseline;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__feature-row {
+    flex: 1 1 calc(33.333% - 1rem);
+    box-sizing: border-box;
+  }
+
+  &__feature {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__feature-title {
+    font-size: 1.2em;
+    margin-bottom: 0.5rem;
+  }
+
+  &__feature-description {
+    font-size: 1em;
+    color: #666;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .specifications {
+    padding: 1rem;
+  }
+}

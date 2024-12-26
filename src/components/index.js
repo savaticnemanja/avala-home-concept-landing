@@ -1,9 +1,9 @@
 export { Navigation } from "./Navigation/Navigation";
-export { Hero } from "./Hero/Hero";
-export { Featured } from "./Featured/Featured";
-export { Featured2 } from "./Featured2/Featured2";
-export { Neighborhood } from "./Neighborhood/Neighborhood";
+export { Slider } from "./Slider/Slider";
 export { Plans } from "./Plans/Plans";
+export { AboutUs } from "./AboutUs/AboutUs";
+export { Location } from "./Location/Location";
+export { Specifications } from "./Specifications/Specifications";
 export { Contact } from "./Contact/Contact";
 export { Partners } from "./Partners/Partners";
 export { Footer } from "./Footer/Footer";

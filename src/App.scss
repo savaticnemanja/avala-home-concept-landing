@@ -6,7 +6,6 @@ $safe-zone: 1290px;
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-// Reset and Utilities
 * {
   margin: 0;
   padding: 0;
@@ -19,38 +18,19 @@ body {
   background-color: $background-color;
 }
 
-// Full-width container with centered content
-.full-width {
-  width: 100%;
-}
-
 .safe-zone {
   max-width: $safe-zone;
-  margin: 0 auto; // Centering the content
-  padding: 0 15px; // Small padding for mobile devices
+  margin: 0 auto;
 }
 
-// Layout Styles
+h1 {
+  font-size: 2.25rem;
+}
 
-.blog {
-  @extend .full-width;
-  padding: 4rem 0;
+h2 {
+  font-size: 1.75rem;
+}
 
-  .safe-zone {
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .blog-posts {
-      display: flex;
-      gap: 1.5rem;
-
-      .post {
-        flex: 1;
-        background: lightgray;
-        height: 250px;
-      }
-    }
-  }
+h3 {
+  font-size: 1.5rem;
 }
