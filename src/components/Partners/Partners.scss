@@ -12,11 +12,12 @@
   }
 
   &__title {
-    font-size: 2rem;
-    color: #2d602d;
-    margin-bottom: 1rem;
+    width: 1290px;
+    margin: 0 auto 1rem auto;
+    padding: 1rem 0;
+    color: #2a454e;
+    border-bottom: 1px solid #2a454e55;
   }
-
   &__scroll-container {
     width: 100%;
     overflow: hidden;
@@ -26,7 +27,7 @@
   &__logos {
     display: flex;
     gap: 2rem;
-    animation: scroll 3s linear infinite;
+    animation: scroll 15s linear infinite;
   }
 
   &__logo {

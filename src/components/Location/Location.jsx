@@ -2,7 +2,8 @@ import "./Location.scss";
 
 export const Location = () => {
   return (
-    <section className="location full-width">
+    <section id="location" className="location">
+      <h1 className="location__title">Lokacija</h1>
       <div className="safe-zone">
         <div className="location-map">
           <div className="map">
@@ -16,9 +17,6 @@ export const Location = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Avala Home Concept Map"
             ></iframe>
-          </div>
-          <div className="details">
-            <img src="src/assets/location-info.jpg" alt="" />
           </div>
         </div>
       </div>

@@ -7,12 +7,28 @@ export const Navigation = () => {
       <div className="container safe-zone">
         <img src={logo} className="logo" />
         <ul className="nav-links">
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Contact</li>
+          <li>
+            <a href="#home">Početna</a>
+          </li>
+          <li>
+            <a href="#aboutus">O nama</a>
+          </li>
+          <li>
+            <a href="#projects">Projekti</a>
+          </li>
+          <li>
+            <a href="#specifications">Specifikacije</a>
+          </li>
+          <li>
+            <a href="#location">Lokacija</a>
+          </li>
+          <li>
+            <a href="#contact">Kontakt</a>
+          </li>
         </ul>
-        <button className="cta-button">Find a House</button>
+        <a href="#contact">
+          <button className="cta-button">ZAKAŽI POSETU</button>
+        </a>
       </div>
     </nav>
   );

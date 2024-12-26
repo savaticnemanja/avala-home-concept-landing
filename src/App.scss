@@ -12,6 +12,11 @@ $safe-zone: 1290px;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
 body {
   font-family: "Barlow", Arial, sans-serif;
   color: $secondary-color;

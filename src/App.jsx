@@ -49,9 +49,9 @@ function App() {
       <Navigation />
       <Slider slides={slides} />
       <AboutUs />
+      <Plans />
       <Specifications />
       <Location />
-      <Plans />
       <Contact />
       <Partners />
       <Footer />

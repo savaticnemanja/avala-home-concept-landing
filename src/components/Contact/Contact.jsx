@@ -2,17 +2,12 @@ import "./Contact.scss";
 
 export const Contact = () => {
   return (
-    <section className="contact-form">
+    <section id="contact" className="contact-form">
       <div className="contact-form__container">
         <div className="contact-form__left">
-          <h2 className="contact-form__title">
+          <h1 className="contact-form__title">
             Kontaktiraj za dodatne informacije
-          </h2>
-          <p className="contact-form__description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua veniam,
-            quis nostrud exercitation ullamco.
-          </p>
+          </h1>
         </div>
         <div className="contact-form__right">
           <form className="contact-form__form">
@@ -20,25 +15,25 @@ export const Contact = () => {
               <input
                 type="text"
                 className="contact-form__input"
-                placeholder="Your Name"
+                placeholder="Ime i prezime"
               />
               <input
                 type="text"
                 className="contact-form__input"
-                placeholder="Phone Number"
+                placeholder="Broj telefona"
               />
             </div>
             <input
               type="email"
               className="contact-form__input"
-              placeholder="Email Address"
+              placeholder="Email adresa"
             />
             <textarea
               className="contact-form__textarea"
-              placeholder="Message"
+              placeholder="Poruka"
             ></textarea>
             <button type="submit" className="contact-form__button">
-              Send Message →
+              POŠALJI UPIT
             </button>
           </form>
         </div>

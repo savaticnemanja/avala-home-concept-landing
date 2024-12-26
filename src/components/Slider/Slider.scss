@@ -69,12 +69,11 @@
   }
 
   &__title {
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1rem 0;
     color: #fff;
+    border-bottom: 1px solid #2a454e55;
 
     @media (min-width: 1024px) {
       color: #4a4a4a;
@@ -94,6 +93,12 @@
     @media (min-width: 1024px) {
       color: #4a4a4a;
     }
+  }
+  a {
+    text-decoration: none;
+  }
+  h1 {
+    border-bottom: 0;
   }
 
   &__button {

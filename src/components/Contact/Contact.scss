@@ -1,12 +1,13 @@
 .contact-form {
   display: flex;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   background: #196366;
   margin: 4rem auto 0 auto;
 
   &__container {
     display: flex;
+    justify-content: flex-start;
     gap: 4rem;
     max-width: 1290px;
     width: 100%;
@@ -22,10 +23,11 @@
   }
 
   &__title {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 1rem;
-    font-weight: 500;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1rem 0;
+    color: #bcd2d3;
+    border-bottom: 1px solid #bcd2d3;
   }
 
   &__description {
@@ -105,6 +107,9 @@
 
 @media only screen and (max-width: 1024px) {
   .contact-form {
-    // display: block;
+    &__container {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 }

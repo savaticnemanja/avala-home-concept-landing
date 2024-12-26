@@ -7,58 +7,58 @@ const slides = [
     highlightedWord: "Vila 1",
     rooms: [
       { name: "Predprostor", size: "10,00 m2" },
-      { name: "Tehnička prostorija", size: "3,00 m2" },
-      { name: "Toalet", size: "4,00 m2" },
-      { name: "Hodnik", size: "10,00 m2" },
-      { name: "Terasa", size: "11,00 m2" },
-      { name: "Soba", size: "15,00 m2" },
-      { name: "Soba", size: "12,00 m2" },
-      { name: "Soba", size: "12,00 m2" },
-      { name: "Kupatilo", size: "6,00 m2" },
-      { name: "Vešernica", size: "5,00 m2" },
-      { name: "Dnevni boravak", size: "22,00 m2" },
-      { name: "Kuhinja i trpezarija", size: "27,00 m2" },
-      { name: "Ostava", size: "2 m2" },
+      { name: "Tehnička prostorija", size: "3,50 m2" },
+      { name: "Toalet", size: "4,50 m2" },
+      { name: "Hodnik", size: "11,00 m2" },
+      { name: "Terasa", size: "12,00 m2" },
+      { name: "Soba", size: "16,00 m2" },
+      { name: "Soba", size: "13,00 m2" },
+      { name: "Soba", size: "14,00 m2" },
+      { name: "Kupatilo", size: "7,00 m2" },
+      { name: "Vešernica", size: "6,00 m2" },
+      { name: "Dnevni boravak", size: "23,00 m2" },
+      { name: "Kuhinja i trpezarija", size: "28,00 m2" },
+      { name: "Ostava", size: "3 m2" },
     ],
     image: "src/assets/plans/plan1.webp",
   },
   {
-    title: "Kompleks modernih kuća sa bazenom na",
-    highlightedWord: "Avali",
+    title: "Avala Home Concept",
+    highlightedWord: "Vila 2",
     rooms: [
-      { name: "Predprostor", size: "10,00 m2" },
-      { name: "Tehnička prostorija", size: "3,00 m2" },
-      { name: "Toalet", size: "4,00 m2" },
-      { name: "Hodnik", size: "10,00 m2" },
-      { name: "Terasa", size: "11,00 m2" },
+      { name: "Predprostor", size: "11,00 m2" },
+      { name: "Tehnička prostorija", size: "4,00 m2" },
+      { name: "Toalet", size: "5,00 m2" },
+      { name: "Hodnik", size: "12,00 m2" },
+      { name: "Terasa", size: "13,00 m2" },
+      { name: "Soba", size: "17,00 m2" },
+      { name: "Soba", size: "14,00 m2" },
       { name: "Soba", size: "15,00 m2" },
-      { name: "Soba", size: "12,00 m2" },
-      { name: "Soba", size: "12,00 m2" },
-      { name: "Kupatilo", size: "6,00 m2" },
-      { name: "Vešernica", size: "5,00 m2" },
-      { name: "Dnevni boravak", size: "22,00 m2" },
-      { name: "Kuhinja i trpezarija", size: "27,00 m2" },
-      { name: "Ostava", size: "2 m2" },
+      { name: "Kupatilo", size: "8,00 m2" },
+      { name: "Vešernica", size: "7,00 m2" },
+      { name: "Dnevni boravak", size: "24,00 m2" },
+      { name: "Kuhinja i trpezarija", size: "29,00 m2" },
+      { name: "Ostava", size: "4 m2" },
     ],
     image: "src/assets/plans/plan2.webp",
   },
   {
-    title: "Kompleks modernih kuća sa bazenom na",
-    highlightedWord: "Avali",
+    title: "Avala Home Concept",
+    highlightedWord: "Vila 3",
     rooms: [
-      { name: "Predprostor", size: "10,00 m2" },
-      { name: "Tehnička prostorija", size: "3,00 m2" },
-      { name: "Toalet", size: "4,00 m2" },
-      { name: "Hodnik", size: "10,00 m2" },
-      { name: "Terasa", size: "11,00 m2" },
+      { name: "Predprostor", size: "12,00 m2" },
+      { name: "Tehnička prostorija", size: "4,50 m2" },
+      { name: "Toalet", size: "5,50 m2" },
+      { name: "Hodnik", size: "13,00 m2" },
+      { name: "Terasa", size: "14,00 m2" },
+      { name: "Soba", size: "18,00 m2" },
       { name: "Soba", size: "15,00 m2" },
-      { name: "Soba", size: "12,00 m2" },
-      { name: "Soba", size: "12,00 m2" },
-      { name: "Kupatilo", size: "6,00 m2" },
-      { name: "Vešernica", size: "5,00 m2" },
-      { name: "Dnevni boravak", size: "22,00 m2" },
-      { name: "Kuhinja i trpezarija", size: "27,00 m2" },
-      { name: "Ostava", size: "2 m2" },
+      { name: "Soba", size: "16,00 m2" },
+      { name: "Kupatilo", size: "9,00 m2" },
+      { name: "Vešernica", size: "8,00 m2" },
+      { name: "Dnevni boravak", size: "25,00 m2" },
+      { name: "Kuhinja i trpezarija", size: "30,00 m2" },
+      { name: "Ostava", size: "5 m2" },
     ],
     image: "src/assets/plans/plan3.webp",
   },
@@ -101,10 +101,12 @@ export const Plans = () => {
 
   return (
     <div
+      id="projects"
       className="plans"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      <h1 className="plans__title">Projekti</h1>
       <div className="plans__content">
         <div className="plans__left">
           <h1 className="plans__title">
@@ -142,7 +144,6 @@ export const Plans = () => {
               <img src={slide.image} alt="Property" />
             </div>
           ))}
-          <div className="plans__overlay" />
         </div>
       </div>
 

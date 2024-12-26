@@ -50,6 +50,7 @@ export const Slider = ({ slides }) => {
 
   return (
     <div
+      id="home"
       className="slider"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -83,7 +84,9 @@ export const Slider = ({ slides }) => {
             {slides[currentSlide].description}
           </p>
 
-          <button className="slider__button">ZAKAŽI POSETU</button>
+          <a href="#contact">
+            <button className="slider__button">ZAKAŽI POSETU</button>
+          </a>
         </div>
 
         <div className="slider__image-container">

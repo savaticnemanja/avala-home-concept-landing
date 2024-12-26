@@ -1,8 +1,16 @@
 .location {
   width: 100%;
-  background: #186367;
-  padding: 4rem 0;
-  margin-top: 8rem;
+  margin-top: 6rem;
+  max-width: 1290px;
+  margin: 0 auto 0 auto;
+  padding: 1rem;
+
+  &__title {
+    width: 100%;
+    padding: 1rem 0;
+    color: #2a454e;
+    border-bottom: 1px solid #2a454e55;
+  }
 
   .safe-zone {
     h2 {
@@ -13,13 +21,12 @@
     }
 
     .location-map {
-      margin-top: -8rem;
       display: flex;
       gap: 2rem;
 
       .map {
         flex: 2;
-        // height: 450px;
+        height: 400px;
         background: gray;
       }
 
@@ -73,7 +80,8 @@
   .location .safe-zone .location-map {
     flex-direction: column;
   }
-  .map {
+
+  .location-map {
     height: 500px;
   }
 }
