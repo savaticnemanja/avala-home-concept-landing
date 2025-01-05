@@ -1,3 +1,12 @@
+import {
+  astralLogo,
+  bekamentLogo,
+  bracaMaricLogo,
+  ciricGradnjaLogo,
+  fluidraLogo,
+  geberitLogo,
+  wienerbergerLogo,
+} from "../../assets";
 import "./Partners.scss";
 
 export const Partners = () => {
@@ -6,74 +15,49 @@ export const Partners = () => {
       <div className="partners__safe-zone">
         <div className="partners__scroll-container">
           <div className="partners__logos">
+            <img src={astralLogo} alt="Partner 1" className="partners__logo" />
             <img
-              src="assets/partners/astral.png"
-              alt="Partner 1"
-              className="partners__logo"
-            />
-            <img
-              src="assets/partners/bekament.png"
+              src={bekamentLogo}
               alt="Partner 2"
               className="partners__logo"
             />
             <img
-              src="assets/partners/braca-maric.png"
+              src={bracaMaricLogo}
               alt="Partner 3"
               className="partners__logo"
             />
             <img
-              src="assets/partners/ciric-gradnja.png"
+              src={ciricGradnjaLogo}
               alt="Partner 4"
               className="partners__logo"
             />
+            <img src={fluidraLogo} alt="Partner 5" className="partners__logo" />
+            <img src={geberitLogo} alt="Partner 5" className="partners__logo" />
             <img
-              src="assets/partners/fluidra.png"
+              src={wienerbergerLogo}
               alt="Partner 5"
               className="partners__logo"
             />
+            <img src={astralLogo} alt="Partner 1" className="partners__logo" />
             <img
-              src="assets/partners/geberit.png"
-              alt="Partner 5"
-              className="partners__logo"
-            />
-            <img
-              src="assets/partners/wienerberger.png"
-              alt="Partner 5"
-              className="partners__logo"
-            />
-            {/* Duplicate logos for seamless scrolling */}
-            <img
-              src="assets/partners/astral.png"
-              alt="Partner 1"
-              className="partners__logo"
-            />
-            <img
-              src="assets/partners/bekament.png"
+              src={bekamentLogo}
               alt="Partner 2"
               className="partners__logo"
             />
             <img
-              src="assets/partners/braca-maric.png"
+              src={bracaMaricLogo}
               alt="Partner 3"
               className="partners__logo"
             />
             <img
-              src="assets/partners/ciric-gradnja.png"
+              src={ciricGradnjaLogo}
               alt="Partner 4"
               className="partners__logo"
             />
+            <img src={fluidraLogo} alt="Partner 5" className="partners__logo" />
+            <img src={geberitLogo} alt="Partner 5" className="partners__logo" />
             <img
-              src="assets/partners/fluidra.png"
-              alt="Partner 5"
-              className="partners__logo"
-            />
-            <img
-              src="assets/partners/geberit.png"
-              alt="Partner 5"
-              className="partners__logo"
-            />
-            <img
-              src="assets/partners/wienerberger.png"
+              src={wienerbergerLogo}
               alt="Partner 5"
               className="partners__logo"
             />

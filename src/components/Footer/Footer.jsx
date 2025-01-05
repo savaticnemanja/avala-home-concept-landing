@@ -1,9 +1,13 @@
-import logo from "../../assets/logo.png";
-import footer1 from "../../assets/1.webp";
-import footer2 from "../../assets/2.webp";
-import footer3 from "../../assets/3.webp";
-import { facebookIcon, instagramIcon, linkedInIcon } from "../../assets/icons";
 import { Link } from "react-router-dom";
+import {
+  logo,
+  facebookIcon,
+  instagramIcon,
+  linkedInIcon,
+  footerImage1,
+  footerImage2,
+  footerImage3,
+} from "../../assets";
 
 import "./Footer.scss";
 export const Footer = () => {
@@ -11,11 +15,11 @@ export const Footer = () => {
     <div className="footer">
       <div className="footer__images-wrapper">
         <div className="footer__images">
-          <img src={footer2} alt="" />
-          <img src={footer3} alt="" />
-          <img src={footer1} alt="" />
-          <img src={footer2} alt="" />
-          <img src={footer3} alt="" />
+          <img src={footerImage1} alt="" />
+          <img src={footerImage2} alt="" />
+          <img src={footerImage3} alt="" />
+          <img src={footerImage1} alt="" />
+          <img src={footerImage2} alt="" />
         </div>
       </div>
       <div className="footer__sections">

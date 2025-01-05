@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { plan1, plan2, plan3 } from "../../assets";
 import "./Plans.scss";
 
 const slides = [
@@ -19,10 +20,9 @@ const slides = [
       { name: "Kuhinja i trpezarija", size: "28,00 m2" },
       { name: "Ostava", size: "3 m2" },
     ],
-    image: "assets/plans/plan1.webp",
+    image: plan1,
   },
   {
-    title: "Avala Home Concept",
     highlightedWord: "Vila 2",
     rooms: [
       { name: "Predprostor", size: "11,00 m2" },
@@ -39,10 +39,9 @@ const slides = [
       { name: "Kuhinja i trpezarija", size: "29,00 m2" },
       { name: "Ostava", size: "4 m2" },
     ],
-    image: "assets/plans/plan2.webp",
+    image: plan2,
   },
   {
-    title: "Avala Home Concept",
     highlightedWord: "Vila 3",
     rooms: [
       { name: "Predprostor", size: "12,00 m2" },
@@ -59,7 +58,7 @@ const slides = [
       { name: "Kuhinja i trpezarija", size: "30,00 m2" },
       { name: "Ostava", size: "5 m2" },
     ],
-    image: "assets/plans/plan3.webp",
+    image: plan3,
   },
 ];
 

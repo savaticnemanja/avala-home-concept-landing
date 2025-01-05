@@ -1,67 +1,82 @@
+import {
+  bathroom,
+  bricks,
+  brickwall,
+  ceilingLight,
+  construction,
+  cube,
+  glass,
+  heat,
+  key,
+  lawnMower,
+  openDoor,
+  wall,
+} from "../../assets";
+
 export const specifications = [
   {
     title: "Čvrsta gradnja",
     description: "Armirano betonska konstrukcija",
-    icon: "assets/specification/construction.svg",
+    icon: construction,
   },
   {
     title: "Thermo klima blok",
     description: "Broj 1. blok na tržištu",
-    icon: "assets/specification/brickwall.svg",
+    icon: brickwall,
   },
   {
     title: "Termoizolacija",
     description: "Austrotherm – debljina 10 cm, debljina zida 30 cm",
-    icon: "assets/specification/wall.svg",
+    icon: wall,
   },
   {
     title: "Sanitarije",
     description:
       "Geberit ugradni sistem uz prateću galanteriju, staklene tuš kabine",
-    icon: "assets/specification/bathroom.svg",
+    icon: bathroom,
   },
   {
     title: "Fasadna stolarija",
     description:
       "Aluminijumski prozori sa alu roletnama i dvostrukim staklom, punjeno argonom",
-    icon: "assets/specification/cube.svg",
+    icon: cube,
   },
   {
     title: "Staklo",
     description: 'Climaguard solar "Guardian" (4 godišnja doba)',
-    icon: "assets/specification/glass.svg",
+    icon: glass,
   },
   {
     title: "Grejanje",
     description:
       "Etažno, digitalni elektro kotao, skriveno radijatorsko grejanje. Toplotne pumpe (opciono)",
-    icon: "assets/specification/heat.svg",
+    icon: heat,
   },
   {
     title: "Unutrašnja vrata",
     description:
       "Medijapan presvučen CPL folijom sa dodatnim ojačanjima u štoku i krilu sa pervajz lajsnama",
-    icon: "assets/specification/open-door.svg",
+    icon: openDoor,
   },
   {
     title: "Spoljna vrata",
     description: "Sigurnosna vrata sa zaključavanjem u 6 tačaka",
-    icon: "assets/specification/key.svg",
+    icon: key,
   },
   {
     title: "Fasada",
     description: "Prirodni materijali: drvo, keramika i kamen",
-    icon: "assets/specification/bricks.svg",
+    icon: bricks,
   },
   {
     title: "Plafon",
     description: "Visina 2,70–2,90 m",
-    icon: "assets/specification/ceiling-light.svg",
+    icon: ceilingLight,
   },
   {
     title: "Uređeno dvorište",
     description:
       "Svuda se postavlja seme premium trave visokog kvaliteta bočno ograđivanjem",
-    icon: "assets/specification/lawn-mower.svg",
+    icon: lawnMower,
   },
 ];

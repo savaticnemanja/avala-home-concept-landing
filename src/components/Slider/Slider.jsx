@@ -1,24 +1,43 @@
 import { useState, useEffect } from "react";
+import {
+  sliderImage1,
+  sliderImage2,
+  sliderImage3,
+  sliderImage4,
+  sliderImage5,
+} from "../../assets";
 import "./Slider.scss";
 
 const slides = [
   {
     id: 1,
-    image: "http://192.168.1.9:3000/public/assets/hero-slide-1.jpg",
+    image: sliderImage1,
     title: "Slide One",
     subtitle: "This is the first slide",
   },
   {
     id: 2,
-    image: "http://192.168.1.9:3000/public/assets/hero-slide-2.jpg",
+    image: sliderImage2,
     title: "Slide Two",
     subtitle: "This is the second slide",
   },
   {
     id: 3,
-    image: "http://192.168.1.9:3000/public/assets/hero-slide-1.jpg",
-    title: "Slide Three",
-    subtitle: "This is the third slide",
+    image: sliderImage3,
+    title: "Slide Two",
+    subtitle: "This is the second slide",
+  },
+  {
+    id: 4,
+    image: sliderImage4,
+    title: "Slide Two",
+    subtitle: "This is the second slide",
+  },
+  {
+    id: 5,
+    image: sliderImage5,
+    title: "Slide Two",
+    subtitle: "This is the second slide",
   },
 ];
 
