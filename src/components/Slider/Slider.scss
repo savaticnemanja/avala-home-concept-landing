@@ -14,17 +14,17 @@
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 7s ease-in-out;
-    transform: scale(1.15);
+    transform: scale(1);
 
     &--active {
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1.15);
     }
   }
 
   &__content {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -35,14 +35,14 @@
   }
 
   &__title {
-    font-size: 5rem;
-    font-weight: 400;
+    font-size: 3.5rem;
+    font-weight: 500;
     margin: 0;
     text-transform: uppercase;
   }
 
   &__subtitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0;
     text-transform: uppercase;
   }
@@ -71,6 +71,17 @@
 
     &:hover {
       opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .hero-slider {
+    &__title {
+      font-size: 2rem;
+    }
+    &__subtitle {
+      font-size: 1rem;
     }
   }
 }

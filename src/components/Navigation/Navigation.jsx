@@ -15,10 +15,19 @@ export const Navigation = () => {
             <Link to="/about-us">O nama</Link>
           </li>
           <li>
-            <Link to="/projects">Projekti</Link>
+            <Link to="/projects">Ponuda kuća</Link>
           </li>
           <li>
             <Link to="/specifications">Specifikacije</Link>
+          </li>
+          <li>
+            <Link to="/about-investor">O investitoru</Link>
+          </li>
+          <li>
+            <Link to="/gallery">Galerija</Link>
+          </li>
+          <li>
+            <Link to="/work-progress">Napredak radova</Link>
           </li>
           <li>
             <Link to="/contact">Kontakt</Link>

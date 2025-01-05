@@ -1,4 +1,4 @@
-import { Slider, Plans, Location, Contact, Partners } from "../../components";
+import { Slider, Location, Contact, Partners } from "../../components";
 import { slides } from "./constants";
 import "./Homepage.scss";
 
@@ -17,7 +17,6 @@ export const Homepage = () => {
           allowFullScreen
         ></iframe>
       </div>
-      <Plans />
       <Location />
       <Contact />
       <Partners />

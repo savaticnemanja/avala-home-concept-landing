@@ -25,15 +25,6 @@ export const Footer = () => {
       <div className="footer__sections">
         <div className="footer__section">
           <img className="footer__logo" src={logo} alt="" />
-          <p>
-            Porodica Ćirić već 30 godina uspešno gradi i posluje na tržištu
-            Srbije. Naše građevinske kompanije Ćirić Home Invest i Ćirić gradnja
-            iza sebe imaju više hiljada uspešno realizovanih projekata i
-            zadovoljnih klijenata. Naše dugogodišnje iskustvo čini nas pouzdanim
-            partnerom od poverenja koji ima znanje, stručnost i kadrove za
-            realizaciju svih vrsta građevinskih radova brzo, kvalitetno i po
-            dogovoru.
-          </p>
         </div>
         <div className="footer__section">
           <h3>Sitemap</h3>
@@ -45,7 +36,19 @@ export const Footer = () => {
               <Link to="/about-us">O nama</Link>
             </li>
             <li>
-              <Link to="/projects">Projekti</Link>
+              <Link to="/projects">Ponuda kuća</Link>
+            </li>
+            <li>
+              <Link to="/specifications">Specifikacije</Link>
+            </li>
+            <li>
+              <Link to="/about-investor">O investitoru</Link>
+            </li>
+            <li>
+              <Link to="/gallery">Galerija</Link>
+            </li>
+            <li>
+              <Link to="/work-progress">Napredak radova</Link>
             </li>
             <li>
               <Link to="/contact">Kontakt</Link>

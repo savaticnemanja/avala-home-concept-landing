@@ -86,8 +86,12 @@ export const Slider = () => {
         ></div>
       ))}
       <div className="hero-slider__content">
-        <h1 className="hero-slider__title">Vaš raj u nadomku Beograda</h1>
-        <p className="hero-slider__subtitle">Luksuzne vile za moderan život</p>
+        <h1 className="hero-slider__title">
+          Plac, kuća, bazen, uređeno dvorište
+        </h1>
+        <p className="hero-slider__subtitle">
+          20 minuta od Beograda, 10 minuta od Ikee
+        </p>
       </div>
     </div>
   );

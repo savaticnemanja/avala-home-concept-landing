@@ -1,0 +1,146 @@
+.projects {
+  position: relative;
+  overflow: hidden;
+  max-width: 1290px;
+  margin: 0 auto 10rem auto;
+
+  &__content {
+    display: flex;
+    height: 100%;
+    gap: 2rem;
+
+    @media (min-width: 1024px) {
+      & > *:first-child {
+        order: 2;
+        flex: 1;
+      }
+      & > *:last-child {
+        flex: 2;
+      }
+    }
+  }
+
+  &__left {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    transition: opacity 0.5s ease;
+    background-color: #fff;
+
+    @media (max-width: 1024px) {
+      padding: 1rem;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    padding: 1rem 0;
+    color: #2a454e;
+  }
+  &__highlight {
+    color: #ff6b45;
+  }
+
+  &__button {
+    display: block;
+    width: fit-content;
+    align-items: center;
+    background-color: #ff6b45;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    transition: gap 0.3s ease;
+    cursor: pointer;
+    border: 0px;
+    color: #fff;
+    gap: 0.5rem;
+
+    &:hover {
+      gap: 1rem;
+      background-color: #29454e;
+      color: #bcd2d3;
+    }
+  }
+
+  &__image-container {
+    position: absolute;
+    inset: 0;
+
+    @media (min-width: 1024px) {
+      position: relative;
+    }
+  }
+
+  &__image {
+    flex: 2;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &--active {
+      opacity: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+  }
+
+  &__nav-button {
+    background-color: #2a454e;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+    border: 0px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #1a2c32;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: #ffffff;
+    }
+  }
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+
+    th,
+    td {
+      // padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f4f4f4;
+      color: #333;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: #fff;
+      color: #666;
+    }
+
+    tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+  }
+}

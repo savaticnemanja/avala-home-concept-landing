@@ -3,13 +3,11 @@
   margin-top: 6rem;
   max-width: 1290px;
   margin: 0 auto 0 auto;
-  padding: 1rem;
 
   &__title {
     width: 100%;
     padding: 1rem 0;
     color: #2a454e;
-    border-bottom: 1px solid #2a454e55;
   }
 
   .safe-zone {
@@ -77,6 +75,10 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .location {
+    padding: 1rem;
+  }
+
   .location .safe-zone .location-map {
     flex-direction: column;
   }

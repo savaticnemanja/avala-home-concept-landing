@@ -31,9 +31,37 @@ export { default as openDoor } from "./specifications/open-door.svg";
 export { default as wall } from "./specifications/wall.svg";
 
 // plans
-export { default as plan1 } from "./plans/plan1.webp";
-export { default as plan2 } from "./plans/plan2.webp";
-export { default as plan3 } from "./plans/plan3.webp";
+export { default as plan1 } from "./plans/plan1.jpg";
+export { default as plan2 } from "./plans/plan2.jpg";
+export { default as plan3 } from "./plans/plan3.jpg";
+
+// gallery
+export { default as galleryImage1 } from "./gallery/1.webp";
+export { default as galleryImage2 } from "./gallery/2.webp";
+export { default as galleryImage3 } from "./gallery/3.webp";
+export { default as galleryImage4 } from "./gallery/4.webp";
+export { default as galleryImage5 } from "./gallery/5.webp";
+export { default as galleryImage6 } from "./gallery/6.webp";
+export { default as galleryImage7 } from "./gallery/7.webp";
+export { default as galleryImage8 } from "./gallery/8.webp";
+export { default as galleryImage9 } from "./gallery/9.webp";
+export { default as galleryImage10 } from "./gallery/10.webp";
+export { default as galleryImage11 } from "./gallery/11.webp";
+export { default as galleryImage12 } from "./gallery/12.webp";
+export { default as galleryImage13 } from "./gallery/13.webp";
+export { default as galleryImage14 } from "./gallery/14.webp";
+export { default as galleryImage15 } from "./gallery/15.webp";
+export { default as galleryImage16 } from "./gallery/16.webp";
+export { default as galleryImage17 } from "./gallery/17.webp";
+export { default as galleryImage18 } from "./gallery/18.webp";
+export { default as galleryImage19 } from "./gallery/19.webp";
+export { default as galleryImage20 } from "./gallery/20.webp";
+export { default as galleryImage21 } from "./gallery/21.webp";
+export { default as galleryImage22 } from "./gallery/22.webp";
+export { default as galleryImage23 } from "./gallery/23.webp";
+export { default as galleryImage24 } from "./gallery/24.webp";
+export { default as galleryImage25 } from "./gallery/25.webp";
+export { default as galleryImage26 } from "./gallery/26.webp";
 
 // footer
 export { default as facebookIcon } from "./icons/facebook-brands-solid.svg";
