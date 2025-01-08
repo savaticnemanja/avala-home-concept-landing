@@ -63,6 +63,12 @@ export { default as galleryImage24 } from "./gallery/24.webp";
 export { default as galleryImage25 } from "./gallery/25.webp";
 export { default as galleryImage26 } from "./gallery/26.webp";
 
+// contact
+export { default as phoneIcon } from "./contact/phone.svg";
+export { default as emailIcon } from "./contact/envelope.svg";
+export { default as viberIcon } from "./contact/viber.svg";
+export { default as whatsappIcon } from "./contact/whatsapp.svg";
+
 // footer
 export { default as facebookIcon } from "./icons/facebook-brands-solid.svg";
 export { default as instagramIcon } from "./icons/instagram-brands-solid.svg";
