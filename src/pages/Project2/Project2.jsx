@@ -6,17 +6,17 @@ import {
   project1Render,
 } from "../../assets";
 
-import "./Projects.scss";
+import "./Project2.scss";
 
-export const Projects = () => {
+export const Project2 = () => {
   return (
-    <div className="projects">
-      <div className="projects__hero-image">
+    <div className="project2">
+      <div className="project2__hero-image">
         <img src={project1Render} alt="" />
       </div>
-      <div className="projects__main">
-        <img className="projects__main-image" src={project1Main} alt="" />
-        <div className="projects__main-description">
+      <div className="project2__main">
+        <img className="project2__main-image" src={project1Main} alt="" />
+        <div className="project2__main-description">
           Prostrana prizemna kuća od 139 metara kvadratnih. Ova moderno
           dizajnirana kuća ima i dva parking mesta i odvojenu namensku
           prostoriju pokraj bazena u koju možete smestiti letnju kuhinju. Čak
@@ -27,20 +27,20 @@ export const Projects = () => {
           spuštate na uređenu stazu koja Vas vodi do bazena i plaže.
         </div>
       </div>
-      <div className="projects__showcase-images">
-        <div className="projects__showcase-image">
+      <div className="project2__showcase-images">
+        <div className="project2__showcase-image">
           <img src={project1Spec1} alt="" />
         </div>
-        <div className="projects__showcase-image">
+        <div className="project2__showcase-image">
           <img src={project1Spec2} alt="" />
         </div>
-        <div className="projects__showcase-image">
+        <div className="project2__showcase-image">
           <img src={project1Spec3} alt="" />
         </div>
       </div>
-      <div className="projects__surface">
-        <div className="projects__surface-title">Površina</div>
-        <div className="projects__surface-value">139m²</div>
+      <div className="project2__surface">
+        <div className="project2__surface-title">Površina</div>
+        <div className="project2__surface-value">139m²</div>
       </div>
     </div>
   );

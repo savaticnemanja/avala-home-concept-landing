@@ -9,6 +9,8 @@ import {
   Specifications,
   WorkProgress,
   Contact,
+  Project1,
+  Project2,
 } from "./pages";
 import "./App.scss";
 
@@ -20,6 +22,8 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/project1" element={<Project1 />} />
+        <Route path="/project2" element={<Project2 />} />
         <Route path="/specifications" element={<Specifications />} />
         <Route path="/about-investor" element={<AboutInvestor />} />
         <Route path="/gallery" element={<Gallery />} />

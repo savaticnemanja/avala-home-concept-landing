@@ -45,6 +45,13 @@ export { default as plan1 } from "./plans/plan1.jpg";
 export { default as plan2 } from "./plans/plan2.jpg";
 export { default as plan3 } from "./plans/plan3.jpg";
 
+// projects
+export { default as project1Main } from "./projects/project1/main.webp";
+export { default as project1Spec1 } from "./projects/project1/spec1.png";
+export { default as project1Spec2 } from "./projects/project1/spec2.png";
+export { default as project1Spec3 } from "./projects/project1/spec3.png";
+export { default as project1Render } from "./projects/project1/render.jpg";
+
 // gallery
 export { default as galleryImage1 } from "./gallery/1.webp";
 export { default as galleryImage2 } from "./gallery/2.webp";

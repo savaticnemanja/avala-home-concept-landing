@@ -6,7 +6,9 @@ export const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="container safe-zone">
-        <img src={logo} className="logo" />
+        <Link to="/">
+          <img src={logo} className="logo" />
+        </Link>
         <ul className="nav-links">
           <li>
             <Link to="/">Početna</Link>
