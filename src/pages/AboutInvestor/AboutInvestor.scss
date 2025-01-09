@@ -1,4 +1,4 @@
-.about-investor {
+.about-us {
   width: 100%;
   background-color: #f8f9fa;
   padding: 1rem 0 0 0;
@@ -6,7 +6,8 @@
   justify-content: space-between;
   gap: 2rem;
   max-width: 1290px;
-  margin: 0 auto 10rem auto;
+  margin: 2rem auto;
+
   &__left {
     flex: 1;
   }
@@ -17,11 +18,32 @@
     flex-direction: column;
     justify-content: flex-start;
     text-align: justify;
-    img {
-      max-width: 400px;
-      height: 100%;
+
+    .about-us__card {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      .about-us__logo {
+        width: 100%; /* Updated to take 100% width of parent */
+        height: auto;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .about-us__contact {
+        margin-top: 1rem;
+        color: #2a454e;
+        font-size: 0.9rem;
+        text-align: center;
+      }
     }
   }
+
   &__title {
     width: 100%;
     margin: 0 0 1rem 0;
@@ -36,6 +58,7 @@
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
+
     &__left {
       order: 2;
     }

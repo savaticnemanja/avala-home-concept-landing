@@ -6,7 +6,64 @@ $primary-color: #f05a28;
   position: sticky;
   padding: 0 1rem;
   top: 0;
-  z-index: 100;
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 1rem;
+
+      a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      &.active a {
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+
+    &.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      li {
+        margin: 1rem 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .cta-button {
+    background-color: #ff6b45;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #29454e;
+      color: #bcd2d3;
+    }
+  }
 
   .safe-zone {
     display: flex;
@@ -17,56 +74,20 @@ $primary-color: #f05a28;
     .logo {
       width: 150px;
     }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      li {
-        margin: 0 1rem;
-
-        a {
-          color: #333;
-          text-decoration: none;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: $primary-color;
-          }
-        }
-
-        &.active a {
-          color: $primary-color;
-          font-weight: bold;
-        }
-      }
-    }
-
-    .cta-button {
-      background-color: #ff6b45;
-      padding: 1rem 1.5rem;
-      font-weight: 600;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      border: none;
-      color: #fff;
-      text-transform: uppercase;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #29454e;
-        color: #bcd2d3;
-      }
-    }
   }
-}
 
-@media (max-width: 768px) {
-  .navigation {
+  @media (max-width: 768px) {
+    .burger-menu {
+      display: flex;
+    }
+
     .safe-zone {
       .nav-links {
         display: none;
+
+        &.open {
+          display: flex;
+        }
       }
 
       .cta-button {

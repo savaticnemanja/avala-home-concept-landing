@@ -1,28 +1,26 @@
 .gallery {
-  margin: 0 auto 10rem auto;
+  margin: 0 auto;
   max-width: 1290px;
 
   &__images {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1rem;
+    gap: 1rem;
     padding: 1rem;
-    border-radius: 5px;
   }
+
   &__title {
-    width: 100%;
-    margin: 0 0 1rem 0;
+    margin-bottom: 1rem;
     padding: 1rem 0;
     color: #2a454e;
   }
+
   &__image {
-    max-width: 300px;
-    height: auto;
-    transition: 0.2s ease-in-out;
+    max-width: 100%;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
     &:hover {
       cursor: pointer;
       transform: scale(1.025);
-      opacity: 1;
       filter: saturate(150%);
     }
   }

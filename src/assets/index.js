@@ -79,7 +79,6 @@ export { default as galleryImage22 } from "./gallery/22.webp";
 export { default as galleryImage23 } from "./gallery/23.webp";
 export { default as galleryImage24 } from "./gallery/24.webp";
 export { default as galleryImage25 } from "./gallery/25.webp";
-export { default as galleryImage26 } from "./gallery/26.webp";
 
 // contact
 export { default as phoneIcon } from "./contact/phone.svg";

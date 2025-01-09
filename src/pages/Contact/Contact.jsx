@@ -1,6 +1,13 @@
 import { phoneIcon, viberIcon, emailIcon, whatsappIcon } from "../../assets";
 import "./Contact.scss";
 
+const ContactIcon = ({ icon, text }) => (
+  <div className="contact__icon">
+    <img src={icon} alt="Contact Icon" />
+    <p>{text}</p>
+  </div>
+);
+
 export const Contact = () => {
   return (
     <div className="contact">
@@ -11,22 +18,10 @@ export const Contact = () => {
           odgovoriti u najkraćem roku.
         </p>
         <div className="contact__icons">
-          <div className="contact__icon">
-            <img src={phoneIcon} alt="Phone" />
-            <p>+381 11 123 456</p>
-          </div>
-          <div className="contact__icon">
-            <img src={viberIcon} alt="Phone" />
-            <p>avalahomeconcept@gmail.com</p>
-          </div>
-          <div className="contact__icon">
-            <img src={whatsappIcon} alt="Phone" />
-            <p>avalahomeconcept@gmail.com</p>
-          </div>
-          <div className="contact__icon">
-            <img src={emailIcon} alt="Phone" />
-            <p>avalahomeconcept@gmail.com</p>
-          </div>
+          <ContactIcon icon={phoneIcon} text="+381 11 123 456" />
+          <ContactIcon icon={viberIcon} text="avalahomeconcept@gmail.com" />
+          <ContactIcon icon={whatsappIcon} text="avalahomeconcept@gmail.com" />
+          <ContactIcon icon={emailIcon} text="avalahomeconcept@gmail.com" />
         </div>
       </div>
       <div className="contact__right">
