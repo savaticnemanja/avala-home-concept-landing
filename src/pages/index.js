@@ -1,9 +1,8 @@
 export { AboutInvestor } from "./AboutInvestor/AboutInvestor";
 export { AboutUs } from "./AboutUs/AboutUs";
-export { Contact } from "./Contact/Contact";
+export { ContactPage } from "./ContactPage/ContactPage";
 export { Gallery } from "./Gallery/Gallery";
 export { Homepage } from "./Homepage/Homepage";
-export { Project1 } from "./Project1/Project1";
-export { Project2 } from "./Project2/Project2";
+export { Project } from "./Project/Project";
 export { Specifications } from "./Specifications/Specifications";
 export { WorkProgress } from "./WorkProgress/WorkProgress";

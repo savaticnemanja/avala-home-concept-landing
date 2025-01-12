@@ -1,17 +1,17 @@
 import {
   AboutInvestor,
   AboutUs,
-  Contact,
+  ContactPage,
   Gallery,
   Homepage,
-  Project1,
-  Project2,
+  Project,
   Specifications,
   WorkProgress,
 } from "@/pages";
 import { Route, Routes } from "react-router";
 import "./App.scss";
 import { Footer, Navigation } from "./components";
+import { projects } from "./projects";
 
 function App() {
   return (
@@ -20,13 +20,29 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/project1" element={<Project1 />} />
-        <Route path="/project2" element={<Project2 />} />
+
+        {/* Dynamically generate routes for projects */}
+        {projects.map((project, index) => (
+          <Route
+            key={index}
+            path={`/project${index + 1}`}
+            element={
+              <Project
+                heroImage={project.heroImage}
+                mainImage={project.mainImage}
+                description={project.description}
+                showcaseImages={project.showcaseImages}
+                surfaceArea={project.surfaceArea}
+              />
+            }
+          />
+        ))}
+
         <Route path="/specifications" element={<Specifications />} />
         <Route path="/about-investor" element={<AboutInvestor />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/work-progress" element={<WorkProgress />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
     </>

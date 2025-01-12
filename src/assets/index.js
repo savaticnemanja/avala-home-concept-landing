@@ -29,6 +29,11 @@ export { default as project1Render } from "./projects/project1/render.jpg";
 export { default as project1Spec1 } from "./projects/project1/spec-1.png";
 export { default as project1Spec2 } from "./projects/project1/spec-2.png";
 export { default as project1Spec3 } from "./projects/project1/spec-3.png";
+export { default as project2Main } from "./projects/project2/main.webp";
+export { default as project2Render } from "./projects/project2/render.webp";
+export { default as project2Spec1 } from "./projects/project2/spec-1.png";
+export { default as project2Spec2 } from "./projects/project2/spec-2.png";
+export { default as project2Spec3 } from "./projects/project2/spec-3.png";
 
 // gallery
 export { default as galleryImage1 } from "./gallery/gallery-1.webp";

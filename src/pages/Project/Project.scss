@@ -1,4 +1,4 @@
-.project1 {
+.project {
   max-width: 1290px;
   margin: 2rem auto 0 auto;
   &__hero-image {
@@ -28,4 +28,22 @@
       height: auto;
     }
   }
+}
+
+.project__net-surface {
+  margin-top: 20px;
+}
+
+.project__net-surface-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.project__net-surface-item {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.project__net-surface-item strong {
+  font-weight: bold;
 }

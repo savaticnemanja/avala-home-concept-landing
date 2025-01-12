@@ -16,21 +16,23 @@ const locations = [
 
 export const Location = () => {
   return (
-    <div className="location">
-      <div className="location-map">
-        <img src={map} alt="Map" />
-      </div>
-      <div className="location-list">
-        <ul>
-          {locations.map((location, index) => (
-            <li key={index}>
-              <FaMapMarkerAlt className="location-icon" />
-              <span>{location.name}</span>
-              <span className="underscore"></span>
-              <span>{location.time}</span>
-            </li>
-          ))}
-        </ul>
+    <div className="wrapper">
+      <div className="location">
+        <div className="location-map">
+          <img src={map} alt="Map" />
+        </div>
+        <div className="location-list">
+          <ul>
+            {locations.map((location, index) => (
+              <li key={index}>
+                <FaMapMarkerAlt className="location-icon" />
+                <span>{location.name}</span>
+                <span className="underscore"></span>
+                <span>{location.time}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
