@@ -17,4 +17,12 @@ export default defineConfig({
       },
     ],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern",
+        additionalData: `@use "@/assets/globals.scss" as *;`,
+      },
+    },
+  },
 });

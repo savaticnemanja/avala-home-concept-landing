@@ -2,44 +2,80 @@ import { facebookIcon, instagramIcon, linkedInIcon, logoWhite } from "@/assets";
 import { Link } from "react-router-dom";
 import "./Footer.scss";
 
+const navLinks = [
+  { path: "/", label: "Početna" },
+  { path: "/about-us", label: "O nama" },
+  { path: "/project1", label: "Projekat 1" },
+  { path: "/project2", label: "Projekat 2" },
+  { path: "/specifications", label: "Specifikacije" },
+  { path: "/about-investor", label: "O investitoru" },
+  { path: "/gallery", label: "Galerija" },
+  { path: "/work-progress", label: "Napredak radova" },
+  { path: "/contact", label: "Kontakt" },
+];
+
 export const Footer = () => {
   return (
     <div className="footer">
-      <img className="footer__logo" src={logoWhite} alt="Logo" />
-      <p className="footer__contact">Telefon: +381 63 383393</p>
-      <p className="footer__contact">Email: avalahomeconcept@gmail.com</p>
+      <Link to="/">
+        <img className="footer__logo" src={logoWhite} alt="Logo" />
+      </Link>
+      <p className="footer__contact">
+        Telefon: <a href="tel:+381 63 383393">+381 63 383393</a>
+      </p>
+      <p className="footer__contact">
+        Email:{" "}
+        <a href="mailto:avalahomeconcept@gmail.com">
+          avalahomeconcept@gmail.com
+        </a>
+      </p>
       <div className="footer__social-icons">
-        <img
-          className="footer__social-icon"
-          src={facebookIcon}
-          alt="Facebook"
-          width="16px"
-          height="16px"
-        />
-        <img
-          className="footer__social-icon"
-          src={instagramIcon}
-          alt="Instagram"
-          width="16px"
-          height="16px"
-        />
-        <img
-          className="footer__social-icon"
-          src={linkedInIcon}
-          alt="LinkedIn"
-          width="16px"
-          height="16px"
-        />
+        <a
+          href="https://www.facebook.com/avalahomeconcept/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="footer__social-icon"
+            src={facebookIcon}
+            alt="Facebook"
+            width="16px"
+            height="16px"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/avala_homeconcept/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="footer__social-icon"
+            src={instagramIcon}
+            alt="Instagram"
+            width="16px"
+            height="16px"
+          />
+        </a>
+        <a
+          href="https://rs.linkedin.com/in/avala-home-concept-718984276"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="footer__social-icon"
+            src={linkedInIcon}
+            alt="LinkedIn"
+            width="16px"
+            height="16px"
+          />
+        </a>
       </div>
       <div className="footer__sitemap">
-        <Link to="/">Početna</Link>
-        <Link to="/about-us">O nama</Link>
-        <Link to="/projects">Ponuda kuća</Link>
-        <Link to="/specifications">Specifikacije</Link>
-        <Link to="/about-investor">O investitoru</Link>
-        <Link to="/gallery">Galerija</Link>
-        <Link to="/work-progress">Napredak radova</Link>
-        <Link to="/contact">Kontakt</Link>
+        {navLinks.map((link) => (
+          <Link key={link.path} to={link.path}>
+            {link.label}
+          </Link>
+        ))}
       </div>
       <p className="footer__copyright">Copyright &#169; Avala Home Concept</p>
     </div>

@@ -1,27 +1,49 @@
-import { plan2, showcaseFront } from "@/assets";
+import { showcase1, showcase2 } from "@/assets";
+import { FaArrowCircleRight, FaCheckCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "./Showcase.scss";
 
 const descriptions = [
-  "Kompleks zatvorenog tipa",
-  "Rampa za ulasku u kompleks",
-  "Moderna arhitektura",
-  "Kompletna infrastruktura",
-  '10 min od autoputa, Ikee, novog TC "Ava" sa mnoštvo prodavnica.',
-  "20 min od Autokomande, Vračara.",
-  "Čvrsta gradnja, premium završni materijali.",
+  {
+    title: "Zdravo prirodno okruzenje",
+    description: "Kuća na Avalskoj planini izolovana od gradske buke",
+  },
+  {
+    title: "Nadomak Beograda",
+    description: "Dobra saobraćajna povezanost sa centrom Beograda",
+  },
+  {
+    title: "Dvoriste bazen i plaza",
+    description: "Bazen sa kompletnom opremom, uređeno dvorište sa rasvetom",
+  },
+  {
+    title: "Maksimalna bezbednost",
+    description: "Sigurnosna aluminijumska vrata, kamere i alarm sistem",
+  },
+  { title: "Parking", description: "Parking mesto" },
 ];
 
 export const Showcase = () => {
   return (
     <div className="showcase">
-      <img src={plan2} className="showcase__image" alt="" />
-      <img src={showcaseFront} className="showcase__image" alt="" />
+      <div className="showcase__image-container">
+        <img src={showcase1} className="showcase__image" alt="" />
+        <img src={showcase2} className="showcase__image" alt="" />
+      </div>
       <div className="showcase__descriptions">
-        {descriptions.map((description, index) => (
-          <p key={index} className="showcase__description-item">
-            {description}
-          </p>
+        {descriptions.map((item, index) => (
+          <div key={index} className="showcase__description-item">
+            <h3 className="showcase__description-title">
+              <FaCheckCircle className="showcase__icon" />
+              {item.title}
+            </h3>
+            <p className="showcase__description-text">{item.description}</p>
+          </div>
         ))}
+        <Link to="/specifications" className="showcase__button">
+          Detaljna specifikacija
+          <FaArrowCircleRight className="showcase__icon" />
+        </Link>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 $primary-color: #f05a28;
 
 .navigation {
+  z-index: 2;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -14,21 +15,60 @@ $primary-color: #f05a28;
     padding: 0;
 
     li {
-      margin: 0 1rem;
+      padding: 1rem 1rem;
+      position: relative;
 
       a {
         color: #333;
         text-decoration: none;
         transition: color 0.3s ease;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &:hover {
           color: $primary-color;
+          .arrow-down {
+            filter: invert(53%) sepia(83%) saturate(7496%) hue-rotate(353deg)
+              brightness(97%) contrast(104%);
+          }
+        }
+
+        .arrow-down {
+          transition: 0.2s ease-in-out;
+          width: 12px;
+          height: 12px;
+          margin-left: 0.5rem;
+          filter: invert(100%);
         }
       }
 
-      &.active a {
-        color: $primary-color;
-        font-weight: bold;
+      .dropdown {
+        z-index: 1;
+        display: none;
+        position: absolute;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        list-style: none;
+        li {
+          margin: 0;
+          padding: 1rem 0.5rem;
+
+          a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+
+      &:hover .dropdown {
+        display: block;
       }
     }
 
@@ -49,19 +89,34 @@ $primary-color: #f05a28;
     }
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .cta-button {
-    background-color: #ff6b45;
-    padding: 1rem 1.5rem;
-    font-weight: 600;
+    display: flex;
+    background-color: $primary-color;
+    padding: 10px 20px;
+    font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: none;
-    color: #fff;
+    color: $background-color;
+    border-radius: 5px;
     text-transform: uppercase;
+    border: 1px solid $background-color;
     cursor: pointer;
 
+    svg {
+      margin-left: 0.5rem;
+      color: $background-color;
+    }
     &:hover {
-      background-color: #29454e;
-      color: #bcd2d3;
+      color: $primary-color;
+      background-color: $background-color;
+      border: 1px solid $primary-color;
+      svg {
+        color: $primary-color;
+      }
     }
   }
 
@@ -74,25 +129,57 @@ $primary-color: #f05a28;
     .logo {
       width: 150px;
     }
+    .mobile-menu-icon {
+      display: none;
+    }
   }
 
   @media (max-width: 768px) {
-    .burger-menu {
-      display: flex;
-    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-    .safe-zone {
-      .nav-links {
-        display: none;
-
-        &.open {
-          display: flex;
+      &.visible {
+        display: flex;
+        // justify-content: space-around;
+        height: 80lvh;
+        background-color: #fff;
+        li {
+          padding: 0.25rem 1rem;
         }
       }
 
-      .cta-button {
-        padding: 0.5rem 0.8rem;
+      li {
+        width: 100%;
+        text-align: center;
+        // padding: 1rem 0;
+
+        a {
+          width: 100%;
+          padding: 1rem 0;
+        }
       }
+    }
+    .mobile-menu-icon {
+      display: block !important;
+      filter: invert(53%) sepia(83%) saturate(7496%) hue-rotate(353deg);
+      background: none;
+      border: none;
+      cursor: pointer;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .cta-button {
+      padding: 0.5rem 0.8rem;
     }
   }
 }
