@@ -4,23 +4,15 @@ import { Link } from "react-router-dom";
 import "./Showcase.scss";
 
 const descriptions = [
-  {
-    title: "Zdravo prirodno okruzenje",
-    description: "Kuća na Avalskoj planini izolovana od gradske buke",
-  },
-  {
-    title: "Nadomak Beograda",
-    description: "Dobra saobraćajna povezanost sa centrom Beograda",
-  },
-  {
-    title: "Dvoriste bazen i plaza",
-    description: "Bazen sa kompletnom opremom, uređeno dvorište sa rasvetom",
-  },
-  {
-    title: "Maksimalna bezbednost",
-    description: "Sigurnosna aluminijumska vrata, kamere i alarm sistem",
-  },
-  { title: "Parking", description: "Parking mesto" },
+  { title: "Zatvoren kompleks" },
+  { title: "Moderna i Mediteranska arhitektura" },
+  { title: "Brza konekcija na autoput" },
+  { title: "Čvrsta gradnja" },
+  { title: "Visok nivo završnih materijala" },
+  { title: "Uređena dvorišta" },
+  { title: "Parking mesto" },
+  { title: "Rampa na ulasku/izlasku" },
+  { title: "Najlepša lokacija sa pogledom na toranj Avala" },
 ];
 
 export const Showcase = () => {
@@ -37,7 +29,6 @@ export const Showcase = () => {
               <FaCheckCircle className="showcase__icon" />
               {item.title}
             </h3>
-            <p className="showcase__description-text">{item.description}</p>
           </div>
         ))}
         <Link to="/specifications" className="showcase__button">

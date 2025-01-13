@@ -1,10 +1,11 @@
 import { emailIcon, phoneIcon, viberIcon, whatsappIcon } from "@/assets";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { Bounce, toast } from "react-toastify";
 import "./Contact.scss";
 
-const ContactIcon = ({ icon, text }) => (
-  <div className="contact__icon">
+const ContactIcon = ({ icon, text, action }) => (
+  <div className="contact__icon" onClick={action}>
     <img src={icon} alt="Contact Icon" />
     <p>{text}</p>
   </div>
@@ -25,12 +26,33 @@ export const Contact = () => {
       )
       .then(
         () => {
-          console.log("Email sent successfully!");
-          alert("Your message has been sent.");
+          toast.success("Vaša poruka je poslata.", {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
         },
-        (error) => {
-          console.error("Error sending email:", error.text);
-          alert("Failed to send message. Please try again later.");
+        () => {
+          toast.success(
+            "Problem sa slanjem poruke. Pokušajte ponovo kasnije.",
+            {
+              position: "bottom-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              transition: Bounce,
+            }
+          );
         }
       );
   };
@@ -46,25 +68,25 @@ export const Contact = () => {
         <div className="contact__icons">
           <ContactIcon
             icon={phoneIcon}
-            text="+381 11 123 456"
-            onClick={() => (window.location.href = "tel:+38111123456")}
+            text="Pozovite nas na +381 63 383393"
+            action={() => (window.location.href = "tel:+38163383393")}
           />
           <ContactIcon
             icon={viberIcon}
-            text="avalahomeconcept@gmail.com"
-            onClick={() =>
-              window.open("viber://add?number=+38111123456", "_blank")
+            text="Kontaktirajte nas putem Vibera"
+            action={() =>
+              window.open("viber://add?number=+38163383393", "_blank")
             }
           />
           <ContactIcon
             icon={whatsappIcon}
-            text="avalahomeconcept@gmail.com"
-            onClick={() => window.open("https://wa.me/38111123456", "_blank")}
+            text="Kontaktirajte nas putem WhatsApp-a"
+            action={() => window.open("https://wa.me/+38163383393", "_blank")}
           />
           <ContactIcon
             icon={emailIcon}
-            text="avalahomeconcept@gmail.com"
-            onClick={() =>
+            text="Pošaljite nam email na avalahomeconcept@gmail.com"
+            action={() =>
               (window.location.href = "mailto:avalahomeconcept@gmail.com")
             }
           />
@@ -73,17 +95,10 @@ export const Contact = () => {
       <div className="contact__right">
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name="firstName" placeholder="Ime" required />
-          <input type="text" name="lastName" placeholder="Prezime" required />
           <input
             type="tel"
             name="contactNumber"
             placeholder="Broj telefona"
-            required
-          />
-          <input
-            type="email"
-            name="contactEmail"
-            placeholder="Email adresa"
             required
           />
           <textarea

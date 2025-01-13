@@ -9,6 +9,7 @@ import {
   WorkProgress,
 } from "@/pages";
 import { Route, Routes } from "react-router";
+import { ToastContainer } from "react-toastify";
 import "./App.scss";
 import { Footer, Navigation } from "./components";
 import { projects } from "./projects";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </>
   );
 }

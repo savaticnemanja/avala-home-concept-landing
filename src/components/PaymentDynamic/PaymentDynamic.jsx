@@ -9,6 +9,7 @@ const paymentDetails = [
 export const PaymentDynamic = () => {
   return (
     <div className="payment-dynamic">
+      <h2 className="payment-dynamic__heading">Dinamika plaćanja</h2>
       <div className="payment-dynamic__wrapper">
         {paymentDetails.map((detail, index) => (
           <div key={index} className="payment-dynamic__content">

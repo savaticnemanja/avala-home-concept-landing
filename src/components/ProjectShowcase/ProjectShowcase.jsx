@@ -69,13 +69,17 @@ const ProjectTable = ({ data }) => (
           <td>{item.area}</td>
         </tr>
       ))}
+      <tr>
+        <td>
+          <Link to={data[0].link}>
+            <button className="project-showcase__details-button">
+              Detaljna specifikacija
+              <FaArrowCircleRight className="showcase__icon" />
+            </button>
+          </Link>
+        </td>
+      </tr>
     </tbody>
-    <Link to={data[0].link}>
-      <button className="project-showcase__details-button">
-        Detaljna specifikacija
-        <FaArrowCircleRight className="showcase__icon" />
-      </button>
-    </Link>
   </table>
 );
 
