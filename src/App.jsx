@@ -8,7 +8,7 @@ import {
   Specifications,
   WorkProgress,
 } from "@/pages";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import { ToastContainer } from "react-toastify";
 import "./App.scss";
 import { Footer, Navigation } from "./components";
@@ -19,6 +19,7 @@ function App() {
     <>
       <Navigation />
       <Routes>
+        <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/about-us" element={<AboutUs />} />
 

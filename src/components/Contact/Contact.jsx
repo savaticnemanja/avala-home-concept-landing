@@ -75,7 +75,7 @@ export const Contact = () => {
             icon={viberIcon}
             text="Kontaktirajte nas putem Vibera"
             action={() =>
-              window.open("viber://add?number=+38163383393", "_blank")
+              window.open("viber://contact/?number=+38163383393", "_blank")
             }
           />
           <ContactIcon
