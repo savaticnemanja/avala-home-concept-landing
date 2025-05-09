@@ -7,6 +7,7 @@ const navLinks = [
   { path: "/about-us", label: "O nama" },
   { path: "/project1", label: "Projekat 1" },
   { path: "/project2", label: "Projekat 2" },
+  { path: "/small-house", label: "Male kuće" },
   { path: "/specifications", label: "Specifikacije" },
   { path: "/about-investor", label: "O investitoru" },
   { path: "/gallery", label: "Galerija" },

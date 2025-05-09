@@ -35,6 +35,18 @@ export { default as project2Spec1 } from "./projects/project2/spec-1.png";
 export { default as project2Spec2 } from "./projects/project2/spec-2.png";
 export { default as project2Spec3 } from "./projects/project2/spec-3.png";
 
+export { default as smallHousesMain } from "./projects/small-houses/main.webp";
+export { default as smallHousesVideo } from "./projects/small-houses/video.mp4";
+export { default as smallHousesInfo1 } from "./projects/small-houses/smallHouseInfo1.webp";
+export { default as smallHousesInfo2 } from "./projects/small-houses/smallHouseInfo2.webp";
+export { default as smallHousesGallery1 } from "./projects/small-houses/1.webp";
+export { default as smallHousesGallery2 } from "./projects/small-houses/2.webp";
+export { default as smallHousesGallery3 } from "./projects/small-houses/3.webp";
+export { default as smallHousesGallery4 } from "./projects/small-houses/4.webp";
+export { default as smallHousesGallery5 } from "./projects/small-houses/5.webp";
+export { default as smallHousesGallery6 } from "./projects/small-houses/6.webp";
+
+
 // gallery
 export { default as galleryImage1 } from "./gallery/gallery-1.webp";
 export { default as galleryImage10 } from "./gallery/gallery-10.webp";

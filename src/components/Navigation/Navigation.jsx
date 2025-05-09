@@ -13,6 +13,7 @@ const navLinks = [
     subLinks: [
       { path: "/project1", label: "Projekat 1" },
       { path: "/project2", label: "Projekat 2" },
+      { path: "/small-houses", label: "Male kuće" },
     ],
   },
   { path: "/specifications", label: "Specifikacije" },

@@ -5,6 +5,7 @@ import {
   Gallery,
   Homepage,
   Project,
+  SmallHouses,
   Specifications,
   WorkProgress,
 } from "@/pages";
@@ -40,6 +41,7 @@ function App() {
           />
         ))}
 
+        <Route path="/small-houses" element={<SmallHouses />} />
         <Route path="/specifications" element={<Specifications />} />
         <Route path="/about-investor" element={<AboutInvestor />} />
         <Route path="/gallery" element={<Gallery />} />
