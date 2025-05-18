@@ -10,6 +10,11 @@ export { default as sliderImage3 } from "./slider/slider-image-3.jpeg";
 export { default as sliderImage4 } from "./slider/slider-image-4.jpeg";
 export { default as sliderImage5 } from "./slider/slider-image-5.jpeg";
 
+// videos
+export { default as video1 } from "./homepage/video1.mp4";
+export { default as video2 } from "./homepage/video2.mp4";
+export { default as video3 } from "./homepage/video3.mov";
+
 // showcase
 export { default as showcaseBackground } from "./showcase/background.png";
 export { default as showcase1 } from "./showcase/showcase-1.jpg";
@@ -66,6 +71,7 @@ export { default as galleryImage25 } from "./gallery/gallery-25.webp";
 export { default as galleryImage26 } from "./gallery/gallery-26.webp";
 export { default as galleryImage27 } from "./gallery/gallery-27.webp";
 export { default as galleryImage28 } from "./gallery/gallery-28.webp";
+export { default as galleryImage29 } from "./gallery/gallery-29.webp";
 export { default as galleryImage3 } from "./gallery/gallery-3.webp";
 export { default as galleryImage4 } from "./gallery/gallery-4.webp";
 export { default as galleryImage5 } from "./gallery/gallery-5.webp";

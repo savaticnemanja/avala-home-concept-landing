@@ -13,7 +13,7 @@ const navLinks = [
     subLinks: [
       { path: "/project1", label: "Projekat 1" },
       { path: "/project2", label: "Projekat 2" },
-      { path: "/small-houses", label: "Male kuće" },
+      { path: "/small-houses", label: "Kuće 80-100m²" },
     ],
   },
   { path: "/specifications", label: "Specifikacije" },
@@ -24,56 +24,78 @@ const navLinks = [
 ];
 
 export const Navigation = () => {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
-  const handleMouseEnter = () => {
-    setDropdownVisible(!dropdownVisible);
+  const toggleDropdown = (label) => {
+    setActiveDropdown(activeDropdown === label ? null : label);
   };
 
-  const handleMouseLeave = () => {
-    setDropdownVisible(false);
+  const closeMobileMenu = () => {
+    setMobileMenuVisible(false);
+    setActiveDropdown(null);
   };
 
-  const toggleMobileMenu = () => {
-    setMobileMenuVisible(!mobileMenuVisible);
+  const handleLinkClick = (hasSubLinks, label, e) => {
+    if (window.innerWidth <= 768 && hasSubLinks) {
+      e.preventDefault();
+      toggleDropdown(label);
+    } else {
+      closeMobileMenu();
+    }
+  };
+
+  const handleArrowClick = (e, label) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleDropdown(label);
   };
 
   return (
     <nav className="navigation">
       <div className="container safe-zone">
-        <Link to="/">
+        <Link to="/" onClick={closeMobileMenu}>
           <img src={logo} className="logo" alt="Logo" />
         </Link>
-        <button className="mobile-menu-icon" onClick={toggleMobileMenu}>
+        <button className="mobile-menu-icon" onClick={() => setMobileMenuVisible(!mobileMenuVisible)}>
           <img
-            src={mobileMenuVisible ? arrowDown : arrowDown}
+            src={arrowDown}
             alt="Menu Icon"
+            className={mobileMenuVisible ? "rotate" : ""}
           />
         </button>
         <ul className={`nav-links ${mobileMenuVisible ? "visible" : ""}`}>
           {navLinks.map((link) => (
             <li
               key={link.label}
-              onMouseEnter={link.subLinks ? handleMouseEnter : null}
-              onMouseLeave={link.subLinks ? handleMouseLeave : null}
-              onClick={link.subLinks ? handleMouseEnter : null}
+              onMouseEnter={() => window.innerWidth > 768 && link.subLinks && setActiveDropdown(link.label)}
+              onMouseLeave={() => window.innerWidth > 768 && link.subLinks && setActiveDropdown(null)}
             >
-              <Link to={link.path} onClick={toggleMobileMenu}>
-                {link.label}
+              <div className="nav-item-container">
+                <Link 
+                  to={link.path || "#"} 
+                  onClick={(e) => handleLinkClick(!!link.subLinks, link.label, e)}
+                >
+                  {link.label}
+                </Link>
                 {link.subLinks && (
-                  <img
-                    src={arrowDown}
-                    className="arrow-down"
-                    alt="Arrow Down"
-                  />
+                  <button 
+                    className="arrow-button"
+                    onClick={(e) => handleArrowClick(e, link.label)}
+                  >
+                    <img
+                      src={arrowDown}
+                      className={`arrow-down ${activeDropdown === link.label ? "rotate" : ""}`}
+                      alt="Arrow Down"
+                    />
+                  </button>
                 )}
-              </Link>
-              {link.subLinks && dropdownVisible && (
-                <ul className="dropdown">
+              </div>
+              {link.subLinks && (
+                <ul className={`dropdown ${activeDropdown === link.label ? "visible" : ""}`}>
                   {link.subLinks.map((subLink) => (
                     <li key={subLink.label}>
-                      <Link to={subLink.path}>{subLink.label}</Link>
+                      <Link to={subLink.path} onClick={closeMobileMenu}>{subLink.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -81,7 +103,7 @@ export const Navigation = () => {
             </li>
           ))}
         </ul>
-        <Link to="/contact" className="cta-link">
+        <Link to="/contact" className="cta-link" onClick={closeMobileMenu}>
           <button className="cta-button">
             Zatraži ponudu
             <FaQuestionCircle />
