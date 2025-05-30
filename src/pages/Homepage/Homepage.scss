@@ -43,3 +43,9 @@
     }
   }
 }
+
+@media only screen and (min-width: 1025px) {
+  .homepage__video-wrapper {
+    padding-bottom: 25%; /* Adjust aspect ratio for desktop */
+  }
+}
