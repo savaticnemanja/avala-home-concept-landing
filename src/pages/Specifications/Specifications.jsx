@@ -1,9 +1,15 @@
+import { SEO } from "@/components";
 import { specifications } from "./constants";
 import "./Specifications.scss";
 
 export const Specifications = () => {
   return (
     <section id="specifications" className="specifications">
+      <SEO
+        title="Specifikacije gradnje"
+        description="Čvrsta betonska konstrukcija, termoizolacija, aluminijumska stolarija, podno grejanje, Geberit sanitarije — sve specifikacije Avala Home Concept kuća."
+        path="/specifications"
+      />
       <h1 className="specifications__title">Specifikacije gradnje</h1>
       <div className="specifications__features">
         {specifications.map((feature, index) => (

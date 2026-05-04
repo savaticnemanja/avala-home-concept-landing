@@ -1,5 +1,4 @@
-import { arrowDown } from "@/assets";
-import logo from "@/assets/logo.png";
+import { arrowDown, logo } from "@/assets";
 import { useEffect, useRef, useState } from "react";
 import { FaQuestionCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -67,14 +66,17 @@ export const Navigation = () => {
     <nav className="navigation" ref={navRef}>
       <div className="container safe-zone">
         <Link to="/" onClick={closeMobileMenu}>
-          <img src={logo} className="logo" alt="Logo" />
+          <img src={logo} className="logo" alt="Avala Home Concept logo" width="150" height="50" />
         </Link>
-        <button className="mobile-menu-icon" onClick={() => setMobileMenuVisible(!mobileMenuVisible)}>
-          <img
-            src={arrowDown}
-            alt="Menu Icon"
-            className={mobileMenuVisible ? "rotate" : ""}
-          />
+        <button
+          className={`mobile-menu-icon${mobileMenuVisible ? " mobile-menu-icon--open" : ""}`}
+          onClick={() => setMobileMenuVisible(!mobileMenuVisible)}
+          aria-label={mobileMenuVisible ? "Zatvori meni" : "Otvori meni"}
+          aria-expanded={mobileMenuVisible}
+        >
+          <span className="mobile-menu-icon__bar" />
+          <span className="mobile-menu-icon__bar" />
+          <span className="mobile-menu-icon__bar" />
         </button>
         <ul className={`nav-links ${mobileMenuVisible ? "visible" : ""}`}>
           {navLinks.map((link) => (

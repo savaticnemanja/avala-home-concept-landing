@@ -19,7 +19,7 @@ export const Location = () => {
     <div className="wrapper">
       <div className="location">
         <div className="location-map">
-          <img src={map} alt="Map" />
+          <img src={map} alt="Mapa lokacije — Avala Home Concept, 20 minuta od Beograda, 10 minuta od Ikee" loading="lazy" decoding="async" />
         </div>
         <div className="location-list">
           <ul>

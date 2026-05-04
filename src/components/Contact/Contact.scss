@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  padding: 0 1rem;
+  padding: 0;
 
   &__left {
     display: flex;
@@ -42,20 +42,12 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    border-radius: 5px;
-    background: #fff;
-    color: #176367;
-    border: 1px solid $secondary-color;
     cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease;
     text-align: center;
 
     &:hover {
-      background: #176367;
       transform: scale(1.05);
-      p {
-        color: $primary-color;
-      }
     }
 
     p {
@@ -102,7 +94,7 @@
 
       button {
         padding: 0.8rem;
-        background-color: #ff6b45;
+        background-color: #c94416;
         border: none;
         border-radius: 5px;
         font-weight: bold;
@@ -111,7 +103,7 @@
         transition: background-color 0.3s ease;
 
         &:hover {
-          background-color: #e05535;
+          background-color: #a33610;
         }
       }
     }

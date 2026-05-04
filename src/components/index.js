@@ -7,3 +7,5 @@ export { PaymentDynamic } from "./PaymentDynamic/PaymentDynamic";
 export { Contact } from "./Contact/Contact";
 export { Partners } from "./Partners/Partners";
 export { Footer } from "./Footer/Footer";
+export { SEO } from "./SEO/SEO";
+export { Lightbox } from "./Lightbox/Lightbox";

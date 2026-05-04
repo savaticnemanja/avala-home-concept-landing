@@ -7,59 +7,28 @@ import {
   geberitLogo,
   wienerbergerLogo,
 } from "@/assets";
-import { useEffect, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
 import "./Partners.scss";
 
 const logos = [
-  { src: astralLogo, alt: "Partner 1" },
-  { src: bekamentLogo, alt: "Partner 2" },
-  { src: bracaMaricLogo, alt: "Partner 3" },
-  { src: ciricHomeInvestLogo, alt: "Partner 4" },
-  { src: fluidraLogo, alt: "Partner 5" },
-  { src: geberitLogo, alt: "Partner 6" },
-  { src: wienerbergerLogo, alt: "Partner 7" },
+  { src: astralLogo, alt: "Astral" },
+  { src: bekamentLogo, alt: "Bekament" },
+  { src: bracaMaricLogo, alt: "Braća Marić" },
+  { src: ciricHomeInvestLogo, alt: "Ćirić Home Invest" },
+  { src: fluidraLogo, alt: "Fluidra" },
+  { src: geberitLogo, alt: "Geberit" },
+  { src: wienerbergerLogo, alt: "Wienerberger" },
 ];
 
-export const Partners = () => {
-  const [slidesToShow, setSlidesToShow] = useState(6);
+const doubled = [...logos, ...logos];
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setSlidesToShow(2);
-      } else {
-        setSlidesToShow(6);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const settings = {
-    infinite: true,
-    speed: 1000,
-    slidesToShow: slidesToShow,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
-  };
-
-  return (
-    <section className="partners">
-      <Slider {...settings}>
-        {logos.map((logo, index) => (
-          <div key={index} className="partners__logo-container">
-            <img src={logo.src} alt={logo.alt} className="partners__logo" />
-          </div>
-        ))}
-      </Slider>
-    </section>
-  );
-};
+export const Partners = () => (
+  <section className="partners" aria-label="Naši partneri">
+    <div className="partners__track">
+      {doubled.map((logo, i) => (
+        <div key={i} className="partners__logo-container">
+          <img src={logo.src} alt={logo.alt} className="partners__logo" loading="lazy" decoding="async" />
+        </div>
+      ))}
+    </div>
+  </section>
+);

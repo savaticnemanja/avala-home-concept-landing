@@ -2,83 +2,112 @@ import { facebookIcon, instagramIcon, linkedInIcon, logoWhite } from "@/assets";
 import { Link } from "react-router-dom";
 import "./Footer.scss";
 
-const navLinks = [
+const pagesLinks = [
   { path: "/", label: "Početna" },
   { path: "/about-us", label: "O nama" },
-  { path: "/project1", label: "Projekat 1" },
-  { path: "/project2", label: "Projekat 2" },
-  { path: "/small-house", label: "Kuće 80-100m²" },
-  { path: "/specifications", label: "Specifikacije" },
-  { path: "/about-investor", label: "O investitoru" },
   { path: "/gallery", label: "Galerija" },
   { path: "/work-progress", label: "Napredak radova" },
+  { path: "/about-investor", label: "O investitoru" },
   { path: "/contact", label: "Kontakt" },
 ];
 
-export const Footer = () => {
-  return (
-    <div className="footer">
-      <Link to="/">
-        <img className="footer__logo" src={logoWhite} alt="Logo" />
-      </Link>
-      <p className="footer__contact">
-        Telefon: <a href="tel:+381 63 383393">+381 63 383393</a>
-      </p>
-      <p className="footer__contact">
-        Email:{" "}
-        <a href="mailto:avalahomeconcept@gmail.com">
-          avalahomeconcept@gmail.com
-        </a>
-      </p>
-      <div className="footer__social-icons">
-        <a
-          href="https://www.facebook.com/avalahomeconcept/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+const offerLinks = [
+  { path: "/project1", label: "Projekat 1 — 139m²" },
+  { path: "/project2", label: "Projekat 2 — 147m²" },
+  { path: "/small-houses", label: "Kuće 80–100m²" },
+  { path: "/specifications", label: "Specifikacije gradnje" },
+];
+
+const socials = [
+  { href: "https://www.facebook.com/avalahomeconcept/", src: facebookIcon, alt: "Facebook" },
+  { href: "https://www.instagram.com/avala_homeconcept/", src: instagramIcon, alt: "Instagram" },
+  { href: "https://rs.linkedin.com/in/avala-home-concept-718984276", src: linkedInIcon, alt: "LinkedIn" },
+];
+
+export const Footer = () => (
+  <footer className="footer">
+    <div className="footer__body">
+
+      <div className="footer__brand">
+        <Link to="/">
           <img
-            className="footer__social-icon"
-            src={facebookIcon}
-            alt="Facebook"
-            width="16px"
-            height="16px"
+            className="footer__logo"
+            src={logoWhite}
+            alt="Avala Home Concept logo"
+            width="280"
+            height="55"
           />
-        </a>
-        <a
-          href="https://www.instagram.com/avala_homeconcept/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            className="footer__social-icon"
-            src={instagramIcon}
-            alt="Instagram"
-            width="16px"
-            height="16px"
-          />
-        </a>
-        <a
-          href="https://rs.linkedin.com/in/avala-home-concept-718984276"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            className="footer__social-icon"
-            src={linkedInIcon}
-            alt="LinkedIn"
-            width="16px"
-            height="16px"
-          />
-        </a>
+        </Link>
+        <p className="footer__tagline">
+          Zatvoren kompleks porodičnih kuća na Avalskoj planini — 20 minuta od Beograda.
+        </p>
+        <div className="footer__socials">
+          {socials.map(({ href, src, alt }) => (
+            <a key={alt} href={href} target="_blank" rel="noopener noreferrer" aria-label={alt}>
+              <img className="footer__social-icon" src={src} alt={alt} width="16" height="16" />
+            </a>
+          ))}
+        </div>
       </div>
-      <div className="footer__sitemap">
-        {navLinks.map((link) => (
-          <Link key={link.path} to={link.path}>
-            {link.label}
-          </Link>
-        ))}
+
+      <div className="footer__nav">
+        <div className="footer__nav-group">
+          <p className="footer__nav-heading">Stranice</p>
+          <ul>
+            {pagesLinks.map(({ path, label }) => (
+              <li key={path}><Link to={path}>{label}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div className="footer__nav-group">
+          <p className="footer__nav-heading">Ponuda kuća</p>
+          <ul>
+            {offerLinks.map(({ path, label }) => (
+              <li key={path}><Link to={path}>{label}</Link></li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <p className="footer__copyright">Copyright &#169; Avala Home Concept. Developed by <a href="https://nemanjas.dev" className="footer__signature">nemanjas.dev</a></p>
+
+      <div className="footer__contact">
+        <p className="footer__nav-heading">Kontakt</p>
+        <ul>
+          <li>
+            <a href="tel:+38163383393">
+              <span className="footer__contact-label">Telefon</span>
+              +381 63 383393
+            </a>
+          </li>
+          <li>
+            <a href="viber://contact/?number=+38163383393">
+              <span className="footer__contact-label">Viber</span>
+              +381 63 383393
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/38163383393" target="_blank" rel="noopener noreferrer">
+              <span className="footer__contact-label">WhatsApp</span>
+              +381 63 383393
+            </a>
+          </li>
+          <li>
+            <a href="mailto:avalahomeconcept@gmail.com">
+              <span className="footer__contact-label">Email</span>
+              avalahomeconcept@gmail.com
+            </a>
+          </li>
+          <li className="footer__contact-location">
+            <span className="footer__contact-label">Lokacija</span>
+            Avala, Beograd, Srbija
+          </li>
+        </ul>
+      </div>
+
     </div>
-  );
-};
+
+    <div className="footer__bottom">
+      <p>&#169; {new Date().getFullYear()} Avala Home Concept. Sva prava zadržana.</p>
+      <p>Developed by <a href="https://nemanjas.dev" className="footer__signature" target="_blank" rel="noopener noreferrer">nemanjas.dev</a></p>
+    </div>
+  </footer>
+);

@@ -1,14 +1,14 @@
 // logo
 export { default as logoWhite } from "./logo-white.webp";
-export { default as logo } from "./logo.png";
+export { default as logo } from "./logo.webp";
 
 // slider
 export { default as arrowDown } from "./slider/arrow-down.svg";
 export { default as sliderImage1 } from "./slider/slider-image-1.jpeg";
-export { default as sliderImage2 } from "./slider/slider-image-2.jpeg";
-export { default as sliderImage3 } from "./slider/slider-image-3.jpeg";
-export { default as sliderImage4 } from "./slider/slider-image-4.jpeg";
-export { default as sliderImage5 } from "./slider/slider-image-5.jpeg";
+export { default as sliderImage2 } from "./slider/slider-image-2.webp";
+export { default as sliderImage3 } from "./slider/slider-image-3.webp";
+export { default as sliderImage4 } from "./slider/slider-image-4.webp";
+export { default as sliderImage5 } from "./slider/slider-image-5.webp";
 
 // videos
 export { default as video1 } from "./homepage/video1.mp4";
@@ -16,29 +16,29 @@ export { default as video2 } from "./homepage/video2.mp4";
 export { default as video3 } from "./homepage/video3.mov";
 
 // showcase
-export { default as showcaseBackground } from "./showcase/background.png";
-export { default as showcase1 } from "./showcase/showcase-1.jpg";
-export { default as showcase2 } from "./showcase/showcase-2.jpg";
+export { default as showcaseBackground } from "./showcase/background.webp";
+export { default as showcase1 } from "./showcase/showcase-1.webp";
+export { default as showcase2 } from "./showcase/showcase-2.webp";
 
 // map
 export { default as map } from "./location/map.webp";
 
 // plans
-export { default as plan1 } from "./plans/plan-1.jpg";
-export { default as plan2 } from "./plans/plan-2.jpg";
-export { default as plan3 } from "./plans/plan-3.jpg";
+export { default as plan1 } from "./plans/plan-1.webp";
+export { default as plan2 } from "./plans/plan-2.webp";
+export { default as plan3 } from "./plans/plan-3.webp";
 
 // projects
 export { default as project1Main } from "./projects/project1/main.webp";
-export { default as project1Render } from "./projects/project1/render.jpg";
-export { default as project1Spec1 } from "./projects/project1/spec-1.png";
-export { default as project1Spec2 } from "./projects/project1/spec-2.png";
-export { default as project1Spec3 } from "./projects/project1/spec-3.png";
+export { default as project1Render } from "./projects/project1/render.webp";
+export { default as project1Spec1 } from "./projects/project1/spec-1.webp";
+export { default as project1Spec2 } from "./projects/project1/spec-2.webp";
+export { default as project1Spec3 } from "./projects/project1/spec-3.webp";
 export { default as project2Main } from "./projects/project2/main.webp";
 export { default as project2Render } from "./projects/project2/render.webp";
-export { default as project2Spec1 } from "./projects/project2/spec-1.png";
-export { default as project2Spec2 } from "./projects/project2/spec-2.png";
-export { default as project2Spec3 } from "./projects/project2/spec-3.png";
+export { default as project2Spec1 } from "./projects/project2/spec-1.webp";
+export { default as project2Spec2 } from "./projects/project2/spec-2.webp";
+export { default as project2Spec3 } from "./projects/project2/spec-3.webp";
 
 export { default as smallHousesMain } from "./projects/small-houses/main.webp";
 export { default as smallHousesVideo } from "./projects/small-houses/video.mp4";
@@ -102,11 +102,11 @@ export { default as wall } from "./icons/wall.svg";
 export { default as whatsappIcon } from "./icons/whatsapp.svg";
 
 // partners
-export { default as astralLogo } from "./partners/astral-logo.png";
-export { default as bekamentLogo } from "./partners/bekament-logo.png";
-export { default as bracaMaricLogo } from "./partners/braca-maric-logo.png";
-export { default as ciricGradnjaLogo } from "./partners/ciric-gradnja-logo.png";
-export { default as ciricHomeInvestLogo } from "./partners/ciric-home-invest-logo.png";
-export { default as fluidraLogo } from "./partners/fluidra-logo.png";
-export { default as geberitLogo } from "./partners/geberit-logo.png";
-export { default as wienerbergerLogo } from "./partners/wienerberger-logo.png";
+export { default as astralLogo } from "./partners/astral-logo.webp";
+export { default as bekamentLogo } from "./partners/bekament-logo.webp";
+export { default as bracaMaricLogo } from "./partners/braca-maric-logo.webp";
+export { default as ciricGradnjaLogo } from "./partners/ciric-gradnja-logo.webp";
+export { default as ciricHomeInvestLogo } from "./partners/ciric-home-invest-logo.webp";
+export { default as fluidraLogo } from "./partners/fluidra-logo.webp";
+export { default as geberitLogo } from "./partners/geberit-logo.webp";
+export { default as wienerbergerLogo } from "./partners/wienerberger-logo.webp";

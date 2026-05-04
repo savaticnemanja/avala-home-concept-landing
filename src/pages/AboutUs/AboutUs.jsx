@@ -1,8 +1,14 @@
+import { SEO } from "@/components";
 import "./AboutUs.scss";
 
 export const AboutUs = () => {
   return (
     <section id="aboutus" className="about-us">
+      <SEO
+        title="O nama"
+        description="Saznajte više o Avala Home Concept — luksuzne kuće modernog dizajna na Avalskoj planini, 20 minuta od Beograda."
+        path="/about-us"
+      />
       <div className="about-us__right">
         <h1 className="about-us__title">O nama</h1>
         <p>

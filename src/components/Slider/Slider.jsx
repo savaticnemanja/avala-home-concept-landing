@@ -48,8 +48,16 @@ export const Slider = () => {
           className={`hero-slider__slide ${
             index === currentIndex ? "hero-slider__slide--active" : ""
           }`}
-          style={{ backgroundImage: `url(${slide.image})` }}
-        ></div>
+        >
+          <img
+            src={slide.image}
+            alt=""
+            className="hero-slider__slide-img"
+            fetchpriority={index === 0 ? "high" : undefined}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding={index === 0 ? "sync" : "async"}
+          />
+        </div>
       ))}
       <div className="hero-slider__content">
         <h1 className="hero-slider__title">

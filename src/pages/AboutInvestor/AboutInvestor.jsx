@@ -1,3 +1,4 @@
+import { SEO } from "@/components";
 import { ciricGradnjaLogo, ciricHomeInvestLogo } from "@/assets";
 import "./AboutInvestor.scss";
 
@@ -30,6 +31,11 @@ const investorData = [
 
 export const AboutInvestor = () => (
   <section id="aboutus" className="about-investor">
+    <SEO
+      title="O investitoru — Porodica Ćirić"
+      description="Porodica Ćirić sa 30 godina iskustva u građevinarstvu stoji iza Avala Home Concept. Kompanije Ćirić Home Invest i Ćirić Gradnja."
+      path="/about-investor"
+    />
     <div className="about-investor__left">
       <h1 className="about-investor__title">O investitoru</h1>
       <p>

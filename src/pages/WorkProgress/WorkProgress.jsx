@@ -1,3 +1,4 @@
+import { SEO } from "@/components";
 import "./WorkProgress.scss";
 
 const videoUrls = [
@@ -26,6 +27,11 @@ const VideoFrame = ({ src }) => (
 export const WorkProgress = () => {
   return (
     <div className="work-progress">
+      <SEO
+        title="Napredak radova"
+        description="Pratite izgradnju Avala Home Concept kompleksa kroz video snimke sa gradilišta."
+        path="/work-progress"
+      />
       {videoUrls.map((url, index) => (
         <VideoFrame key={index} src={url} />
       ))}

@@ -27,6 +27,8 @@ export const projects = [
     `,
     showcaseImages: [project1Spec1, project1Spec2, project1Spec3],
     surfaceArea: 139,
+    seoTitle: "Projekat 1 — Prizemna kuća 139m²",
+    seoDescription: "Prostrana prizemna kuća od 139m² sa tri svetle sobe, bazenom i terasom sa pogledom na Avalski toranj. Zatvoren kompleks 20 min od Beograda.",
     netSurfaceArea: [
       { name: "Predprostor", area: "10,00 m²" },
       { name: "Tehnička prostorija", area: "3,00 m²" },
@@ -49,6 +51,8 @@ export const projects = [
       Udobna porodična kuća od 147 m2 okružena prirodom i prijatnim ambijentom. Zakoračite u prostran dnevni boravk sa velikim staklenim vratima koja gledaju na predivno zelenilo Avalske planine. Ova moderno koncipirana porodična kuća ima čak tri spavaće sobe, dva odvojena kupatila, đakuzi (opciono) i veliku trpezariju koja je povezana sa dnevnim boravkom. Iz dnevne sobe izazite na balkon i spuštate se stepenicama koje Vas vode do dvorišta u kom se nalazi Vaš privatni bazen (opciono).`,
     showcaseImages: [project2Spec1, project2Spec2, project2Spec3],
     surfaceArea: 147,
+    seoTitle: "Projekat 2 — Porodična kuća 147m²",
+    seoDescription: "Udobna porodična kuća od 147m² sa tri spavaće sobe, dva kupatila i opcionalnim džakuzijem, okružena zelenilom Avale.",
     netSurfaceArea: [
       { name: "Predprostor", area: "4,00 m²" },
       { name: "Hodnik", area: "10,00 m²" },

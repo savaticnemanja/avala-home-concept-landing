@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code
+.claude/
+
+# Generated reports
+lighthouse.json
+lighouse.json
+lighthouse-report.md

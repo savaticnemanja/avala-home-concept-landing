@@ -87,11 +87,11 @@ export const ProjectShowcase = () => {
   return (
     <div className="project-showcase">
       <div className="project-showcase__project-container">
-        <ProjectImage src={plan1} alt="Plan1" />
+        <ProjectImage src={plan1} alt="Projekat 1 — osnova prizemne kuće 139m², Avala Home Concept" />
         <ProjectTable data={projectData1} />
       </div>
       <div className="project-showcase__project-container">
-        <ProjectImage src={plan2} alt="Plan2" />
+        <ProjectImage src={plan2} alt="Projekat 2 — osnova porodične kuće 147m², Avala Home Concept" />
         <ProjectTable data={projectData2} />
       </div>
     </div>

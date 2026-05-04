@@ -18,16 +18,16 @@ export const Showcase = () => {
   return (
     <div className="showcase">
       <div className="showcase__image-container">
-        <img src={showcase1} className="showcase__image" alt="" />
-        <img src={showcase2} className="showcase__image" alt="" />
+        <img src={showcase1} className="showcase__image" alt="Avala Home Concept — stambeni kompleks na Avali, eksterijerni prikaz" loading="lazy" decoding="async" />
+        <img src={showcase2} className="showcase__image" alt="Avala Home Concept — porodična kuća sa bazenom i uređenim dvorištem" loading="lazy" decoding="async" />
       </div>
       <div className="showcase__descriptions">
         {descriptions.map((item, index) => (
           <div key={index} className="showcase__description-item">
-            <h3 className="showcase__description-title">
+            <p className="showcase__description-title">
               <FaCheckCircle className="showcase__icon" />
               {item.title}
-            </h3>
+            </p>
           </div>
         ))}
         <Link to="/specifications" className="showcase__button">
