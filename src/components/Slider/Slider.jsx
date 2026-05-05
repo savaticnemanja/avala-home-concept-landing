@@ -66,12 +66,18 @@ export const Slider = () => {
         <p className="hero-slider__subtitle">
           20 minuta od Beograda, 10 minuta od Ikee
         </p>
-        <img
-          src={arrowDown}
-          alt="Arrow down"
-          className="hero-slider__arrow-down"
-        />
+        <a href="tel:+38163383393" className="hero-slider__cta">
+          <svg className="hero-slider__cta-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          Pozovi nas
+        </a>
       </div>
+      <img
+        src={arrowDown}
+        alt="Arrow down"
+        className="hero-slider__arrow-down"
+      />
     </div>
   );
 };

@@ -75,6 +75,7 @@
     align-items: flex-start;
     &__image-container {
       margin: 1rem;
+      width: calc(100% - 2rem);
       flex-direction: column;
       gap: 1rem;
     }
