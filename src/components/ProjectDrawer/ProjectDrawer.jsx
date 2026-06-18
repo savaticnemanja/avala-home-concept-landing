@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuArrowUpRight, LuBed, LuMaximize2, LuSunrise, LuX } from 'react-icons/lu';
+import { LuArrowUpRight, LuBed, LuMaximize2, LuSunrise, LuX, LuHouse } from 'react-icons/lu';
 import { useI18n } from '@/i18n/I18nProvider';
 
 // Full-screen image zoom layered above the drawer panel.
@@ -137,7 +137,7 @@ export const ProjectDrawer = ({ project, onClose }) => {
             {/* Sticky header */}
             <div className="flex items-center justify-between gap-4 px-5 md:px-8 h-16 md:h-20 border-b border-border flex-shrink-0 bg-bg/95 backdrop-blur-md">
               <div className="min-w-0">
-                <span className="overline mt-0 block truncate">{t('offer.eyebrow')}</span>
+                <span className="overline"><LuHouse />{t('offer.eyebrow')}</span>
                 <h2
                   className="text-text truncate"
                   style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.2rem,2.5vw,1.7rem)', fontWeight: 400, lineHeight: 1.1 }}

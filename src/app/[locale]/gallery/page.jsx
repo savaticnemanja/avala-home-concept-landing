@@ -1,7 +1,8 @@
 'use client';
 import { useCallback, useState } from 'react';
 import Image from 'next/image';
-import { LuMaximize2 } from 'react-icons/lu';
+import Link from 'next/link';
+import { LuMaximize2, LuImages, LuArrowRight } from 'react-icons/lu';
 import { Lightbox } from '@/components';
 import { gallerySources } from '@/lib/gallery';
 import { useI18n } from '@/i18n/I18nProvider';
@@ -19,7 +20,7 @@ const workProgressVideos = [
 ];
 
 export default function GalleryPage() {
-  const { t, dict } = useI18n();
+  const { t, dict, href } = useI18n();
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeTab, setActiveTab] = useState('gallery');
   const close = useCallback(() => setActiveIndex(null), []);
@@ -34,7 +35,7 @@ export default function GalleryPage() {
       <section className="py-8 md:py-16 bg-bg">
         <div className="safe-zone">
           <div className="mb-10">
-            <span className="overline">{t('gallery.eyebrow')}</span>
+            <span className="overline"><LuImages />{t('gallery.eyebrow')}</span>
             <h1
               className="text-text leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 400 }}
@@ -106,6 +107,22 @@ export default function GalleryPage() {
           )}
         </div>
       </section>
+
+      {/* CTA */}
+      <div className="py-8 md:py-16 bg-bg border-t border-border">
+        <div className="safe-zone flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p
+            className="text-text italic"
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.2rem,2.5vw,1.8rem)', fontWeight: 400 }}
+          >
+            {t('midCta.text')}
+          </p>
+          <Link href={href('/contact')} className="btn-primary group flex-shrink-0">
+            {t('midCta.requestOffer')}
+            <span className="btn-arrow flex items-center"><LuArrowRight className="w-4 h-4" /></span>
+          </Link>
+        </div>
+      </div>
 
       {activeTab === 'gallery' && (
         <Lightbox

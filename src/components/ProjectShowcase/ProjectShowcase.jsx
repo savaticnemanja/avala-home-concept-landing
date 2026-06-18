@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuArrowRight, LuBed, LuMaximize2, LuSunrise } from 'react-icons/lu';
+import { LuArrowRight, LuBed, LuMaximize2, LuSunrise, LuHouse } from 'react-icons/lu';
 import plan1 from '@/assets/projects/project-1/plan-card.webp';
 import plan2 from '@/assets/projects/project-2/plan-card.webp';
 import smallHousesMain from '@/assets/projects/small-houses/main.webp';
@@ -9,9 +9,9 @@ import { useI18n } from '@/i18n/I18nProvider';
 
 // Language-neutral card data; text comes from dict.projectShowcase.cards[i]
 const cardData = [
-  { area: '139', beds: 3, terrace: '11m²', image: plan1, link: '/project1' },
-  { area: '147', beds: 3, terrace: '18m²', image: plan2, link: '/project2' },
-  { area: '80–100', beds: 2, terrace: null, image: smallHousesMain, link: '/small-houses' },
+  { area: '139', beds: 3, terrace: '11m²', image: plan1, link: '/offer#project1' },
+  { area: '147', beds: 3, terrace: '18m²', image: plan2, link: '/offer#project2' },
+  { area: '80–100', beds: 2, terrace: null, image: smallHousesMain, link: '/offer#smallHouses' },
 ];
 
 const ProjectCard = ({ project, t, href }) => (
@@ -128,7 +128,7 @@ export const ProjectShowcase = () => {
   <section className="py-12 md:py-24 bg-bg overflow-hidden">
     {/* Header */}
     <div className="safe-zone section-header mb-12" data-reveal>
-      <span className="overline">{t('projectShowcase.eyebrow')}</span>
+      <span className="overline"><LuHouse />{t('projectShowcase.eyebrow')}</span>
       <h2
         className="text-text"
         style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}

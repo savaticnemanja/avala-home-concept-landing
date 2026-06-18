@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { LuUsers, LuBriefcase } from 'react-icons/lu';
 import ciricGradnjaLogo from '@/assets/partners/ciric-gradnja.webp';
 import ciricHomeInvestLogo from '@/assets/partners/ciric-home-invest.webp';
 import { getDictionary } from '@/i18n/getDictionary';
@@ -42,7 +43,7 @@ export default async function AboutUsPage({ params }) {
       <section className="py-12 md:py-24 bg-bg">
         <div className="safe-zone">
           <div className="mb-6">
-            <span className="overline">{a.eyebrow}</span>
+            <span className="overline"><LuUsers />{a.eyebrow}</span>
             <h1
               className="text-text leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 400 }}
@@ -86,7 +87,7 @@ export default async function AboutUsPage({ params }) {
       <section className="py-12 md:py-24 bg-bg-alt border-t border-border">
         <div className="safe-zone">
           <div className="mb-8">
-            <span className="overline">{a.investorEyebrow}</span>
+            <span className="overline"><LuBriefcase />{a.investorEyebrow}</span>
             <h2
               className="text-text leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem,4vw,3rem)', fontWeight: 400 }}

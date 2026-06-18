@@ -1,5 +1,5 @@
 'use client';
-import { LuKeyRound, LuFilePen, LuHouse } from 'react-icons/lu';
+import { LuKeyRound, LuFilePen, LuHouse, LuWallet } from 'react-icons/lu';
 import { useI18n } from '@/i18n/I18nProvider';
 
 // Language-neutral data (number, amount, icon); label/detail from dict.payment.steps
@@ -23,7 +23,7 @@ export const PaymentDynamic = () => {
 
       {/* Header */}
       <div className="section-header" data-reveal>
-        <span className="overline">{t('payment.eyebrow')}</span>
+        <span className="overline"><LuWallet />{t('payment.eyebrow')}</span>
         <h2
           className="text-text"
           style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}

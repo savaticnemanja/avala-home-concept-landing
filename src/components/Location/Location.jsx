@@ -1,4 +1,5 @@
 'use client';
+import { LuMapPin } from 'react-icons/lu';
 import { LocationMap } from './LocationMap';
 import { useI18n } from '@/i18n/I18nProvider';
 
@@ -11,7 +12,7 @@ export const Location = () => {
 
         {/* Header */}
         <div className="section-header" data-reveal>
-          <span className="overline">{t('location.eyebrow')}</span>
+          <span className="overline"><LuMapPin />{t('location.eyebrow')}</span>
           <h2
             className="text-text"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}

@@ -15,6 +15,7 @@ import {
   LuRows3,
   LuThermometerSun,
   LuHousePlus,
+  LuSparkles,
 } from 'react-icons/lu';
 import { useI18n } from '@/i18n/I18nProvider';
 
@@ -60,7 +61,7 @@ export const Showcase = () => {
 
       {/* Naslov */}
       <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16" data-reveal>
-        <span className="overline">{t('showcase.eyebrow')}</span>
+        <span className="overline"><LuSparkles />{t('showcase.eyebrow')}</span>
         <h2
           className="text-text-light"
           style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2.2rem,5vw,4rem)', fontWeight: 400, lineHeight: 1.1 }}

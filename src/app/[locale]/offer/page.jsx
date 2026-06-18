@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { LuArrowRight, LuBed, LuMaximize2, LuSunrise, LuMousePointerClick } from 'react-icons/lu';
+import Link from 'next/link';
+import { LuArrowRight, LuBed, LuMaximize2, LuSunrise, LuMousePointerClick, LuMap } from 'react-icons/lu';
 import { ProjectDrawer } from '@/components';
 import { projects } from '@/lib/projects';
 import sitePlanImage from '@/assets/gallery/gallery-23.webp';
@@ -128,8 +129,31 @@ const OfferCard = ({ project, title, t, onOpen }) => (
 );
 
 export default function OfferPage() {
-  const { t, dict } = useI18n();
+  const { t, dict, href } = useI18n();
   const [selected, setSelected] = useState(null);
+
+  // Deep-linking: /offer#project1 (etc.) opens the matching house drawer, so
+  // the individual projects are reachable directly without standalone pages.
+  useEffect(() => {
+    const openFromHash = () => {
+      const key = window.location.hash.replace('#', '');
+      const match = projects.find((p) => p.key === key);
+      if (match) setSelected(match);
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, []);
+
+  const openProject = (p) => {
+    setSelected(p);
+    window.history.replaceState(null, '', `#${p.key}`);
+  };
+
+  const closeProject = () => {
+    setSelected(null);
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+  };
 
   return (
     <main className="pt-20">
@@ -139,7 +163,7 @@ export default function OfferPage() {
           <div>
             <div className="flex items-end justify-between gap-4 mb-4">
               <div>
-                <span className="overline">{t('offer.sitePlan.eyebrow')}</span>
+                <span className="overline"><LuMap />{t('offer.sitePlan.eyebrow')}</span>
                 <h2
                   className="text-text"
                   style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.4rem,2.6vw,2.1rem)', fontWeight: 400 }}
@@ -169,7 +193,7 @@ export default function OfferPage() {
                   project={p}
                   title={dict.projects[p.dictKey].title}
                   t={t}
-                  onOpen={() => setSelected(p)}
+                  onOpen={() => openProject(p)}
                 />
               ))}
 
@@ -189,14 +213,30 @@ export default function OfferPage() {
                 project={p}
                 title={dict.projects[p.dictKey].title}
                 t={t}
-                onOpen={() => setSelected(p)}
+                onOpen={() => openProject(p)}
               />
             ))}
           </div>
         </div>
       </section>
 
-      <ProjectDrawer project={selected} onClose={() => setSelected(null)} />
+      {/* CTA */}
+      <div className="py-8 md:py-16 bg-bg border-t border-border">
+        <div className="safe-zone flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p
+            className="text-text italic"
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.2rem,2.5vw,1.8rem)', fontWeight: 400 }}
+          >
+            {t('midCta.text')}
+          </p>
+          <Link href={href('/contact')} className="btn-primary group flex-shrink-0">
+            {t('midCta.requestOffer')}
+            <span className="btn-arrow flex items-center"><LuArrowRight className="w-4 h-4" /></span>
+          </Link>
+        </div>
+      </div>
+
+      <ProjectDrawer project={selected} onClose={closeProject} />
     </main>
   );
 }

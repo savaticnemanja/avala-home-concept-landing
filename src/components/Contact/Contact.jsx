@@ -61,7 +61,7 @@ export const Contact = () => {
           {/* Left — info */}
           <div className="flex flex-col gap-10" data-reveal>
             <div>
-              <span className="overline">{t('contact.eyebrow')}</span>
+              <span className="overline"><LuMessageCircle />{t('contact.eyebrow')}</span>
               <h2
                 className="text-text-light"
                 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}

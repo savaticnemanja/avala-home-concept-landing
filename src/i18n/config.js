@@ -33,9 +33,6 @@ export const routes = [
   '/about-us',
   '/gallery',
   '/offer',
-  '/project1',
-  '/project2',
-  '/small-houses',
   '/contact',
   '/thank-you',
 ];

@@ -68,11 +68,13 @@
     @apply mb-8 md:mb-14 text-center;
   }
 
-  /* ── Overline (eyebrow — sits ABOVE the heading) ─────────── */
+  /* ── Overline (eyebrow — chip/pill above the heading) ─────── */
   .overline {
-    @apply block text-[0.72rem] font-medium tracking-[0.22em] uppercase text-accent mb-3;
+    @apply inline-flex items-center gap-1.5 text-[0.66rem] font-medium tracking-[0.18em] uppercase
+           text-accent bg-accent/10 border border-accent/25 rounded-full px-3 py-1 mb-4;
     font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
+  .overline svg { @apply w-3 h-3 flex-shrink-0; }
 
   /* ── Buttons ─────────────────────────────────────────────── */
   .btn-primary {
@@ -168,6 +170,10 @@
     font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 }
+
+/* `.overline` collides with Tailwind's text-decoration utility of the same
+   name; this unlayered rule overrides it so no line is drawn over the text. */
+.overline { text-decoration: none; }
 
 /* ── Scroll reveal ────────────────────────────────────────────── */
 [data-reveal] {

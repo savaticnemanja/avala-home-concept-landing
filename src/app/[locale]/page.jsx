@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LuBadgeCheck, LuMail } from 'react-icons/lu';
 import {
   Contact,
   Location,
@@ -43,7 +44,7 @@ export default async function HomePage({ params }) {
       <section className="py-12 md:py-24 bg-bg-dark">
         <div className="safe-zone">
           <div className="section-header-centered">
-            <span className="overline">{dict.specifications.eyebrow}</span>
+            <span className="overline"><LuBadgeCheck />{dict.specifications.eyebrow}</span>
             <h2
               className="text-text-light leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}
@@ -84,7 +85,7 @@ export default async function HomePage({ params }) {
       {/* CTA */}
       <div className="py-10 md:py-20 bg-bg border-t border-border">
         <div className="safe-zone flex flex-col items-center gap-5 text-center">
-          <span className="overline">{dict.homeCta.eyebrow}</span>
+          <span className="overline"><LuMail />{dict.homeCta.eyebrow}</span>
           <h3
             className="text-text italic max-w-lg"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.6rem,3vw,2.4rem)', fontWeight: 400 }}
@@ -111,22 +112,6 @@ export default async function HomePage({ params }) {
 
       {/* Partneri */}
       <Partners />
-
-      {/* CTA ispod PaymentDynamic */}
-      <div className="py-8 md:py-16 bg-bg border-t border-border">
-        <div className="safe-zone flex flex-col sm:flex-row items-center justify-between gap-6">
-          <p
-            className="text-text italic"
-            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.2rem,2.5vw,1.8rem)', fontWeight: 400 }}
-          >
-            {dict.midCta.text}
-          </p>
-          <Link href={withLocale(locale, '/contact')} className="btn-primary group flex-shrink-0">
-            {dict.midCta.requestOffer}
-            <ArrowIcon />
-          </Link>
-        </div>
-      </div>
     </>
   );
 }

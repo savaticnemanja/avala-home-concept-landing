@@ -31,9 +31,9 @@ export const Footer = () => {
   ];
 
   const offerLinks = [
-    { path: '/project1', label: t('footer.offer.project1') },
-    { path: '/project2', label: t('footer.offer.project2') },
-    { path: '/small-houses', label: t('footer.offer.smallHouses') },
+    { path: '/offer#project1', label: t('footer.offer.project1') },
+    { path: '/offer#project2', label: t('footer.offer.project2') },
+    { path: '/offer#smallHouses', label: t('footer.offer.smallHouses') },
   ];
 
   return (

@@ -266,14 +266,17 @@ export const Navigation = () => {
 
           {/* Desktop right side: phone + CTA + language switcher */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Phone CTA (icon only) */}
+            {/* Phone CTA (icon only, pulsing) */}
             <a
               href="tel:+38163383393"
               aria-label="+381 63 383 393"
               title="+381 63 383 393"
-              className="inline-flex items-center justify-center w-11 h-11 border border-accent text-accent transition-all duration-250 hover:bg-accent hover:text-white"
+              className="group relative inline-flex items-center justify-center w-11 h-11"
             >
-              <LuPhone className="w-4 h-4" />
+              <span className="absolute inset-0 m-auto w-11 h-11 bg-accent/50 animate-ping pointer-events-none" />
+              <span className="relative inline-flex items-center justify-center w-11 h-11 bg-bg border border-accent text-accent transition-all duration-250 group-hover:bg-accent group-hover:text-white">
+                <LuPhone className="w-4 h-4" />
+              </span>
             </a>
 
             {/* Desktop CTA */}
