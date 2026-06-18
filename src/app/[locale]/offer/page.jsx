@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuArrowRight, LuBed, LuMaximize2, LuSunrise, LuMousePointerClick, LuMap } from 'react-icons/lu';
+import { LuArrowRight, LuBed, LuMaximize2, LuSunrise, LuMousePointerClick, LuMap, LuHouse } from 'react-icons/lu';
 import { ProjectDrawer } from '@/components';
 import { projects } from '@/lib/projects';
 import sitePlanImage from '@/assets/gallery/gallery-23.webp';
@@ -159,6 +159,17 @@ export default function OfferPage() {
     <main className="pt-20">
       <section className="py-12 md:py-16 bg-bg">
         <div className="safe-zone">
+          {/* Page heading */}
+          <div className="mb-8 md:mb-12">
+            <span className="overline"><LuHouse />{t('offer.eyebrow')}</span>
+            <h1
+              className="text-text leading-tight"
+              style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 400 }}
+            >
+              {t('nav.offer')}
+            </h1>
+          </div>
+
           {/* Interactive site plan */}
           <div>
             <div className="flex items-end justify-between gap-4 mb-4">

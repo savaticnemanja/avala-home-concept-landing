@@ -1,16 +1,11 @@
 import Link from 'next/link';
 import { getDictionary } from '@/i18n/getDictionary';
-import { buildAlternates, withLocale } from '@/i18n/config';
+import { withLocale } from '@/i18n/config';
+import { buildPageMetadata } from '@/i18n/seo';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const dict = await getDictionary(locale);
-  return {
-    title: dict.meta.thankYou.title,
-    description: dict.meta.thankYou.description,
-    alternates: buildAlternates(locale, '/thank-you'),
-    robots: { index: false },
-  };
+  return buildPageMetadata({ locale, path: '/thank-you', metaKey: 'thankYou', robots: { index: false } });
 }
 
 export default async function ThankYouPage({ params }) {

@@ -3,16 +3,11 @@ import { LuUsers, LuBriefcase } from 'react-icons/lu';
 import ciricGradnjaLogo from '@/assets/partners/ciric-gradnja.webp';
 import ciricHomeInvestLogo from '@/assets/partners/ciric-home-invest.webp';
 import { getDictionary } from '@/i18n/getDictionary';
-import { buildAlternates } from '@/i18n/config';
+import { buildPageMetadata } from '@/i18n/seo';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const dict = await getDictionary(locale);
-  return {
-    title: dict.meta.about.title,
-    description: dict.meta.about.description,
-    alternates: buildAlternates(locale, '/about-us'),
-  };
+  return buildPageMetadata({ locale, path: '/about-us', metaKey: 'about' });
 }
 
 const investorData = [

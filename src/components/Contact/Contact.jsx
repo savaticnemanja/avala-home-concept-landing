@@ -6,7 +6,7 @@ import { Bounce, toast } from 'react-toastify';
 import { LuPhone, LuMessageSquare, LuMessageCircle, LuMail, LuSend } from 'react-icons/lu';
 import { useI18n } from '@/i18n/I18nProvider';
 
-export const Contact = () => {
+export const Contact = ({ headingTag: Heading = 'h2' } = {}) => {
   const { t, href } = useI18n();
   const form = useRef();
   const router = useRouter();
@@ -62,13 +62,13 @@ export const Contact = () => {
           <div className="flex flex-col gap-10" data-reveal>
             <div>
               <span className="overline"><LuMessageCircle />{t('contact.eyebrow')}</span>
-              <h2
+              <Heading
                 className="text-text"
                 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}
               >
                 {t('contact.titleA')}{' '}
                 <em>{t('contact.titleEm')}</em>
-              </h2>
+              </Heading>
               <p className="text-text-muted font-light text-sm leading-relaxed mt-5 max-w-sm">
                 {t('contact.availability')}
               </p>

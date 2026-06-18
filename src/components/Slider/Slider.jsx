@@ -54,7 +54,7 @@ export const Slider = () => {
     ) : (
       <Image
         src={slide.src}
-        alt="Avala Home Concept"
+        alt={`Avala Home Concept — ${t('slider.subtitle')}`}
         fill
         className="object-cover"
         priority={i === 0}
