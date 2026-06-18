@@ -53,13 +53,13 @@ export default function SmallHousesPage() {
         <div className="absolute inset-0 bg-bg-dark/30" />
         <div className="absolute inset-0 flex items-end pb-12">
           <div className="safe-zone">
+            <span className="overline">{t('smallHouses.eyebrow')}</span>
             <h1
               className="text-text-light leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 400 }}
             >
               {t('smallHouses.title')}
             </h1>
-            <span className="overline">{t('smallHouses.eyebrow')}</span>
           </div>
         </div>
       </div>

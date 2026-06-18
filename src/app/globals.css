@@ -27,13 +27,13 @@
 
   body {
     @apply bg-bg text-text antialiased;
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
     font-weight: 300;
     line-height: 1.7;
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+    font-family: var(--font-heading, 'Noto Serif', Georgia, serif);
     @apply font-normal leading-tight text-text;
   }
 
@@ -48,7 +48,7 @@
   img, video { @apply max-w-full; }
 
   input, textarea {
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
     @apply outline-none;
   }
 }
@@ -68,10 +68,10 @@
     @apply mb-8 md:mb-14 text-center;
   }
 
-  /* ── Overline (eyebrow — sits UNDER the heading) ─────────── */
+  /* ── Overline (eyebrow — sits ABOVE the heading) ─────────── */
   .overline {
-    @apply block text-[0.72rem] font-medium tracking-[0.22em] uppercase text-accent mt-3;
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    @apply block text-[0.72rem] font-medium tracking-[0.22em] uppercase text-accent mb-3;
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 
   /* ── Buttons ─────────────────────────────────────────────── */
@@ -81,7 +81,7 @@
            px-8 py-3.5 no-underline cursor-pointer border-none
            transition-all duration-250
            hover:bg-accent-hover hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(196,151,90,0.35)];
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 
   .btn-ghost {
@@ -91,7 +91,7 @@
            px-8 py-3.5 no-underline cursor-pointer
            transition-all duration-250
            hover:bg-accent hover:text-white;
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 
   .btn-outline-light {
@@ -101,7 +101,7 @@
            px-8 py-3.5 no-underline cursor-pointer
            transition-all duration-250
            hover:border-text-light/80 hover:bg-text-light/8;
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 
   .btn-icon {
@@ -127,7 +127,7 @@
            py-3 text-sm font-light
            transition-colors duration-200
            focus:border-accent;
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 
   /* ── Divider ─────────────────────────────────────────────── */
@@ -141,7 +141,7 @@
     @apply flex justify-between items-center w-full py-5
            text-left bg-transparent border-none cursor-pointer
            transition-colors duration-150 hover:text-accent;
-    font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+    font-family: var(--font-heading, 'Noto Serif', Georgia, serif);
     font-size: 1.2rem;
     font-weight: 400;
     color: #1A1915;
@@ -149,7 +149,7 @@
 
   .accordion-content {
     @apply text-sm leading-[1.8] text-text-muted pb-5 font-light;
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 
   /* ── Tabs ────────────────────────────────────────────────── */
@@ -158,14 +158,14 @@
            border-b-2 border-transparent text-text-muted bg-transparent
            cursor-pointer transition-all duration-200
            hover:text-text;
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 
   .tab-active {
     @apply pb-3 px-1 text-[0.78rem] font-medium tracking-[0.12em] uppercase
            border-b-2 border-accent text-text bg-transparent
            cursor-pointer;
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+    font-family: var(--font-body, 'Manrope', system-ui, sans-serif);
   }
 }
 

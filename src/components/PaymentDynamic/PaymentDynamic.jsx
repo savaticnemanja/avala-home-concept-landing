@@ -23,13 +23,13 @@ export const PaymentDynamic = () => {
 
       {/* Header */}
       <div className="section-header" data-reveal>
+        <span className="overline">{t('payment.eyebrow')}</span>
         <h2
           className="text-text"
           style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}
         >
           {t('payment.title')}
         </h2>
-        <span className="overline">{t('payment.eyebrow')}</span>
       </div>
 
       {/* Steps */}

@@ -1,11 +1,11 @@
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
+import { Manrope, Noto_Serif } from 'next/font/google';
 import './globals.css';
 import { ToastProvider } from '@/components/ToastProvider/ToastProvider';
 import { ScrollToTop } from '@/components/ScrollToTop/ScrollToTop';
 import { RevealObserver } from '@/components/RevealObserver/RevealObserver';
 import { defaultLocale, SITE_URL } from '@/i18n/config';
 
-const cormorant = Cormorant_Garamond({
+const notoSerif = Noto_Serif({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
   style: ['normal', 'italic'],
@@ -13,7 +13,7 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
+const manrope = Manrope({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
   variable: '--font-body',
@@ -34,7 +34,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang={defaultLocale} className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html lang={defaultLocale} className={`${notoSerif.variable} ${manrope.variable}`}>
       <body>
         <ToastProvider>
           {children}

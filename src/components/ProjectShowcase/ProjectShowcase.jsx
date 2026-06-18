@@ -128,13 +128,13 @@ export const ProjectShowcase = () => {
   <section className="py-12 md:py-24 bg-bg overflow-hidden">
     {/* Header */}
     <div className="safe-zone section-header mb-12" data-reveal>
+      <span className="overline">{t('projectShowcase.eyebrow')}</span>
       <h2
         className="text-text"
         style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}
       >
         {t('projectShowcase.title')}
       </h2>
-      <span className="overline">{t('projectShowcase.eyebrow')}</span>
     </div>
 
     {/* Horizontal scroll strip */}

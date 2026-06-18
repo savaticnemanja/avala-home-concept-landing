@@ -15,6 +15,8 @@ export const Navigation = () => {
   const router = useRouter();
   const { t, href, locale } = useI18n();
   const [navHidden, setNavHidden] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const navRef = useRef(null);
@@ -53,6 +55,8 @@ export const Navigation = () => {
       } else if (y < lastScrollY.current - 6) {
         setNavHidden(false);
       }
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(max > 0 ? Math.min(1, y / max) : 0);
       lastScrollY.current = y;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -70,7 +74,11 @@ export const Navigation = () => {
   }, []);
 
   useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const apply = () => setIsMobile(mq.matches);
+    apply();
     const onResize = () => {
+      apply();
       if (window.innerWidth >= 768) {
         setNavHidden(false);
         setMobileMenuVisible(false);
@@ -98,6 +106,26 @@ export const Navigation = () => {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, transparent 100%)',
         }}
       />
+
+      {/* ── Scroll progress ──────────────────────────────────── */}
+      {/* Desktop: appears when the nav is collapsed. Mobile: always */}
+      {/* visible once scrolled (sits above the nav bar). */}
+      <div
+        className="fixed top-0 left-0 right-0 h-[3px] z-[51] pointer-events-none"
+        style={{
+          opacity:
+            !mobileMenuVisible && (isMobile ? scrollProgress > 0.001 : navHidden)
+              ? 1
+              : 0,
+          transition: 'opacity 0.3s ease',
+        }}
+        aria-hidden="true"
+      >
+        <div
+          className="h-full bg-accent origin-left"
+          style={{ transform: `scaleX(${scrollProgress})` }}
+        />
+      </div>
 
       {/* ── Full-screen mobile menu ──────────────────────────── */}
       <div
@@ -188,7 +216,7 @@ export const Navigation = () => {
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-50 bg-bg/95 backdrop-blur-md shadow-[0_1px_0_#E3DBCE]"
         style={{
-          transform: (navHidden && !mobileMenuVisible) ? 'translateY(-100%)' : 'translateY(0)',
+          transform: (navHidden && !mobileMenuVisible) ? 'translateY(calc(-100% - 4px))' : 'translateY(0)',
           transition: 'transform 0.35s ease',
         }}
       >
@@ -238,10 +266,14 @@ export const Navigation = () => {
 
           {/* Desktop right side: phone + CTA + language switcher */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Phone CTA */}
-            <a href="tel:+38163383393" className="btn-ghost inline-flex">
+            {/* Phone CTA (icon only) */}
+            <a
+              href="tel:+38163383393"
+              aria-label="+381 63 383 393"
+              title="+381 63 383 393"
+              className="inline-flex items-center justify-center w-11 h-11 border border-accent text-accent transition-all duration-250 hover:bg-accent hover:text-white"
+            >
               <LuPhone className="w-4 h-4" />
-              +381 63 383 393
             </a>
 
             {/* Desktop CTA */}

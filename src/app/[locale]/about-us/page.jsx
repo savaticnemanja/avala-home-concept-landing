@@ -42,13 +42,13 @@ export default async function AboutUsPage({ params }) {
       <section className="py-12 md:py-24 bg-bg">
         <div className="safe-zone">
           <div className="mb-6">
+            <span className="overline">{a.eyebrow}</span>
             <h1
               className="text-text leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 400 }}
             >
               {a.title}
             </h1>
-            <span className="overline">{a.eyebrow}</span>
           </div>
           <div className="max-w-3xl flex flex-col gap-5 font-light leading-relaxed text-text-muted text-base">
             {a.paragraphs.map((p, i) => (
@@ -86,13 +86,13 @@ export default async function AboutUsPage({ params }) {
       <section className="py-12 md:py-24 bg-bg-alt border-t border-border">
         <div className="safe-zone">
           <div className="mb-8">
+            <span className="overline">{a.investorEyebrow}</span>
             <h2
               className="text-text leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem,4vw,3rem)', fontWeight: 400 }}
             >
               {a.investorTitle}
             </h2>
-            <span className="overline">{a.investorEyebrow}</span>
           </div>
           <p className="max-w-2xl text-text-muted font-light leading-relaxed mb-12">
             {a.investorText}

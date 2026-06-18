@@ -11,13 +11,13 @@ export const Location = () => {
 
         {/* Header */}
         <div className="section-header" data-reveal>
+          <span className="overline">{t('location.eyebrow')}</span>
           <h2
             className="text-text"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}
           >
             {t('location.title')}
           </h2>
-          <span className="overline">{t('location.eyebrow')}</span>
           <p className="text-text-muted font-light mt-4 max-w-lg text-sm leading-relaxed">
             {t('location.text')}
           </p>

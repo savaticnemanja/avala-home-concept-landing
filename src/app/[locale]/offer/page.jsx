@@ -139,13 +139,13 @@ export default function OfferPage() {
           <div>
             <div className="flex items-end justify-between gap-4 mb-4">
               <div>
+                <span className="overline">{t('offer.sitePlan.eyebrow')}</span>
                 <h2
                   className="text-text"
                   style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.4rem,2.6vw,2.1rem)', fontWeight: 400 }}
                 >
                   {t('offer.sitePlan.title')}
                 </h2>
-                <span className="overline">{t('offer.sitePlan.eyebrow')}</span>
               </div>
               <span className="hidden sm:flex items-center gap-2 text-sm font-light text-text-muted">
                 <LuMousePointerClick className="w-4 h-4 text-accent" />

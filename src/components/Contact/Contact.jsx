@@ -61,6 +61,7 @@ export const Contact = () => {
           {/* Left — info */}
           <div className="flex flex-col gap-10" data-reveal>
             <div>
+              <span className="overline">{t('contact.eyebrow')}</span>
               <h2
                 className="text-text-light"
                 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}
@@ -68,7 +69,6 @@ export const Contact = () => {
                 {t('contact.titleA')}{' '}
                 <em>{t('contact.titleEm')}</em>
               </h2>
-              <span className="overline">{t('contact.eyebrow')}</span>
               <p className="text-text-light/50 font-light text-sm leading-relaxed mt-5 max-w-sm">
                 {t('contact.availability')}
               </p>

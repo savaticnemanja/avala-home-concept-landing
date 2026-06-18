@@ -43,13 +43,13 @@ export default async function HomePage({ params }) {
       <section className="py-12 md:py-24 bg-bg-dark">
         <div className="safe-zone">
           <div className="section-header-centered">
+            <span className="overline">{dict.specifications.eyebrow}</span>
             <h2
               className="text-text-light leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 400 }}
             >
               {dict.specifications.title}
             </h2>
-            <span className="overline">{dict.specifications.eyebrow}</span>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-border-dark">
             {specs.map((item, i) => {
@@ -84,13 +84,13 @@ export default async function HomePage({ params }) {
       {/* CTA */}
       <div className="py-10 md:py-20 bg-bg border-t border-border">
         <div className="safe-zone flex flex-col items-center gap-5 text-center">
+          <span className="overline">{dict.homeCta.eyebrow}</span>
           <h3
             className="text-text italic max-w-lg"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.6rem,3vw,2.4rem)', fontWeight: 400 }}
           >
             {dict.homeCta.title}
           </h3>
-          <span className="overline">{dict.homeCta.eyebrow}</span>
           <p className="text-text-muted text-sm font-light max-w-sm">
             {dict.homeCta.text}
           </p>

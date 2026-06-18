@@ -34,13 +34,13 @@ export default function GalleryPage() {
       <section className="py-8 md:py-16 bg-bg">
         <div className="safe-zone">
           <div className="mb-10">
+            <span className="overline">{t('gallery.eyebrow')}</span>
             <h1
               className="text-text leading-tight"
               style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 400 }}
             >
               {t('gallery.title')}
             </h1>
-            <span className="overline">{t('gallery.eyebrow')}</span>
           </div>
 
           {/* Tabs */}

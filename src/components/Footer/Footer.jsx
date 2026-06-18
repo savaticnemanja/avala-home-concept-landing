@@ -25,6 +25,7 @@ export const Footer = () => {
   const pagesLinks = [
     { path: '/', label: t('footer.pages.home') },
     { path: '/about-us', label: t('footer.pages.about') },
+    { path: '/offer', label: t('nav.offer') },
     { path: '/gallery', label: t('footer.pages.gallery') },
     { path: '/contact', label: t('footer.pages.contact') },
   ];
@@ -37,8 +38,8 @@ export const Footer = () => {
 
   return (
   <footer className="bg-bg-mid text-text-light">
-    <div className="safe-zone py-8 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+    <div className="safe-zone py-10 md:py-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
 
         {/* Brand */}
         <div className="flex flex-col gap-5">
@@ -65,7 +66,7 @@ export const Footer = () => {
         </div>
 
         {/* Nav */}
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-6 sm:gap-8 pt-8 border-t border-border-dark md:pt-0 md:border-t-0">
           <div>
             <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent mb-5">
               {t('footer.pagesHeading')}
@@ -103,7 +104,7 @@ export const Footer = () => {
         </div>
 
         {/* Contact */}
-        <div>
+        <div className="pt-8 border-t border-border-dark md:pt-0 md:border-t-0">
           <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent mb-5">
             {t('footer.contactHeading')}
           </p>
