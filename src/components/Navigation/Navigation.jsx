@@ -15,7 +15,6 @@ export const Navigation = () => {
   const router = useRouter();
   const { t, href, locale } = useI18n();
   const [navHidden, setNavHidden] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const navRef = useRef(null);
@@ -24,14 +23,7 @@ export const Navigation = () => {
   const navLinks = [
     { path: '/', label: t('nav.home') },
     { path: '/about-us', label: t('nav.about') },
-    {
-      label: t('nav.offer'),
-      subLinks: [
-        { path: '/project1', label: t('nav.project1') },
-        { path: '/project2', label: t('nav.project2') },
-        { path: '/small-houses', label: t('nav.smallHouses') },
-      ],
-    },
+    { path: '/offer', label: t('nav.offer') },
     { path: '/gallery', label: t('nav.gallery') },
     { path: '/contact', label: t('nav.contact') },
   ];
@@ -54,9 +46,7 @@ export const Navigation = () => {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      if (window.innerWidth >= 768) {
-        setNavHidden(false);
-      } else if (y < 100) {
+      if (y < 100) {
         setNavHidden(false);
       } else if (y > lastScrollY.current + 6) {
         setNavHidden(true);
@@ -72,7 +62,6 @@ export const Navigation = () => {
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
-        setActiveDropdown(null);
         setLangOpen(false);
       }
     };
@@ -129,70 +118,31 @@ export const Navigation = () => {
           <ul>
             {navLinks.map((link, idx) => (
               <li key={link.label} className="border-b border-border-dark">
-                {link.subLinks ? (
-                  <div>
-                    {/* Parent label — not a link */}
-                    <div className="flex items-center gap-5 py-5">
-                      <span
-                        className="text-text-light/20 text-[0.68rem] font-medium tracking-[0.2em] flex-shrink-0"
-                        style={{ fontFamily: 'var(--font-body)' }}
-                      >
-                        {String(idx + 1).padStart(2, '0')}
-                      </span>
-                      <span
-                        className="text-text-light/35"
-                        style={{
-                          fontFamily: 'var(--font-heading)',
-                          fontSize: 'clamp(1.7rem, 7vw, 2.6rem)',
-                          fontWeight: 400,
-                          lineHeight: 1.1,
-                        }}
-                      >
-                        {link.label}
-                      </span>
-                    </div>
-                    {/* Sub-links */}
-                    <div className="pl-9 pb-5 flex flex-col gap-1">
-                      {link.subLinks.map((sub) => (
-                        <Link
-                          key={sub.label}
-                          href={href(sub.path)}
-                          onClick={closeMobileMenu}
-                          className="block py-2 text-sm font-light text-text-light/50 hover:text-accent transition-colors duration-150"
-                          style={{ fontFamily: 'var(--font-body)' }}
-                        >
-                          — {sub.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    href={href(link.path)}
-                    onClick={closeMobileMenu}
-                    className={[
-                      'flex items-center gap-5 py-5 group transition-colors duration-150',
-                      isActive(link.path) ? 'text-accent' : 'text-text-light hover:text-accent',
-                    ].join(' ')}
+                <Link
+                  href={href(link.path)}
+                  onClick={closeMobileMenu}
+                  className={[
+                    'flex items-center gap-5 py-5 group transition-colors duration-150',
+                    isActive(link.path) ? 'text-accent' : 'text-text-light hover:text-accent',
+                  ].join(' ')}
+                >
+                  <span
+                    className="text-text-light/20 text-[0.68rem] font-medium tracking-[0.2em] flex-shrink-0 group-hover:text-accent/40 transition-colors duration-150"
+                    style={{ fontFamily: 'var(--font-body)' }}
                   >
-                    <span
-                      className="text-text-light/20 text-[0.68rem] font-medium tracking-[0.2em] flex-shrink-0 group-hover:text-accent/40 transition-colors duration-150"
-                      style={{ fontFamily: 'var(--font-body)' }}
-                    >
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontSize: 'clamp(1.7rem, 7vw, 2.6rem)',
-                        fontWeight: 400,
-                        lineHeight: 1.1,
-                      }}
-                    >
-                      {link.label}
-                    </span>
-                  </Link>
-                )}
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: 'clamp(1.7rem, 7vw, 2.6rem)',
+                      fontWeight: 400,
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
               </li>
             ))}
           </ul>
@@ -248,7 +198,7 @@ export const Navigation = () => {
           <Link href={href('/')} onClick={closeMobileMenu}>
             <Image
               src={logo}
-              className="h-20 w-auto"
+              className="h-10 md:h-12 w-auto"
               alt="Avala Home Concept logo"
               width={150}
               height={50}
@@ -270,52 +220,18 @@ export const Navigation = () => {
           {/* Desktop nav links */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <li
-                key={link.label}
-                className="relative"
-                onMouseEnter={() => link.subLinks && setActiveDropdown(link.label)}
-                onMouseLeave={() => link.subLinks && setActiveDropdown(null)}
-              >
-                <div className="flex items-center gap-1">
-                  <Link
-                    href={link.path ? href(link.path) : '#'}
-                    className={[
-                      'relative py-2 text-[0.85rem] tracking-[0.04em] text-text transition-colors duration-200',
-                      'after:absolute after:bottom-0 after:left-0 after:h-px after:w-0',
-                      'after:bg-accent after:transition-[width] after:duration-200 hover:after:w-full',
-                      link.path && isActive(link.path) ? 'after:w-full' : '',
-                    ].join(' ')}
-                  >
-                    {link.label}
-                  </Link>
-                  {link.subLinks && (
-                    <LuChevronDown
-                      className={['w-3.5 h-3.5 text-text transition-transform duration-200', activeDropdown === link.label ? 'rotate-180' : ''].join(' ')}
-                    />
-                  )}
-                </div>
-
-                {link.subLinks && (
-                  <ul
-                    className={[
-                      'absolute top-full left-0 min-w-[180px]',
-                      'bg-bg border border-border shadow-[0_4px_20px_rgba(26,25,21,0.08)]',
-                      'py-2 mt-1',
-                      activeDropdown === link.label ? 'block' : 'hidden',
-                    ].join(' ')}
-                  >
-                    {link.subLinks.map((sub) => (
-                      <li key={sub.label}>
-                        <Link
-                          href={href(sub.path)}
-                          className="block px-4 py-2 text-[0.85rem] text-text hover:text-accent transition-colors duration-150"
-                        >
-                          {sub.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              <li key={link.label} className="relative flex">
+                <Link
+                  href={href(link.path)}
+                  className={[
+                    'relative flex items-center h-16 md:h-20 text-[0.85rem] tracking-[0.04em] text-text transition-colors duration-200',
+                    'after:absolute after:-bottom-px after:left-0 after:h-[2px] after:w-0',
+                    'after:bg-accent after:transition-[width] after:duration-200 hover:after:w-full',
+                    isActive(link.path) ? 'after:w-full' : '',
+                  ].join(' ')}
+                >
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>

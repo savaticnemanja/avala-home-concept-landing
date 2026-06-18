@@ -34,6 +34,10 @@
     "thankYou": {
       "title": "Thank you",
       "description": "Your message has been sent successfully. We will get back to you as soon as possible."
+    },
+    "offer": {
+      "title": "House offer",
+      "description": "Avala Home Concept house offer — available projects with floor plans, 3D renders and square footage. Gated complex on Mount Avala, 20 min from Belgrade."
     }
   },
   "nav": {
@@ -98,19 +102,31 @@
         "title": "Project 1",
         "subtitle": "Single-storey house",
         "badge": "Available",
-        "highlights": ["Living room 22m²", "Kitchen + dining 27m²", "Pool and landscaped yard"]
+        "highlights": [
+          "Living room 22m²",
+          "Kitchen + dining 27m²",
+          "Pool and landscaped yard"
+        ]
       },
       {
         "title": "Project 2",
         "subtitle": "Family house",
         "badge": "Available",
-        "highlights": ["Walk-in closet 8m²", "Jacuzzi (optional)", "Open porch 7m²"]
+        "highlights": [
+          "Walk-in closet 8m²",
+          "Jacuzzi (optional)",
+          "Open porch 7m²"
+        ]
       },
       {
         "title": "Houses 80–100m²",
         "subtitle": "Compact house",
         "badge": "Inquire",
-        "highlights": ["Mediterranean style", "Energy efficient", "More affordable price"]
+        "highlights": [
+          "Mediterranean style",
+          "Energy efficient",
+          "More affordable price"
+        ]
       }
     ]
   },
@@ -118,19 +134,58 @@
     "title": "Specifications",
     "eyebrow": "Build quality",
     "items": [
-      { "title": "Solid construction", "description": "Reinforced concrete structure" },
-      { "title": "Thermo climate block", "description": "The No. 1 block on the market" },
-      { "title": "Thermal insulation", "description": "10 cm thick, 30 cm wall thickness" },
-      { "title": "Sanitary ware", "description": "Geberit concealed system, glass shower cabins" },
-      { "title": "Facade joinery", "description": "Aluminium windows with aluminium blinds and double glazing, argon-filled" },
-      { "title": "Glass", "description": "Climaguard Solar \"Guardian\" (all four seasons)" },
-      { "title": "Heating", "description": "Floor-by-floor digital electric boiler, radiator heating. Heat pumps (optional)" },
-      { "title": "Interior doors", "description": "MDF coated with CPL foil and trim mouldings" },
-      { "title": "Exterior doors", "description": "Security doors with 6-point locking" },
-      { "title": "Facade", "description": "Natural materials: wood, ceramics and stone" },
-      { "title": "Ceiling", "description": "Height 2.70–2.90 m" },
-      { "title": "Landscaped yard", "description": "Premium grass, fence and wiring for yard lighting" },
-      { "title": "Swimming pool", "description": "Pool with basic equipment from the Astral brand" }
+      {
+        "title": "Solid construction",
+        "description": "Reinforced concrete structure"
+      },
+      {
+        "title": "Thermo climate block",
+        "description": "The No. 1 block on the market"
+      },
+      {
+        "title": "Thermal insulation",
+        "description": "10 cm thick, 30 cm wall thickness"
+      },
+      {
+        "title": "Sanitary ware",
+        "description": "Geberit concealed system, glass shower cabins"
+      },
+      {
+        "title": "Facade joinery",
+        "description": "Aluminium windows with aluminium blinds and double glazing, argon-filled"
+      },
+      {
+        "title": "Glass",
+        "description": "Climaguard Solar \"Guardian\" (all four seasons)"
+      },
+      {
+        "title": "Heating",
+        "description": "Floor-by-floor digital electric boiler, radiator heating. Heat pumps (optional)"
+      },
+      {
+        "title": "Interior doors",
+        "description": "MDF coated with CPL foil and trim mouldings"
+      },
+      {
+        "title": "Exterior doors",
+        "description": "Security doors with 6-point locking"
+      },
+      {
+        "title": "Facade",
+        "description": "Natural materials: wood, ceramics and stone"
+      },
+      {
+        "title": "Ceiling",
+        "description": "Height 2.70–2.90 m"
+      },
+      {
+        "title": "Landscaped yard",
+        "description": "Premium grass, fence and wiring for yard lighting"
+      },
+      {
+        "title": "Swimming pool",
+        "description": "Pool with basic equipment from the Astral brand"
+      }
     ]
   },
   "location": {
@@ -142,9 +197,18 @@
     "title": "Payment schedule",
     "eyebrow": "How to buy",
     "steps": [
-      { "label": "Reservation", "detail": "Reserve your chosen house with a symbolic deposit that secures your position in the complex." },
-      { "label": "Contract signing", "detail": "By signing the purchase agreement you invest 30% of the property's total value." },
-      { "label": "4 instalments during construction", "detail": "You pay the remaining amount in 4 equal instalments — upon completion of each construction phase." }
+      {
+        "label": "Reservation",
+        "detail": "Reserve your chosen house with a symbolic deposit that secures your position in the complex."
+      },
+      {
+        "label": "Contract signing",
+        "detail": "By signing the purchase agreement you invest 30% of the property's total value."
+      },
+      {
+        "label": "4 instalments during construction",
+        "detail": "You pay the remaining amount in 4 equal instalments — upon completion of each construction phase."
+      }
     ]
   },
   "midCta": {
@@ -202,10 +266,22 @@
       "We believe in the importance of a healthy lifestyle, so we have made sure our houses are energy efficient and sustainable. We use advanced technologies and environmentally friendly materials to reduce our ecological footprint and provide you with a space where you can live mindful of the importance of preserving nature."
     ],
     "stats": [
-      { "value": "30+", "label": "years of experience" },
-      { "value": "1000+", "label": "projects" },
-      { "value": "20 min", "label": "from Belgrade" },
-      { "value": "100+", "label": "satisfied families" }
+      {
+        "value": "30+",
+        "label": "years of experience"
+      },
+      {
+        "value": "1000+",
+        "label": "projects"
+      },
+      {
+        "value": "20 min",
+        "label": "from Belgrade"
+      },
+      {
+        "value": "100+",
+        "label": "satisfied families"
+      }
     ],
     "investorTitle": "The Ćirić Family",
     "investorEyebrow": "Investor",
@@ -222,12 +298,44 @@
     "project1": {
       "title": "Project 1 — Single-storey house 139m²",
       "description": "A spacious single-storey house of 139 square metres. This modern-designed house also has two parking spaces and a separate purpose-built room next to the pool where you can set up a summer kitchen. As many as three airy, comfortable rooms are positioned to receive plenty of sunlight, which will lift your spirits every morning. The doors of the large living room open onto a terrace offering a magnificent view of the Avala Tower. From the terrace, steps lead down to a landscaped path that takes you to the pool and the beach.",
-      "rooms": ["Entrance area", "Utility room", "Toilet", "Hallway", "Terrace", "Room 1", "Room 2", "Room 3", "Bathroom", "Laundry room", "Living room", "Kitchen and dining room"]
+      "rooms": [
+        "Entrance area",
+        "Utility room",
+        "Toilet",
+        "Hallway",
+        "Terrace",
+        "Room 1",
+        "Room 2",
+        "Room 3",
+        "Bathroom",
+        "Laundry room",
+        "Living room",
+        "Kitchen and dining room"
+      ]
     },
     "project2": {
       "title": "Project 2 — Family house 147m²",
       "description": "A comfortable family house of 147 m² surrounded by nature and a pleasant atmosphere. Step into a spacious living room with large glass doors that look out onto the beautiful greenery of Mount Avala. This modern family house has three bedrooms, two separate bathrooms, a jacuzzi (optional) and a large dining room connected to the living room.",
-      "rooms": ["Entrance area", "Hallway", "Toilet + laundry", "Room 1", "Room 2", "Room 3", "Walk-in closet", "Bathroom", "Terrace", "Open porch", "Living room", "Kitchen", "Pantry", "Utility room"]
+      "rooms": [
+        "Entrance area",
+        "Hallway",
+        "Toilet + laundry",
+        "Room 1",
+        "Room 2",
+        "Room 3",
+        "Walk-in closet",
+        "Bathroom",
+        "Terrace",
+        "Open porch",
+        "Living room",
+        "Kitchen",
+        "Pantry",
+        "Utility room"
+      ]
+    },
+    "smallHouses": {
+      "title": "Houses 80–100m²",
+      "description": "Compact houses from 80 to 100m² in Mediterranean style — energy efficient and more affordable. Gated complex on Mount Avala, 20 min from Belgrade."
     }
   },
   "smallHouses": {
@@ -253,5 +361,56 @@
     "close": "Close",
     "prev": "Previous",
     "next": "Next"
+  },
+  "offer": {
+    "title": "House offer",
+    "eyebrow": "Our offer",
+    "intro": "Browse our available house projects. Click a project to view its floor plan, 3D renders and square footage.",
+    "viewDetails": "Detailed specifications",
+    "rooms": "rooms",
+    "terrace": "Terrace",
+    "cards": [
+      {
+        "title": "Project 1",
+        "subtitle": "Single-storey house",
+        "badge": "Available",
+        "highlights": [
+          "Living room 22m²",
+          "Kitchen + dining 27m²",
+          "Pool and landscaped yard"
+        ]
+      },
+      {
+        "title": "Project 2",
+        "subtitle": "Family house",
+        "badge": "Available",
+        "highlights": [
+          "Walk-in closet 8m²",
+          "Jacuzzi (optional)",
+          "Open porch 7m²"
+        ]
+      },
+      {
+        "title": "Houses 80–100m²",
+        "subtitle": "Compact house",
+        "badge": "Inquire",
+        "highlights": [
+          "Mediterranean style",
+          "Energy efficient",
+          "More affordable price"
+        ]
+      }
+    ],
+    "drawer": {
+      "plan": "Floor plan",
+      "renders": "3D renders",
+      "close": "Close menu",
+      "requestOffer": "Request an offer"
+    },
+    "sitePlan": {
+      "eyebrow": "Interactive plan",
+      "title": "Site plan",
+      "hint": "Click a marker to view the house details"
+    }
   }
 }

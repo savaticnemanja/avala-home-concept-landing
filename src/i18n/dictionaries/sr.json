@@ -34,6 +34,10 @@
     "thankYou": {
       "title": "Hvala vam",
       "description": "Vaša poruka je uspešno poslata. Kontaktiraćemo vas u najkraćem roku."
+    },
+    "offer": {
+      "title": "Ponuda kuća",
+      "description": "Ponuda kuća Avala Home Concept — dostupni projekti sa osnovama, 3D prikazima i kvadraturom. Zatvoren kompleks na Avalskoj planini, 20 min od Beograda."
     }
   },
   "nav": {
@@ -98,19 +102,31 @@
         "title": "Projekat 1",
         "subtitle": "Prizemna kuća",
         "badge": "Dostupno",
-        "highlights": ["Dnevni boravak 22m²", "Kuhinja + trpezarija 27m²", "Bazen i uređeno dvorište"]
+        "highlights": [
+          "Dnevni boravak 22m²",
+          "Kuhinja + trpezarija 27m²",
+          "Bazen i uređeno dvorište"
+        ]
       },
       {
         "title": "Projekat 2",
         "subtitle": "Porodična kuća",
         "badge": "Dostupno",
-        "highlights": ["Garderober 8m²", "Džakuzi (opciono)", "Otvoreni trem 7m²"]
+        "highlights": [
+          "Garderober 8m²",
+          "Džakuzi (opciono)",
+          "Otvoreni trem 7m²"
+        ]
       },
       {
         "title": "Kuće 80–100m²",
         "subtitle": "Kompaktna kuća",
         "badge": "Upitajte",
-        "highlights": ["Mediteranski stil", "Energetski efikasno", "Povoljnija cena"]
+        "highlights": [
+          "Mediteranski stil",
+          "Energetski efikasno",
+          "Povoljnija cena"
+        ]
       }
     ]
   },
@@ -118,19 +134,58 @@
     "title": "Specifikacije",
     "eyebrow": "Kvalitet gradnje",
     "items": [
-      { "title": "Čvrsta gradnja", "description": "Armirano betonska konstrukcija" },
-      { "title": "Thermo klima blok", "description": "Broj 1. blok na tržištu" },
-      { "title": "Termoizolacija", "description": "Debljina 10 cm, debljina zida 30 cm" },
-      { "title": "Sanitarije", "description": "Geberit ugradni sistem, staklene tuš kabine" },
-      { "title": "Fasadna stolarija", "description": "Aluminijumski prozori sa alu roletnama i dvostrukim staklom, punjeno argonom" },
-      { "title": "Staklo", "description": "Climaguard solar \"Guardian\" (4 godišnja doba)" },
-      { "title": "Grejanje", "description": "Etažno, digitalni elektro kotao, radijatorsko grejanje. Toplotne pumpe (opciono)" },
-      { "title": "Unutrašnja vrata", "description": "Medijapan presvučen CPL folijom sa pervajz lajsnama" },
-      { "title": "Spoljna vrata", "description": "Sigurnosna vrata sa zaključavanjem u 6 tačaka" },
-      { "title": "Fasada", "description": "Prirodni materijali: drvo, keramika i kamen" },
-      { "title": "Plafon", "description": "Visina 2,70–2,90 m" },
-      { "title": "Uređeno dvorište", "description": "Premium trava, ograda i instalacija za dvorišno osvetljenje" },
-      { "title": "Bazen", "description": "Bazen sa osnovnom opremom brenda Astral" }
+      {
+        "title": "Čvrsta gradnja",
+        "description": "Armirano betonska konstrukcija"
+      },
+      {
+        "title": "Thermo klima blok",
+        "description": "Broj 1. blok na tržištu"
+      },
+      {
+        "title": "Termoizolacija",
+        "description": "Debljina 10 cm, debljina zida 30 cm"
+      },
+      {
+        "title": "Sanitarije",
+        "description": "Geberit ugradni sistem, staklene tuš kabine"
+      },
+      {
+        "title": "Fasadna stolarija",
+        "description": "Aluminijumski prozori sa alu roletnama i dvostrukim staklom, punjeno argonom"
+      },
+      {
+        "title": "Staklo",
+        "description": "Climaguard solar \"Guardian\" (4 godišnja doba)"
+      },
+      {
+        "title": "Grejanje",
+        "description": "Etažno, digitalni elektro kotao, radijatorsko grejanje. Toplotne pumpe (opciono)"
+      },
+      {
+        "title": "Unutrašnja vrata",
+        "description": "Medijapan presvučen CPL folijom sa pervajz lajsnama"
+      },
+      {
+        "title": "Spoljna vrata",
+        "description": "Sigurnosna vrata sa zaključavanjem u 6 tačaka"
+      },
+      {
+        "title": "Fasada",
+        "description": "Prirodni materijali: drvo, keramika i kamen"
+      },
+      {
+        "title": "Plafon",
+        "description": "Visina 2,70–2,90 m"
+      },
+      {
+        "title": "Uređeno dvorište",
+        "description": "Premium trava, ograda i instalacija za dvorišno osvetljenje"
+      },
+      {
+        "title": "Bazen",
+        "description": "Bazen sa osnovnom opremom brenda Astral"
+      }
     ]
   },
   "location": {
@@ -142,9 +197,18 @@
     "title": "Dinamika plaćanja",
     "eyebrow": "Kako kupiti",
     "steps": [
-      { "label": "Rezervacija", "detail": "Rezervišite željenu kuću uz simboličan avans koji garantuje vašu poziciju u kompleksu." },
-      { "label": "Overa ugovora", "detail": "Potpisivanjem kupoprodajnog ugovora ulažete 30% ukupne vrednosti nekretnine." },
-      { "label": "4 rate tokom gradnje", "detail": "Preostali iznos plaćate u 4 jednake rate — po završetku svake faze izgradnje." }
+      {
+        "label": "Rezervacija",
+        "detail": "Rezervišite željenu kuću uz simboličan avans koji garantuje vašu poziciju u kompleksu."
+      },
+      {
+        "label": "Overa ugovora",
+        "detail": "Potpisivanjem kupoprodajnog ugovora ulažete 30% ukupne vrednosti nekretnine."
+      },
+      {
+        "label": "4 rate tokom gradnje",
+        "detail": "Preostali iznos plaćate u 4 jednake rate — po završetku svake faze izgradnje."
+      }
     ]
   },
   "midCta": {
@@ -202,10 +266,22 @@
       "Verujemo u važnost zdravog načina života, stoga smo se pobrinuli da naše kuće budu energetski efikasne i održive. Koristimo napredne tehnologije i ekološki prihvatljive materijale kako bismo smanjili ekološki otisak i pružili vam prostor u kojem možete živeti sa svesti o važnosti očuvanja prirode."
     ],
     "stats": [
-      { "value": "30+", "label": "godina iskustva" },
-      { "value": "1000+", "label": "projekata" },
-      { "value": "20 min", "label": "od Beograda" },
-      { "value": "100+", "label": "zadovoljnih porodica" }
+      {
+        "value": "30+",
+        "label": "godina iskustva"
+      },
+      {
+        "value": "1000+",
+        "label": "projekata"
+      },
+      {
+        "value": "20 min",
+        "label": "od Beograda"
+      },
+      {
+        "value": "100+",
+        "label": "zadovoljnih porodica"
+      }
     ],
     "investorTitle": "Porodica Ćirić",
     "investorEyebrow": "Investitor",
@@ -222,12 +298,44 @@
     "project1": {
       "title": "Projekat 1 — Prizemna kuća 139m²",
       "description": "Prostrana prizemna kuća od 139 metara kvadratnih. Ova moderno dizajnirana kuća ima i dva parking mesta i odvojenu namensku prostoriju pokraj bazena u koju možete smestiti letnju kuhinju. Čak tri prozračne i komforne sobe pozicionirane su tako da primaju dosta sunčeve svetlosti što će Vam svakog jutra uliti dodatno raspoloženje. Vrata velikog dnevnog boravka otvaraju se na terasu koja pruža veličanstven pogled na Avalaski toranj. Sa terase se stepenicama spuštate na uređenu stazu koja Vas vodi do bazena i plaže.",
-      "rooms": ["Predprostor", "Tehnička prostorija", "Toalet", "Hodnik", "Terasa", "Soba 1", "Soba 2", "Soba 3", "Kupatilo", "Vešernica", "Dnevni boravak", "Kuhinja i trpezarija"]
+      "rooms": [
+        "Predprostor",
+        "Tehnička prostorija",
+        "Toalet",
+        "Hodnik",
+        "Terasa",
+        "Soba 1",
+        "Soba 2",
+        "Soba 3",
+        "Kupatilo",
+        "Vešernica",
+        "Dnevni boravak",
+        "Kuhinja i trpezarija"
+      ]
     },
     "project2": {
       "title": "Projekat 2 — Porodična kuća 147m²",
       "description": "Udobna porodična kuća od 147 m² okružena prirodom i prijatnim ambijentom. Zakoračite u prostran dnevni boravak sa velikim staklenim vratima koja gledaju na predivno zelenilo Avalske planine. Ova moderno koncipirana porodična kuća ima čak tri spavaće sobe, dva odvojena kupatila, džakuzi (opciono) i veliku trpezariju koja je povezana sa dnevnim boravkom.",
-      "rooms": ["Predprostor", "Hodnik", "Toalet + vešeraj", "Soba 1", "Soba 2", "Soba 3", "Garderober", "Kupatilo", "Terasa", "Otvoreni trem", "Dnevni boravak", "Kuhinja", "Ostava", "Tehnička prostorija"]
+      "rooms": [
+        "Predprostor",
+        "Hodnik",
+        "Toalet + vešeraj",
+        "Soba 1",
+        "Soba 2",
+        "Soba 3",
+        "Garderober",
+        "Kupatilo",
+        "Terasa",
+        "Otvoreni trem",
+        "Dnevni boravak",
+        "Kuhinja",
+        "Ostava",
+        "Tehnička prostorija"
+      ]
+    },
+    "smallHouses": {
+      "title": "Kuće 80–100m²",
+      "description": "Kompaktne kuće od 80 do 100m² u mediteranskom stilu — energetski efikasne i povoljnije. Zatvoren kompleks na Avalskoj planini, 20 min od Beograda."
     }
   },
   "smallHouses": {
@@ -253,5 +361,56 @@
     "close": "Zatvori",
     "prev": "Prethodna",
     "next": "Sledeća"
+  },
+  "offer": {
+    "title": "Ponuda kuća",
+    "eyebrow": "Naša ponuda",
+    "intro": "Pregledajte dostupne projekte kuća. Kliknite na projekat da vidite osnovu, 3D prikaze i kvadraturu.",
+    "viewDetails": "Detaljne specifikacije",
+    "rooms": "sobe",
+    "terrace": "Terasa",
+    "cards": [
+      {
+        "title": "Projekat 1",
+        "subtitle": "Prizemna kuća",
+        "badge": "Dostupno",
+        "highlights": [
+          "Dnevni boravak 22m²",
+          "Kuhinja + trpezarija 27m²",
+          "Bazen i uređeno dvorište"
+        ]
+      },
+      {
+        "title": "Projekat 2",
+        "subtitle": "Porodična kuća",
+        "badge": "Dostupno",
+        "highlights": [
+          "Garderober 8m²",
+          "Džakuzi (opciono)",
+          "Otvoreni trem 7m²"
+        ]
+      },
+      {
+        "title": "Kuće 80–100m²",
+        "subtitle": "Kompaktna kuća",
+        "badge": "Upitajte",
+        "highlights": [
+          "Mediteranski stil",
+          "Energetski efikasno",
+          "Povoljnija cena"
+        ]
+      }
+    ],
+    "drawer": {
+      "plan": "Osnova",
+      "renders": "3D prikazi",
+      "close": "Zatvori meni",
+      "requestOffer": "Zatraži ponudu"
+    },
+    "sitePlan": {
+      "eyebrow": "Interaktivni plan",
+      "title": "Plan kompleksa",
+      "hint": "Kliknite na oznaku da vidite detalje kuće"
+    }
   }
 }

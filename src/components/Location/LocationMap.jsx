@@ -4,8 +4,9 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { LuMapPin, LuClock } from 'react-icons/lu';
 
-// Free, no-token vector tiles (OpenFreeMap) — includes building data for 3D.
-const STYLE_URL = 'https://tiles.openfreemap.org/styles/positron';
+// Free, no-token vector tiles (OpenFreeMap) — "liberty" is the colorful basemap
+// (blue water, green parks, colored roads); includes building data for 3D.
+const STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty';
 
 /**
  * ⚠️ APPROXIMATE COORDINATES — replace with real values.
@@ -63,10 +64,19 @@ export const LocationMap = () => {
             type: 'fill-extrusion',
             minzoom: 13,
             paint: {
-              'fill-extrusion-color': '#d9d3c7',
+              // Vibrant height-based gradient: gold → coral → deep wine.
+              'fill-extrusion-color': [
+                'interpolate',
+                ['linear'],
+                ['coalesce', ['get', 'render_height'], 6],
+                0, '#F2C14E',
+                12, '#E8833A',
+                28, '#D7503B',
+                60, '#8E2D52',
+              ],
               'fill-extrusion-height': ['coalesce', ['get', 'render_height'], 6],
               'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0],
-              'fill-extrusion-opacity': 0.85,
+              'fill-extrusion-opacity': 0.92,
             },
           },
           firstSymbol,

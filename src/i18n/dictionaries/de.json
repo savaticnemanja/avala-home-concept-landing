@@ -34,6 +34,10 @@
     "thankYou": {
       "title": "Vielen Dank",
       "description": "Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns so schnell wie möglich bei Ihnen."
+    },
+    "offer": {
+      "title": "Hausangebot",
+      "description": "Hausangebot von Avala Home Concept — verfügbare Projekte mit Grundrissen, 3D-Visualisierungen und Quadratmetern. Geschlossener Komplex am Berg Avala, 20 Min. von Belgrad."
     }
   },
   "nav": {
@@ -98,19 +102,31 @@
         "title": "Projekt 1",
         "subtitle": "Bungalow",
         "badge": "Verfügbar",
-        "highlights": ["Wohnzimmer 22 m²", "Küche + Esszimmer 27 m²", "Pool und gepflegter Garten"]
+        "highlights": [
+          "Wohnzimmer 22 m²",
+          "Küche + Esszimmer 27 m²",
+          "Pool und gepflegter Garten"
+        ]
       },
       {
         "title": "Projekt 2",
         "subtitle": "Familienhaus",
         "badge": "Verfügbar",
-        "highlights": ["Ankleidezimmer 8 m²", "Whirlpool (optional)", "Offene Veranda 7 m²"]
+        "highlights": [
+          "Ankleidezimmer 8 m²",
+          "Whirlpool (optional)",
+          "Offene Veranda 7 m²"
+        ]
       },
       {
         "title": "Häuser 80–100 m²",
         "subtitle": "Kompaktes Haus",
         "badge": "Anfragen",
-        "highlights": ["Mediterraner Stil", "Energieeffizient", "Günstigerer Preis"]
+        "highlights": [
+          "Mediterraner Stil",
+          "Energieeffizient",
+          "Günstigerer Preis"
+        ]
       }
     ]
   },
@@ -118,19 +134,58 @@
     "title": "Spezifikationen",
     "eyebrow": "Bauqualität",
     "items": [
-      { "title": "Solide Bauweise", "description": "Stahlbetonkonstruktion" },
-      { "title": "Thermo-Klimablock", "description": "Block Nr. 1 auf dem Markt" },
-      { "title": "Wärmedämmung", "description": "10 cm dick, Wandstärke 30 cm" },
-      { "title": "Sanitär", "description": "Geberit-Unterputzsystem, Glas-Duschkabinen" },
-      { "title": "Fassadenelemente", "description": "Aluminiumfenster mit Aluminiumrollläden und Doppelverglasung, argongefüllt" },
-      { "title": "Glas", "description": "Climaguard Solar „Guardian“ (alle vier Jahreszeiten)" },
-      { "title": "Heizung", "description": "Etagenweiser digitaler Elektrokessel, Radiatorheizung. Wärmepumpen (optional)" },
-      { "title": "Innentüren", "description": "MDF mit CPL-Folie beschichtet, mit Zierleisten" },
-      { "title": "Außentüren", "description": "Sicherheitstüren mit 6-Punkt-Verriegelung" },
-      { "title": "Fassade", "description": "Natürliche Materialien: Holz, Keramik und Stein" },
-      { "title": "Decke", "description": "Höhe 2,70–2,90 m" },
-      { "title": "Gepflegter Garten", "description": "Premium-Rasen, Zaun und Verkabelung für die Gartenbeleuchtung" },
-      { "title": "Swimmingpool", "description": "Pool mit Grundausstattung der Marke Astral" }
+      {
+        "title": "Solide Bauweise",
+        "description": "Stahlbetonkonstruktion"
+      },
+      {
+        "title": "Thermo-Klimablock",
+        "description": "Block Nr. 1 auf dem Markt"
+      },
+      {
+        "title": "Wärmedämmung",
+        "description": "10 cm dick, Wandstärke 30 cm"
+      },
+      {
+        "title": "Sanitär",
+        "description": "Geberit-Unterputzsystem, Glas-Duschkabinen"
+      },
+      {
+        "title": "Fassadenelemente",
+        "description": "Aluminiumfenster mit Aluminiumrollläden und Doppelverglasung, argongefüllt"
+      },
+      {
+        "title": "Glas",
+        "description": "Climaguard Solar „Guardian“ (alle vier Jahreszeiten)"
+      },
+      {
+        "title": "Heizung",
+        "description": "Etagenweiser digitaler Elektrokessel, Radiatorheizung. Wärmepumpen (optional)"
+      },
+      {
+        "title": "Innentüren",
+        "description": "MDF mit CPL-Folie beschichtet, mit Zierleisten"
+      },
+      {
+        "title": "Außentüren",
+        "description": "Sicherheitstüren mit 6-Punkt-Verriegelung"
+      },
+      {
+        "title": "Fassade",
+        "description": "Natürliche Materialien: Holz, Keramik und Stein"
+      },
+      {
+        "title": "Decke",
+        "description": "Höhe 2,70–2,90 m"
+      },
+      {
+        "title": "Gepflegter Garten",
+        "description": "Premium-Rasen, Zaun und Verkabelung für die Gartenbeleuchtung"
+      },
+      {
+        "title": "Swimmingpool",
+        "description": "Pool mit Grundausstattung der Marke Astral"
+      }
     ]
   },
   "location": {
@@ -142,9 +197,18 @@
     "title": "Zahlungsplan",
     "eyebrow": "So kaufen Sie",
     "steps": [
-      { "label": "Reservierung", "detail": "Reservieren Sie Ihr Wunschhaus mit einer symbolischen Anzahlung, die Ihre Position im Komplex sichert." },
-      { "label": "Vertragsunterzeichnung", "detail": "Mit der Unterzeichnung des Kaufvertrags investieren Sie 30 % des Gesamtwerts der Immobilie." },
-      { "label": "4 Raten während des Baus", "detail": "Den Restbetrag zahlen Sie in 4 gleichen Raten — nach Abschluss jeder Bauphase." }
+      {
+        "label": "Reservierung",
+        "detail": "Reservieren Sie Ihr Wunschhaus mit einer symbolischen Anzahlung, die Ihre Position im Komplex sichert."
+      },
+      {
+        "label": "Vertragsunterzeichnung",
+        "detail": "Mit der Unterzeichnung des Kaufvertrags investieren Sie 30 % des Gesamtwerts der Immobilie."
+      },
+      {
+        "label": "4 Raten während des Baus",
+        "detail": "Den Restbetrag zahlen Sie in 4 gleichen Raten — nach Abschluss jeder Bauphase."
+      }
     ]
   },
   "midCta": {
@@ -202,10 +266,22 @@
       "Wir glauben an die Bedeutung eines gesunden Lebensstils und haben daher dafür gesorgt, dass unsere Häuser energieeffizient und nachhaltig sind. Wir nutzen fortschrittliche Technologien und umweltfreundliche Materialien, um den ökologischen Fußabdruck zu verringern und Ihnen einen Raum zu bieten, in dem Sie im Bewusstsein der Bedeutung des Naturschutzes leben können."
     ],
     "stats": [
-      { "value": "30+", "label": "Jahre Erfahrung" },
-      { "value": "1000+", "label": "Projekte" },
-      { "value": "20 Min.", "label": "von Belgrad" },
-      { "value": "100+", "label": "zufriedene Familien" }
+      {
+        "value": "30+",
+        "label": "Jahre Erfahrung"
+      },
+      {
+        "value": "1000+",
+        "label": "Projekte"
+      },
+      {
+        "value": "20 Min.",
+        "label": "von Belgrad"
+      },
+      {
+        "value": "100+",
+        "label": "zufriedene Familien"
+      }
     ],
     "investorTitle": "Familie Ćirić",
     "investorEyebrow": "Investor",
@@ -222,12 +298,44 @@
     "project1": {
       "title": "Projekt 1 — Bungalow 139 m²",
       "description": "Ein geräumiger Bungalow von 139 Quadratmetern. Dieses modern gestaltete Haus verfügt zudem über zwei Parkplätze und einen separaten Zweckraum neben dem Pool, in dem Sie eine Sommerküche einrichten können. Gleich drei luftige und komfortable Zimmer sind so positioniert, dass sie viel Sonnenlicht erhalten, was Ihnen jeden Morgen zusätzlich gute Laune bringt. Die Türen des großen Wohnzimmers öffnen sich zu einer Terrasse mit herrlichem Blick auf den Avala-Turm. Von der Terrasse führen Stufen hinunter zu einem gepflegten Weg, der Sie zum Pool und zum Strand bringt.",
-      "rooms": ["Eingangsbereich", "Technikraum", "Toilette", "Flur", "Terrasse", "Zimmer 1", "Zimmer 2", "Zimmer 3", "Badezimmer", "Waschraum", "Wohnzimmer", "Küche und Esszimmer"]
+      "rooms": [
+        "Eingangsbereich",
+        "Technikraum",
+        "Toilette",
+        "Flur",
+        "Terrasse",
+        "Zimmer 1",
+        "Zimmer 2",
+        "Zimmer 3",
+        "Badezimmer",
+        "Waschraum",
+        "Wohnzimmer",
+        "Küche und Esszimmer"
+      ]
     },
     "project2": {
       "title": "Projekt 2 — Familienhaus 147 m²",
       "description": "Ein komfortables Familienhaus von 147 m², umgeben von Natur und angenehmem Ambiente. Betreten Sie ein geräumiges Wohnzimmer mit großen Glastüren, die auf das wunderschöne Grün des Berges Avala blicken. Dieses moderne Familienhaus verfügt über drei Schlafzimmer, zwei separate Bäder, einen Whirlpool (optional) und ein großes Esszimmer, das mit dem Wohnzimmer verbunden ist.",
-      "rooms": ["Eingangsbereich", "Flur", "Toilette + Waschraum", "Zimmer 1", "Zimmer 2", "Zimmer 3", "Ankleidezimmer", "Badezimmer", "Terrasse", "Offene Veranda", "Wohnzimmer", "Küche", "Speisekammer", "Technikraum"]
+      "rooms": [
+        "Eingangsbereich",
+        "Flur",
+        "Toilette + Waschraum",
+        "Zimmer 1",
+        "Zimmer 2",
+        "Zimmer 3",
+        "Ankleidezimmer",
+        "Badezimmer",
+        "Terrasse",
+        "Offene Veranda",
+        "Wohnzimmer",
+        "Küche",
+        "Speisekammer",
+        "Technikraum"
+      ]
+    },
+    "smallHouses": {
+      "title": "Häuser 80–100 m²",
+      "description": "Kompakte Häuser von 80 bis 100 m² im mediterranen Stil — energieeffizient und günstiger. Geschlossener Komplex am Berg Avala, 20 Min. von Belgrad."
     }
   },
   "smallHouses": {
@@ -253,5 +361,56 @@
     "close": "Schließen",
     "prev": "Zurück",
     "next": "Weiter"
+  },
+  "offer": {
+    "title": "Hausangebot",
+    "eyebrow": "Unser Angebot",
+    "intro": "Entdecken Sie unsere verfügbaren Hausprojekte. Klicken Sie auf ein Projekt, um Grundriss, 3D-Visualisierungen und Quadratmeter zu sehen.",
+    "viewDetails": "Detaillierte Spezifikationen",
+    "rooms": "Zimmer",
+    "terrace": "Terrasse",
+    "cards": [
+      {
+        "title": "Projekt 1",
+        "subtitle": "Bungalow",
+        "badge": "Verfügbar",
+        "highlights": [
+          "Wohnzimmer 22 m²",
+          "Küche + Esszimmer 27 m²",
+          "Pool und gepflegter Garten"
+        ]
+      },
+      {
+        "title": "Projekt 2",
+        "subtitle": "Familienhaus",
+        "badge": "Verfügbar",
+        "highlights": [
+          "Ankleidezimmer 8 m²",
+          "Whirlpool (optional)",
+          "Offene Veranda 7 m²"
+        ]
+      },
+      {
+        "title": "Häuser 80–100 m²",
+        "subtitle": "Kompaktes Haus",
+        "badge": "Anfragen",
+        "highlights": [
+          "Mediterraner Stil",
+          "Energieeffizient",
+          "Günstigerer Preis"
+        ]
+      }
+    ],
+    "drawer": {
+      "plan": "Grundriss",
+      "renders": "3D-Visualisierungen",
+      "close": "Menü schließen",
+      "requestOffer": "Angebot anfordern"
+    },
+    "sitePlan": {
+      "eyebrow": "Interaktiver Plan",
+      "title": "Lageplan",
+      "hint": "Klicken Sie auf eine Markierung, um die Hausdetails zu sehen"
+    }
   }
 }
