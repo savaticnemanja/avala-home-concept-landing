@@ -35,14 +35,14 @@ const ZoomViewer = ({ images, index, onClose, onSetIndex }) => {
       onClick={onClose}
     >
       <button
-        className="absolute top-4 right-4 text-text-light text-3xl leading-none hover:text-accent-strong transition-colors"
+        className="absolute top-4 right-4 text-text-light text-3xl leading-none hover:text-accent transition-colors"
         onClick={onClose}
         aria-label="Zatvori"
       >
         &#x2715;
       </button>
       <button
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-text-light text-5xl leading-none hover:text-accent-strong transition-colors p-2"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-text-light text-5xl leading-none hover:text-accent transition-colors p-2"
         onClick={(e) => { e.stopPropagation(); prev(); }}
         aria-label="Prethodna"
       >
@@ -56,7 +56,7 @@ const ZoomViewer = ({ images, index, onClose, onSetIndex }) => {
         onClick={(e) => e.stopPropagation()}
       />
       <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-text-light text-5xl leading-none hover:text-accent-strong transition-colors p-2"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-text-light text-5xl leading-none hover:text-accent transition-colors p-2"
         onClick={(e) => { e.stopPropagation(); next(); }}
         aria-label="Sledeća"
       >
@@ -143,7 +143,7 @@ export const ProjectDrawer = ({ project, onClose }) => {
               <button
                 onClick={onClose}
                 aria-label={t('offer.drawer.close')}
-                className="flex-shrink-0 w-10 h-10 flex items-center justify-center border border-border rounded-full text-text-muted hover:text-accent-strong hover:border-accent transition-colors duration-200"
+                className="flex-shrink-0 w-10 h-10 flex items-center justify-center border border-border rounded-full text-text-muted hover:text-accent hover:border-accent transition-colors duration-200"
               >
                 <LuX className="w-5 h-5" />
               </button>
@@ -166,11 +166,11 @@ export const ProjectDrawer = ({ project, onClose }) => {
                   />
                   <span
                     className="absolute top-3 right-3 px-3 py-1 text-[0.68rem] font-medium tracking-[0.15em] uppercase text-white"
-                    style={{ backgroundColor: 'rgba(138,101,38,0.95)', fontFamily: 'var(--font-body)', backdropFilter: 'blur(4px)' }}
+                    style={{ backgroundColor: 'rgba(196,151,90,0.92)', fontFamily: 'var(--font-body)', backdropFilter: 'blur(4px)' }}
                   >
                     {t(`offer.cards.${active.cardIndex}.badge`)}
                   </span>
-                  <span className="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-bg-dark/55 text-white backdrop-blur-sm transition-colors duration-200 group-hover:bg-accent-strong">
+                  <span className="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-bg-dark/55 text-white backdrop-blur-sm transition-colors duration-200 group-hover:bg-accent">
                     <LuZoomIn className="w-4 h-4" />
                   </span>
                 </button>
@@ -201,17 +201,17 @@ export const ProjectDrawer = ({ project, onClose }) => {
                   {t(`offer.cards.${active.cardIndex}.subtitle`)}
                 </p>
                 <span className="flex items-center gap-2 text-sm font-light text-text-muted whitespace-nowrap flex-shrink-0">
-                  <LuBed className="w-4 h-4 text-accent-strong" />
+                  <LuBed className="w-4 h-4 text-accent" />
                   {active.beds} {t('offer.rooms')}
                 </span>
                 {active.terrace && (
                   <span className="flex items-center gap-2 text-sm font-light text-text-muted whitespace-nowrap flex-shrink-0">
-                    <LuSunrise className="w-4 h-4 text-accent-strong" />
+                    <LuSunrise className="w-4 h-4 text-accent" />
                     {t('offer.terrace')} {active.terrace}
                   </span>
                 )}
                 <span className="flex items-center gap-2 text-sm font-light text-text-muted whitespace-nowrap flex-shrink-0">
-                  <LuMaximize2 className="w-4 h-4 text-accent-strong" />
+                  <LuMaximize2 className="w-4 h-4 text-accent" />
                   {active.area} m²
                 </span>
               </div>
@@ -223,7 +223,7 @@ export const ProjectDrawer = ({ project, onClose }) => {
 
                 {rooms && (
                   <div className="flex flex-col gap-3">
-                    <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent-strong">
+                    <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent">
                       {t('projectPage.netSurfaceLabel')}
                     </p>
                     <table className="w-full text-sm border-collapse">
@@ -238,7 +238,7 @@ export const ProjectDrawer = ({ project, onClose }) => {
                     </table>
                     <div className="pt-3 border-t border-border flex justify-between items-center">
                       <span className="text-sm font-medium text-text">{t('projectPage.total')}</span>
-                      <span className="text-accent-strong font-medium">{active.surfaceArea} m²</span>
+                      <span className="text-accent font-medium">{active.surfaceArea} m²</span>
                     </div>
                   </div>
                 )}
@@ -251,7 +251,7 @@ export const ProjectDrawer = ({ project, onClose }) => {
                   className="group relative inline-flex items-stretch flex-shrink-0"
                 >
                   <span className="absolute inset-0 m-auto w-8 h-8 bg-accent/50 animate-ping [animation-duration:2.5s] pointer-events-none" />
-                  <span className="relative inline-flex items-center justify-center px-4 bg-bg border border-accent text-accent-strong transition-all duration-250 group-hover:bg-accent-strong group-hover:text-white">
+                  <span className="relative inline-flex items-center justify-center px-4 bg-bg border border-accent text-accent transition-all duration-250 group-hover:bg-accent group-hover:text-white">
                     <LuPhone className="w-4 h-4" />
                   </span>
                 </a>

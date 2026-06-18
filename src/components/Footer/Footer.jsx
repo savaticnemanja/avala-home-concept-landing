@@ -14,7 +14,7 @@ const socials = [
 
 const contacts = [
   { href: 'tel:+38163383393',                       Icon: LuPhone,         label: '+381 63 383393' },
-  { href: 'viber://chat?number=%2B38163383393',      Icon: LuMessageSquare, label: 'Viber' },
+  { href: 'viber://add?number=38163383393',          Icon: LuMessageSquare, label: 'Viber' },
   { href: 'https://wa.me/38163383393',              Icon: LuMessageCircle, label: 'WhatsApp', external: true },
   { href: 'mailto:avalahomeconcept@gmail.com',      Icon: LuMail,          label: 'avalahomeconcept@gmail.com' },
 ];
@@ -50,7 +50,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="w-9 h-9 flex items-center justify-center border border-border-dark text-text-light/40 hover:border-accent hover:text-accent-strong transition-all duration-200"
+                className="w-9 h-9 flex items-center justify-center border border-border-dark text-text-light/40 hover:border-accent hover:text-accent transition-all duration-200"
               >
                 <Icon className="w-4 h-4" />
               </a>
@@ -59,7 +59,7 @@ export const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border-dark md:pt-0 md:border-t-0">
-          <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent-strong mb-5">
+          <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent mb-5">
             {t('footer.pagesHeading')}
           </p>
           <ul className="flex flex-col gap-2.5">
@@ -77,7 +77,7 @@ export const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border-dark md:pt-0 md:border-t-0">
-          <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent-strong mb-5">
+          <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent mb-5">
             {t('footer.contactHeading')}
           </p>
           <ul className="flex flex-col gap-2.5">
@@ -86,9 +86,9 @@ export const Footer = () => {
                 <a
                   href={href}
                   {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className="flex items-center gap-3 text-sm font-light text-text-light/55 hover:text-accent-strong transition-colors duration-150 group"
+                  className="flex items-center gap-3 text-sm font-light text-text-light/55 hover:text-accent transition-colors duration-150 group"
                 >
-                  <span className="w-7 h-7 flex items-center justify-center border border-border-dark text-text-light/30 group-hover:border-accent/50 group-hover:text-accent-strong transition-all duration-200 flex-shrink-0">
+                  <span className="w-7 h-7 flex items-center justify-center border border-border-dark text-text-light/30 group-hover:border-accent/50 group-hover:text-accent transition-all duration-200 flex-shrink-0">
                     <Icon className="w-3 h-3" />
                   </span>
                   <span className="underline decoration-1 underline-offset-4 decoration-text-light/25 group-hover:decoration-accent transition-colors duration-150">
@@ -118,7 +118,7 @@ export const Footer = () => {
             href="https://nemanjas.dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent-strong hover:text-accent-strong transition-colors duration-150"
+            className="text-accent hover:text-accent transition-colors duration-150"
           >
             nemanjas.dev
           </a>

@@ -50,14 +50,14 @@ export const Lightbox = ({ images, activeIndex, onClose, onSetIndex }) => {
     >
       <button
         ref={closeRef}
-        className="absolute top-4 right-4 text-text-light text-3xl leading-none hover:text-accent-strong transition-colors"
+        className="absolute top-4 right-4 text-text-light text-3xl leading-none hover:text-accent transition-colors"
         onClick={onClose}
         aria-label={t('offer.drawer.close', 'Close')}
       >
         &#x2715;
       </button>
       <button
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-text-light text-5xl leading-none hover:text-accent-strong transition-colors p-2"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-text-light text-5xl leading-none hover:text-accent transition-colors p-2"
         onClick={(e) => { e.stopPropagation(); prev(); }}
         aria-label={t('gallery.prev', 'Previous')}
       >
@@ -71,7 +71,7 @@ export const Lightbox = ({ images, activeIndex, onClose, onSetIndex }) => {
         onClick={(e) => e.stopPropagation()}
       />
       <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-text-light text-5xl leading-none hover:text-accent-strong transition-colors p-2"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-text-light text-5xl leading-none hover:text-accent transition-colors p-2"
         onClick={(e) => { e.stopPropagation(); next(); }}
         aria-label={t('gallery.next', 'Next')}
       >

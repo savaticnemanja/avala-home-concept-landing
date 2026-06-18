@@ -115,7 +115,7 @@ export const Showcase = () => {
             key={i}
             className={`flex items-center gap-4 group p-4 rounded-[2px] border backdrop-blur-sm transition-all duration-300 hover:border-accent hover:bg-white/[0.1] hover:-translate-y-0.5 ${active ? 'border-accent bg-white/[0.1] -translate-y-0.5' : 'border-white/15 bg-white/[0.06]'}`}
           >
-            <span className={`flex-shrink-0 w-11 h-11 flex items-center justify-center border rounded-[2px] transition-all duration-300 group-hover:border-accent group-hover:bg-accent-strong group-hover:text-white ${active ? 'border-accent bg-accent-strong text-white' : 'border-white/25 text-accent-strong'}`}>
+            <span className={`flex-shrink-0 w-11 h-11 flex items-center justify-center border rounded-[2px] transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-white ${active ? 'border-accent bg-accent text-white' : 'border-white/25 text-accent'}`}>
               <Icon className="w-5 h-5" />
             </span>
             <span
@@ -131,7 +131,7 @@ export const Showcase = () => {
 
       <Link
         href={href('/contact')}
-        className={`btn-primary group mt-12 md:mt-16 transition-transform duration-500 ${activeCount >= benefits.length ? 'cta-pulse' : ''}`}
+        className={`btn-primary group mt-12 md:mt-16 transition-transform duration-500 ${activeCount >= Math.ceil(benefits.length * 0.6) ? 'cta-pulse' : ''}`}
       >
         {t('showcase.requestOffer')}
         <span className="btn-arrow"><svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4"><path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd"/></svg></span>

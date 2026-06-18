@@ -29,7 +29,7 @@ const ProjectCard = ({ project, t, href }) => (
       <span
         className="absolute top-4 left-4 px-3 py-1 text-[0.68rem] font-medium tracking-[0.15em] uppercase"
         style={{
-          backgroundColor: 'rgba(138,101,38,0.95)',
+          backgroundColor: 'rgba(196,151,90,0.92)',
           color: '#fff',
           fontFamily: 'var(--font-body)',
           backdropFilter: 'blur(4px)',
@@ -57,7 +57,7 @@ const ProjectCard = ({ project, t, href }) => (
         </div>
         <div className="text-right flex-shrink-0">
           <span
-            className="text-accent-strong"
+            className="text-accent"
             style={{ fontFamily: 'var(--font-heading)', fontSize: '2.4rem', fontWeight: 400, lineHeight: 1 }}
           >
             {project.area}
@@ -68,17 +68,17 @@ const ProjectCard = ({ project, t, href }) => (
 
       <div className="flex gap-5 py-4 border-y border-border">
         <div className="flex items-center gap-2 text-sm font-light text-text-muted">
-          <LuBed className="w-4 h-4 text-accent-strong" />
+          <LuBed className="w-4 h-4 text-accent" />
           {project.beds} {t('projectShowcase.rooms')}
         </div>
         {project.terrace && (
           <div className="flex items-center gap-2 text-sm font-light text-text-muted">
-            <LuSunrise className="w-4 h-4 text-accent-strong" />
+            <LuSunrise className="w-4 h-4 text-accent" />
             {t('projectShowcase.terrace')} {project.terrace}
           </div>
         )}
         <div className="flex items-center gap-2 text-sm font-light text-text-muted">
-          <LuMaximize2 className="w-4 h-4 text-accent-strong" />
+          <LuMaximize2 className="w-4 h-4 text-accent" />
           {project.area} m²
         </div>
       </div>
@@ -94,7 +94,7 @@ const ProjectCard = ({ project, t, href }) => (
 
       <Link
         href={href(project.link)}
-        className="flex items-center justify-between text-sm font-medium text-accent-strong group mt-1"
+        className="flex items-center justify-between text-sm font-medium text-accent group mt-1"
         style={{ fontFamily: 'var(--font-body)', letterSpacing: '0.05em' }}
       >
         {t('projectShowcase.detailSpecs')}
@@ -134,7 +134,7 @@ export const ProjectShowcase = () => {
         >
           {t('projectShowcase.scrollHint')}
         </span>
-        <LuChevronsRight className="w-5 h-5 text-accent-strong scroll-hint-x" />
+        <LuChevronsRight className="w-5 h-5 text-accent scroll-hint-x" />
       </div>
     </div>
 

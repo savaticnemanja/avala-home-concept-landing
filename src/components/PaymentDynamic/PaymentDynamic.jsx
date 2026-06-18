@@ -84,14 +84,14 @@ export const PaymentDynamic = () => {
               >
                 {number}
               </span>
-              <span className={`w-12 h-12 flex items-center justify-center border rounded-full transition-all duration-300 group-hover:border-accent group-hover:text-accent-strong ${active ? 'border-accent text-accent-strong' : 'border-border text-text-muted'}`}>
+              <span className={`w-12 h-12 flex items-center justify-center border rounded-full transition-all duration-300 group-hover:border-accent group-hover:text-accent ${active ? 'border-accent text-accent' : 'border-border text-text-muted'}`}>
                 <Icon className="w-5 h-5" />
               </span>
             </div>
 
             <div>
               <p
-                className="text-accent-strong"
+                className="text-accent"
                 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.8rem', fontWeight: 400, lineHeight: 1 }}
               >
                 {amount}

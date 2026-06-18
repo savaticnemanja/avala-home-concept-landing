@@ -60,7 +60,7 @@ export default async function LocaleLayout({ children, params }) {
       />
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-3 focus:left-3 focus:bg-bg focus:text-text focus:px-4 focus:py-2 focus:border focus:border-accent-strong focus:rounded-[2px]"
+        className="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-3 focus:left-3 focus:bg-bg focus:text-text focus:px-4 focus:py-2 focus:border focus:border-accent focus:rounded-[2px]"
       >
         {dict.nav.skipToContent}
       </a>

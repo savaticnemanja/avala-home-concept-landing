@@ -77,7 +77,7 @@ export const Slider = () => {
         style={{ animation: 'fade-up 0.8s ease both' }}
       >
         <p
-          className="text-accent-strong text-[0.7rem] font-medium tracking-[0.25em] uppercase mb-5"
+          className="text-accent text-[0.7rem] font-medium tracking-[0.25em] uppercase mb-5"
           style={{ fontFamily: 'var(--font-body)' }}
         >
           {t('slider.eyebrow')}

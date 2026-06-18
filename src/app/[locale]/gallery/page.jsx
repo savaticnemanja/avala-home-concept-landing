@@ -55,7 +55,7 @@ export default function GalleryPage() {
                 className={[
                   'flex-1 py-2.5 px-4 text-sm transition-colors duration-150',
                   activeTab === tab.key
-                    ? 'bg-accent-strong text-white'
+                    ? 'bg-accent text-white'
                     : 'text-text-muted hover:text-text',
                 ].join(' ')}
               >

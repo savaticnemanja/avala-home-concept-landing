@@ -59,7 +59,7 @@ export default async function AboutUsPage({ params }) {
             {a.stats.map(({ value, label }) => (
               <div key={label} className="flex flex-col items-center justify-center py-6 md:py-10 px-2 md:px-4 text-center">
                 <span
-                  className="text-accent-strong"
+                  className="text-accent"
                   style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 400, lineHeight: 1 }}
                 >
                   {value}
@@ -101,9 +101,9 @@ export default async function AboutUsPage({ params }) {
                   className="object-contain"
                 />
                 <div className="flex flex-col gap-1 text-sm font-light text-text-muted">
-                  <p>{a.emailLabel} <a href={`mailto:${investor.email}`} className="text-accent-strong hover:text-accent-strong transition-colors">{investor.email}</a></p>
+                  <p>{a.emailLabel} <a href={`mailto:${investor.email}`} className="text-accent hover:text-accent transition-colors">{investor.email}</a></p>
                   <a href={investor.website} target="_blank" rel="noopener noreferrer"
-                     className="text-accent-strong hover:text-accent-strong transition-colors">
+                     className="text-accent hover:text-accent transition-colors">
                     {a.website}
                   </a>
                 </div>
