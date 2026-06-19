@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.git
+.claude
+*.log
+prisma/dev.db
+prisma/dev.db-journal
+public/uploads
+.env
+.DS_Store
+README.md
+lighthouse*.json
+lighthouse-report.md

@@ -1,0 +1,129 @@
+// Prisma schema for Avala Home Concept admin-managed content.
+// SQLite database; per-locale text uses explicit columns (sr/en/ru/de).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model GalleryCategory {
+  id     Int    @id @default(autoincrement())
+  slug   String @unique
+  order  Int    @default(0)
+  nameSr String
+  nameEn String @default("")
+  nameRu String @default("")
+  nameDe String @default("")
+
+  images GalleryImage[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GalleryImage {
+  id         Int             @id @default(autoincrement())
+  category   GalleryCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId Int
+  order      Int             @default(0)
+  filename   String
+  width      Int             @default(0)
+  height     Int             @default(0)
+  captionSr  String          @default("")
+  captionEn  String          @default("")
+  captionRu  String          @default("")
+  captionDe  String          @default("")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categoryId])
+}
+
+model Project {
+  id    Int    @id @default(autoincrement())
+  slug  String @unique
+  order Int    @default(0)
+
+  titleSr String
+  titleEn String @default("")
+  titleRu String @default("")
+  titleDe String @default("")
+
+  subtitleSr String @default("")
+  subtitleEn String @default("")
+  subtitleRu String @default("")
+  subtitleDe String @default("")
+
+  badgeSr String @default("")
+  badgeEn String @default("")
+  badgeRu String @default("")
+  badgeDe String @default("")
+
+  descriptionSr String @default("")
+  descriptionEn String @default("")
+  descriptionRu String @default("")
+  descriptionDe String @default("")
+
+  areaLabel     String  @default("")
+  totalAreaM2   Float?
+  sitePlanTop   String?
+  sitePlanLeft  String?
+  coverFilename String?
+
+  images     ProjectImage[]
+  highlights ProjectHighlight[]
+  rooms      ProjectRoom[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ProjectImage {
+  id        Int     @id @default(autoincrement())
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId Int
+  order     Int     @default(0)
+  filename  String
+  width     Int     @default(0)
+  height    Int     @default(0)
+  captionSr String  @default("")
+  captionEn String  @default("")
+  captionRu String  @default("")
+  captionDe String  @default("")
+
+  @@index([projectId])
+}
+
+model ProjectHighlight {
+  id        Int     @id @default(autoincrement())
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId Int
+  order     Int     @default(0)
+  icon      String  @default("LuDot")
+  value     String  @default("")
+  labelSr   String
+  labelEn   String  @default("")
+  labelRu   String  @default("")
+  labelDe   String  @default("")
+
+  @@index([projectId])
+}
+
+model ProjectRoom {
+  id        Int     @id @default(autoincrement())
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId Int
+  order     Int     @default(0)
+  area      String  @default("")
+  nameSr    String
+  nameEn    String  @default("")
+  nameRu    String  @default("")
+  nameDe    String  @default("")
+
+  @@index([projectId])
+}

@@ -1,9 +1,16 @@
 'use client';
 import { useCallback, useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { LuArrowUpRight, LuBed, LuMaximize2, LuSunrise, LuX, LuZoomIn, LuPhone } from 'react-icons/lu';
+import * as LuIcons from 'react-icons/lu';
+import { LuArrowUpRight, LuX, LuZoomIn, LuPhone } from 'react-icons/lu';
 import { useI18n } from '@/i18n/I18nProvider';
+import { imageUrl } from '@/lib/imageUrl';
+import { pick } from '@/lib/localize';
+
+const Hl = ({ name, className }) => {
+  const Cmp = LuIcons[name] ?? LuIcons.LuDot;
+  return <Cmp className={className} />;
+};
 
 const ZoomViewer = ({ images, index, onClose, onSetIndex }) => {
   const prev = useCallback(
@@ -27,7 +34,6 @@ const ZoomViewer = ({ images, index, onClose, onSetIndex }) => {
 
   if (index === null) return null;
   const { src, alt } = images[index];
-  const imgSrc = typeof src === 'string' ? src : src.src;
 
   return (
     <div
@@ -50,7 +56,7 @@ const ZoomViewer = ({ images, index, onClose, onSetIndex }) => {
       </button>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={imgSrc}
+        src={src}
         alt={alt}
         className="max-h-[90vh] max-w-[90vw] object-contain rounded-[4px]"
         onClick={(e) => e.stopPropagation()}
@@ -67,7 +73,7 @@ const ZoomViewer = ({ images, index, onClose, onSetIndex }) => {
 };
 
 export const ProjectDrawer = ({ project, onClose }) => {
-  const { t, dict, href } = useI18n();
+  const { t, locale, href } = useI18n();
   const [active, setActive] = useState(project);
   const [visible, setVisible] = useState(false);
   const [zoom, setZoom] = useState(null);
@@ -95,19 +101,26 @@ export const ProjectDrawer = ({ project, onClose }) => {
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose, zoom]);
 
-  const detail = active ? dict.projects[active.dictKey] : null;
-  const title = detail?.title ?? '';
-  const rooms = active?.netAreas
-    ? detail.rooms.map((name, i) => ({ name, area: active.netAreas[i] }))
-    : null;
+  const title = active ? pick(active, 'title', locale) : '';
+  const subtitle = active ? pick(active, 'subtitle', locale) : '';
+  const badge = active ? pick(active, 'badge', locale) : '';
+  const description = active ? pick(active, 'description', locale) : '';
+  const highlights = active?.highlights ?? [];
+  const rooms = active?.rooms ?? [];
 
-  const zoomImages = active
-    ? [
-        { src: active.heroImage, alt: title },
-        { src: active.planImage, alt: `${title} — ${t('offer.drawer.plan')}` },
-        ...active.renderImages.map((src, i) => ({ src, alt: `${title} ${i + 1}` })),
-      ]
+  // Ordered images (cover first), mapped to viewer entries.
+  const orderedImages = active
+    ? [...active.images].sort((a, b) => {
+        if (a.filename === active.coverFilename) return -1;
+        if (b.filename === active.coverFilename) return 1;
+        return a.order - b.order;
+      })
     : [];
+
+  const zoomImages = orderedImages.map((im, i) => ({
+    src: imageUrl(im.filename),
+    alt: pick(im, 'caption', locale) || `${title} ${i + 1}`,
+  }));
 
   return (
     <>
@@ -151,95 +164,94 @@ export const ProjectDrawer = ({ project, onClose }) => {
 
             <div className="flex-1 min-h-0 flex flex-col">
 
-              <div className="flex flex-col gap-3 px-2 md:px-6 py-4 flex-shrink-0">
-                <button
-                  onClick={() => setZoom(activeImg)}
-                  className="relative w-full h-64 md:h-80 rounded-[4px] overflow-hidden border border-border group"
-                  aria-label={zoomImages[activeImg]?.alt}
-                >
-                  <Image
-                    src={zoomImages[activeImg].src}
-                    alt={zoomImages[activeImg].alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    priority
-                  />
-                  <span
-                    className="absolute top-3 right-3 px-3 py-1 text-[0.68rem] font-medium tracking-[0.15em] uppercase text-white"
-                    style={{ backgroundColor: 'rgba(196,151,90,0.92)', fontFamily: 'var(--font-body)', backdropFilter: 'blur(4px)' }}
+              {zoomImages.length > 0 && (
+                <div className="flex flex-col gap-3 px-2 md:px-6 py-4 flex-shrink-0">
+                  <button
+                    onClick={() => setZoom(activeImg)}
+                    className="relative w-full h-64 md:h-80 rounded-[4px] overflow-hidden border border-border group"
+                    aria-label={zoomImages[activeImg]?.alt}
                   >
-                    {t(`offer.cards.${active.cardIndex}.badge`)}
-                  </span>
-                  <span className="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-bg-dark/55 text-white backdrop-blur-sm transition-colors duration-200 group-hover:bg-accent">
-                    <LuZoomIn className="w-4 h-4" />
-                  </span>
-                </button>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={zoomImages[activeImg].src}
+                      alt={zoomImages[activeImg].alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {badge && (
+                      <span
+                        className="absolute top-3 right-3 px-3 py-1 text-[0.68rem] font-medium tracking-[0.15em] uppercase text-white"
+                        style={{ backgroundColor: 'rgba(196,151,90,0.92)', fontFamily: 'var(--font-body)', backdropFilter: 'blur(4px)' }}
+                      >
+                        {badge}
+                      </span>
+                    )}
+                    <span className="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-bg-dark/55 text-white backdrop-blur-sm transition-colors duration-200 group-hover:bg-accent">
+                      <LuZoomIn className="w-4 h-4" />
+                    </span>
+                  </button>
 
-                <div
-                  className="flex gap-2 overflow-x-auto"
-                  style={{ scrollSnapType: 'x mandatory' }}
-                >
-                  {zoomImages.map((im, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveImg(i)}
-                      className={`relative flex-shrink-0 h-14 w-20 md:h-16 md:w-24 rounded-[3px] overflow-hidden border-2 transition-all duration-200 ${i === activeImg ? 'border-accent' : 'border-transparent opacity-60 hover:opacity-100'}`}
-                      style={{ scrollSnapAlign: 'start' }}
-                      aria-label={im.alt}
+                  <div className="flex gap-2 overflow-x-auto" style={{ scrollSnapType: 'x mandatory' }}>
+                    {zoomImages.map((im, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveImg(i)}
+                        className={`relative flex-shrink-0 h-14 w-20 md:h-16 md:w-24 rounded-[3px] overflow-hidden border-2 transition-all duration-200 ${i === activeImg ? 'border-accent' : 'border-transparent opacity-60 hover:opacity-100'}`}
+                        style={{ scrollSnapAlign: 'start' }}
+                        aria-label={im.alt}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={im.src} alt="" className="w-full h-full object-cover" loading="lazy" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {(subtitle || highlights.length > 0) && (
+                <div className="flex items-center gap-5 px-2 md:px-6 py-4 border-y border-border overflow-x-auto flex-shrink-0">
+                  {subtitle && (
+                    <p
+                      className="text-text-muted text-[0.7rem] font-medium tracking-[0.15em] uppercase whitespace-nowrap flex-shrink-0"
+                      style={{ fontFamily: 'var(--font-body)' }}
                     >
-                      <Image src={im.src} alt="" fill className="object-cover" loading="lazy" />
-                    </button>
+                      {subtitle}
+                    </p>
+                  )}
+                  {highlights.map((h) => (
+                    <span key={h.id} className="flex items-center gap-2 text-sm font-light text-text-muted whitespace-nowrap flex-shrink-0">
+                      <Hl name={h.icon} className="w-4 h-4 text-accent" />
+                      {pick(h, 'label', locale)}{h.value ? ` ${h.value}` : ''}
+                    </span>
                   ))}
                 </div>
-              </div>
-
-              <div className="flex items-center gap-5 px-2 md:px-6 py-4 border-y border-border overflow-x-auto flex-shrink-0">
-                <p
-                  className="text-text-muted text-[0.7rem] font-medium tracking-[0.15em] uppercase whitespace-nowrap flex-shrink-0"
-                  style={{ fontFamily: 'var(--font-body)' }}
-                >
-                  {t(`offer.cards.${active.cardIndex}.subtitle`)}
-                </p>
-                <span className="flex items-center gap-2 text-sm font-light text-text-muted whitespace-nowrap flex-shrink-0">
-                  <LuBed className="w-4 h-4 text-accent" />
-                  {active.beds} {t('offer.rooms')}
-                </span>
-                {active.terrace && (
-                  <span className="flex items-center gap-2 text-sm font-light text-text-muted whitespace-nowrap flex-shrink-0">
-                    <LuSunrise className="w-4 h-4 text-accent" />
-                    {t('offer.terrace')} {active.terrace}
-                  </span>
-                )}
-                <span className="flex items-center gap-2 text-sm font-light text-text-muted whitespace-nowrap flex-shrink-0">
-                  <LuMaximize2 className="w-4 h-4 text-accent" />
-                  {active.area} m²
-                </span>
-              </div>
+              )}
 
               <div className="flex-1 min-h-0 overflow-y-auto px-2 md:px-6 py-4 flex flex-col gap-6">
-                {detail?.description && (
-                  <p className="text-text-muted font-light leading-relaxed">{detail.description}</p>
+                {description && (
+                  <p className="text-text-muted font-light leading-relaxed whitespace-pre-line">{description}</p>
                 )}
 
-                {rooms && (
+                {rooms.length > 0 && (
                   <div className="flex flex-col gap-3">
                     <p className="text-[0.72rem] font-medium tracking-[0.18em] uppercase text-accent">
                       {t('projectPage.netSurfaceLabel')}
                     </p>
                     <table className="w-full text-sm border-collapse">
                       <tbody>
-                        {rooms.map((row, i) => (
-                          <tr key={i} className="border-b border-border/50 last:border-0">
-                            <td className="py-2 font-light text-text">{row.name}</td>
+                        {rooms.map((row) => (
+                          <tr key={row.id} className="border-b border-border/50 last:border-0">
+                            <td className="py-2 font-light text-text">{pick(row, 'name', locale)}</td>
                             <td className="py-2 text-right text-text-muted font-light">{row.area}</td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
-                    <div className="pt-3 border-t border-border flex justify-between items-center">
-                      <span className="text-sm font-medium text-text">{t('projectPage.total')}</span>
-                      <span className="text-accent font-medium">{active.surfaceArea} m²</span>
-                    </div>
+                    {active.totalAreaM2 != null && (
+                      <div className="pt-3 border-t border-border flex justify-between items-center">
+                        <span className="text-sm font-medium text-text">{t('projectPage.total')}</span>
+                        <span className="text-accent font-medium">{active.totalAreaM2} m²</span>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

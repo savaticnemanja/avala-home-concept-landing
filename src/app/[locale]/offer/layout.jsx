@@ -1,7 +1,10 @@
-import { getDictionary } from '@/i18n/getDictionary';
 import { buildPageMetadata } from '@/i18n/seo';
 import { SITE_URL, withLocale } from '@/i18n/config';
-import { projects } from '@/lib/projects';
+import { prisma } from '@/lib/db';
+import { pick } from '@/lib/localize';
+
+// Queries the DB for JSON-LD, so render on demand (DB may not exist at build).
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -10,26 +13,33 @@ export async function generateMetadata({ params }) {
 
 export default async function Layout({ children, params }) {
   const { locale } = await params;
-  const dict = await getDictionary(locale);
   const baseUrl = `${SITE_URL}${withLocale(locale, '/offer')}/`;
+
+  const projects = await prisma.project.findMany({
+    orderBy: { order: 'asc' },
+    include: { highlights: true },
+  });
 
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    itemListElement: projects.map((p, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      item: {
-        '@type': 'House',
-        name: dict.projects[p.dictKey].title,
-        description: dict.projects[p.dictKey].description,
-        numberOfRooms: p.beds,
-        url: `${baseUrl}#${p.key}`,
-        ...(p.surfaceArea
-          ? { floorSize: { '@type': 'QuantitativeValue', value: p.surfaceArea, unitCode: 'MTK' } }
-          : {}),
-      },
-    })),
+    itemListElement: projects.map((p, i) => {
+      const beds = p.highlights.find((h) => h.icon === 'LuBed')?.value;
+      return {
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'House',
+          name: pick(p, 'title', locale),
+          description: pick(p, 'description', locale),
+          ...(beds ? { numberOfRooms: Number(beds) || beds } : {}),
+          url: `${baseUrl}#${p.slug}`,
+          ...(p.totalAreaM2
+            ? { floorSize: { '@type': 'QuantitativeValue', value: p.totalAreaM2, unitCode: 'MTK' } }
+            : {}),
+        },
+      };
+    }),
   };
 
   return (

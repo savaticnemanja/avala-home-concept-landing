@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:/data/app.db
+      - UPLOAD_DIR=/app/public/uploads
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-changeme}
+      - SESSION_SECRET=${SESSION_SECRET:?set SESSION_SECRET in .env}
+    volumes:
+      - db-data:/data
+      - uploads-data:/app/public/uploads
+    restart: unless-stopped
+
+volumes:
+  db-data:
+  uploads-data:

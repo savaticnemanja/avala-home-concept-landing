@@ -28,6 +28,17 @@ out
 # Claude Code
 .claude/
 
+# Env
+.env
+
+# Prisma / SQLite
+/prisma/*.db
+/prisma/*.db-journal
+/data/
+
+# Runtime uploads
+/public/uploads/
+
 # Generated reports
 lighthouse.json
 lighouse.json

@@ -14,6 +14,10 @@ import {
 } from '@/components';
 import { getDictionary } from '@/i18n/getDictionary';
 import { withLocale } from '@/i18n/config';
+import { prisma } from '@/lib/db';
+
+// Reads projects from the DB for the showcase, so render on demand.
+export const dynamic = 'force-dynamic';
 
 const ArrowIcon = () => (
   <span className="btn-arrow"><svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4"><path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd"/></svg></span>
@@ -23,11 +27,21 @@ export default async function HomePage({ params }) {
   const { locale } = await params;
   const dict = await getDictionary(locale);
 
+  // First 3 projects in the same order as the /offer page.
+  const projects = await prisma.project.findMany({
+    orderBy: { order: 'asc' },
+    take: 3,
+    include: {
+      images: { orderBy: { order: 'asc' } },
+      highlights: { orderBy: { order: 'asc' } },
+    },
+  });
+
   return (
     <>
       <Slider />
-          
-      <ProjectShowcase />
+
+      <ProjectShowcase projects={projects} />
 
       <Showcase />
 
