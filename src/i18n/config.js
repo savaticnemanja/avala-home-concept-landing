@@ -14,8 +14,7 @@ export const localeNames = {
   ru: 'Русский',
   de: 'Deutsch',
 };
-// TODO: Change this to your production URL when deploying
-export const SITE_URL = 'https://demo.nemanjas.dev';
+export const SITE_URL = 'https://avalahomeconcept.com';
 
 export const isLocale = (value) => locales.includes(value);
 

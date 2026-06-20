@@ -15,17 +15,26 @@ const Hl = ({ name, className }) => {
   return <Cmp className={className} />;
 };
 
+// Cards/pins are real links to the project page (crawlable, OG-shareable),
+// but a plain click opens the drawer instead of navigating. Modifier- or
+// middle-clicks fall through so "open in new tab" still works.
+const openOrNavigate = (onOpen) => (e) => {
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+  e.preventDefault();
+  onOpen();
+};
+
 const coverOf = (project) => {
   const cover = project.images.find((i) => i.filename === project.coverFilename);
   return (cover ?? project.images[0])?.filename ?? null;
 };
 
-const SitePlanPin = ({ project, title, onOpen }) => {
+const SitePlanPin = ({ project, title, to, onOpen }) => {
   if (!project.sitePlanTop || !project.sitePlanLeft) return null;
   return (
-    <button
-      type="button"
-      onClick={onOpen}
+    <Link
+      href={to}
+      onClick={openOrNavigate(onOpen)}
       aria-label={title}
       className="absolute group/pin -translate-x-1/2 -translate-y-1/2 z-10"
       style={{ top: project.sitePlanTop, left: project.sitePlanLeft }}
@@ -41,24 +50,26 @@ const SitePlanPin = ({ project, title, onOpen }) => {
           <span className="block text-sm leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             {title}
           </span>
-          <span className="block text-accent text-[0.72rem] font-medium tracking-[0.05em]" style={{ fontFamily: 'var(--font-body)' }}>
-            {project.areaLabel} m²
-          </span>
+          {project.totalAreaM2 != null && (
+            <span className="block text-accent text-[0.72rem] font-medium tracking-[0.05em]" style={{ fontFamily: 'var(--font-body)' }}>
+              {project.totalAreaM2} m²
+            </span>
+          )}
         </span>
         <span className="block w-2.5 h-2.5 bg-bg-dark rotate-45 mx-auto -mt-1.5" />
       </span>
-    </button>
+    </Link>
   );
 };
 
-const OfferCard = ({ project, locale, t, onOpen }) => {
+const OfferCard = ({ project, locale, t, to, onOpen }) => {
   const title = pick(project, 'title', locale);
   const subtitle = pick(project, 'subtitle', locale);
   const badge = pick(project, 'badge', locale);
   const cover = coverOf(project);
 
   return (
-    <button type="button" onClick={onOpen} className="card group flex flex-col text-left w-full" aria-label={title}>
+    <Link href={to} onClick={openOrNavigate(onOpen)} className="card group flex flex-col text-left w-full" aria-label={title}>
       <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
         {cover && (
           // eslint-disable-next-line @next/next/no-img-element
@@ -91,10 +102,10 @@ const OfferCard = ({ project, locale, t, onOpen }) => {
               {title}
             </h3>
           </div>
-          {project.areaLabel && (
+          {project.totalAreaM2 != null && (
             <div className="text-right flex-shrink-0">
               <span className="text-accent" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.4rem', fontWeight: 400, lineHeight: 1 }}>
-                {project.areaLabel}
+                {project.totalAreaM2}
               </span>
               <span className="text-text-muted text-sm block">m²</span>
             </div>
@@ -119,7 +130,7 @@ const OfferCard = ({ project, locale, t, onOpen }) => {
           </span>
         </span>
       </div>
-    </button>
+    </Link>
   );
 };
 
@@ -178,7 +189,7 @@ export default function OfferClient({ projects }) {
               <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/30 via-transparent to-bg-dark/10 pointer-events-none" />
 
               {projects.map((p) => (
-                <SitePlanPin key={p.id} project={p} title={pick(p, 'title', locale)} onOpen={() => openProject(p)} />
+                <SitePlanPin key={p.id} project={p} title={pick(p, 'title', locale)} to={href(`/offer/${p.slug}`)} onOpen={() => openProject(p)} />
               ))}
 
               <span className="sm:hidden absolute bottom-3 left-3 flex items-center gap-2 bg-bg-dark/80 backdrop-blur-sm text-text-light text-[0.72rem] font-light px-3 py-1.5 rounded-full">
@@ -190,7 +201,7 @@ export default function OfferClient({ projects }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 md:mt-12">
             {projects.map((p) => (
-              <OfferCard key={p.id} project={p} locale={locale} t={t} onOpen={() => openProject(p)} />
+              <OfferCard key={p.id} project={p} locale={locale} t={t} to={href(`/offer/${p.slug}`)} onOpen={() => openProject(p)} />
             ))}
           </div>
         </div>
