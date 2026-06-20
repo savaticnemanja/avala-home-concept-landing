@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { LuPhone, LuMessageSquare, LuMessageCircle, LuMail, LuMapPin } from 'react-icons/lu';
 import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
-import logoWhite from '@/assets/brand/logo-old.webp';
+import logoLight from '@/assets/brand/logo-light.webp';
 import { useI18n } from '@/i18n/I18nProvider';
 
 const socials = [
@@ -37,7 +37,7 @@ export const Footer = () => {
 
         <div className="flex flex-col gap-5 items-center text-center md:items-start md:text-left">
           <Link href={href('/')}>
-            <Image src={logoWhite} alt="Avala Home Concept logo" width={225} height={40} />
+            <Image src={logoLight} alt="Avala Home Concept logo" width={225} height={40} />
           </Link>
           <p className="text-sm text-text-light/55 font-light leading-relaxed max-w-xs mx-auto md:mx-0">
             {t('footer.tagline')}

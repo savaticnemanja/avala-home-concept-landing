@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { LuArrowUpRight, LuChevronDown, LuPhone, LuGlobe, LuMenu, LuX } from 'react-icons/lu';
-import logo from '@/assets/brand/logo-old.webp';
+import logo from '@/assets/brand/logo-dark.webp';
 import { useI18n } from '@/i18n/I18nProvider';
 import { locales, localeNames } from '@/i18n/config';
 
