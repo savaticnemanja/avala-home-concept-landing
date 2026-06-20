@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as LuIcons from 'react-icons/lu';
-import { LuArrowRight } from 'react-icons/lu';
+import { LuArrowRight, LuMap, LuList } from 'react-icons/lu';
 import { ProjectDrawer } from '@/components';
 import { useI18n } from '@/i18n/I18nProvider';
 import { imageUrl } from '@/lib/imageUrl';
@@ -182,12 +182,30 @@ const MapPanel = ({ projects, locale, href, activeId, openProject }) => (
   </div>
 );
 
+// --- Shared IO setup ---
+const setupIO = (root, onActive) => {
+  if (!root) return () => {};
+  const obs = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (visible.length) onActive(Number(visible[0].target.dataset.projectId));
+    },
+    { root, threshold: [0.3, 0.5, 0.7] },
+  );
+  root.querySelectorAll('[data-project-id]').forEach((el) => obs.observe(el));
+  return () => obs.disconnect();
+};
+
 // --- Main ---
 export default function OfferClient({ projects }) {
   const { t, locale, href } = useI18n();
   const [selected, setSelected] = useState(null);
   const [activeId, setActiveId] = useState(projects[0]?.id ?? null);
+  const [mobileView, setMobileView] = useState('map');
   const catalogRef = useRef(null);
+  const mobileCatalogRef = useRef(null);
   const basePath = href('/offer');
 
   useEffect(() => {
@@ -216,22 +234,14 @@ export default function OfferClient({ projects }) {
     }
   };
 
-  // Scroll-based active sync
+  // Desktop catalog scroll sync
+  useEffect(() => setupIO(catalogRef.current, setActiveId), [projects]);
+
+  // Mobile list scroll sync (re-runs when list tab becomes active)
   useEffect(() => {
-    const root = catalogRef.current;
-    if (!root) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible.length) setActiveId(Number(visible[0].target.dataset.projectId));
-      },
-      { root, threshold: [0.3, 0.5, 0.7] },
-    );
-    root.querySelectorAll('[data-project-id]').forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, [projects]);
+    if (mobileView !== 'list') return;
+    return setupIO(mobileCatalogRef.current, setActiveId);
+  }, [projects, mobileView]);
 
   const catalogCards = projects.map((p) => (
     <CatalogCard
@@ -246,14 +256,57 @@ export default function OfferClient({ projects }) {
     />
   ));
 
+  const mapPanel = (
+    <MapPanel
+      projects={projects}
+      locale={locale}
+      href={href}
+      activeId={activeId}
+      openProject={openProject}
+    />
+  );
+
   return (
     <>
-      {/* Mobile: stacked */}
-      <div className="lg:hidden flex flex-col pt-20">
-        <div className="relative w-full" style={{ height: 'min(45vw, 320px)' }}>
-          <MapPanel projects={projects} locale={locale} href={href} activeId={activeId} openProject={openProject} />
+      {/* Mobile: full-height with map/list toggle */}
+      <div
+        className="lg:hidden flex flex-col"
+        style={{ marginTop: '5rem', height: 'calc(100svh - 5rem)' }}
+      >
+        {/* Content area */}
+        <div className="flex-1 relative overflow-hidden">
+          {mobileView === 'map' ? (
+            <div className="absolute inset-0">{mapPanel}</div>
+          ) : (
+            <div ref={mobileCatalogRef} className="absolute inset-0 overflow-y-auto bg-bg">
+              {catalogCards}
+            </div>
+          )}
         </div>
-        <div>{catalogCards}</div>
+
+        {/* Bottom tab bar */}
+        <div className="flex-shrink-0 flex border-t border-border bg-bg" style={{ height: '3.25rem' }}>
+          <button
+            type="button"
+            onClick={() => setMobileView('map')}
+            className={`flex-1 flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-150 ${
+              mobileView === 'map' ? 'text-accent border-t-2 border-accent -mt-px' : 'text-text-muted'
+            }`}
+          >
+            <LuMap className="w-4 h-4" />
+            Mapa
+          </button>
+          <button
+            type="button"
+            onClick={() => setMobileView('list')}
+            className={`flex-1 flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-150 ${
+              mobileView === 'list' ? 'text-accent border-t-2 border-accent -mt-px' : 'text-text-muted'
+            }`}
+          >
+            <LuList className="w-4 h-4" />
+            Lista
+          </button>
+        </div>
       </div>
 
       {/* Desktop: fixed split */}
@@ -265,7 +318,7 @@ export default function OfferClient({ projects }) {
           {catalogCards}
         </div>
         <div className="flex-1 relative">
-          <MapPanel projects={projects} locale={locale} href={href} activeId={activeId} openProject={openProject} />
+          {mapPanel}
         </div>
       </div>
 
