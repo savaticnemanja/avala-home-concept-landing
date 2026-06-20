@@ -1,5 +1,5 @@
 import { getSession } from '@/lib/auth';
-import { AdminNav } from './AdminNav';
+import { AdminShell } from './AdminShell';
 
 export const metadata = {
   title: 'Admin — Avala Home Concept',
@@ -17,10 +17,5 @@ export default async function AdminLayout({ children }) {
     return <div className="min-h-screen bg-bg">{children}</div>;
   }
 
-  return (
-    <div className="min-h-screen bg-bg flex flex-col md:flex-row">
-      <AdminNav />
-      <main className="flex-1 min-w-0 p-4 md:p-8 max-w-5xl">{children}</main>
-    </div>
-  );
+  return <AdminShell>{children}</AdminShell>;
 }

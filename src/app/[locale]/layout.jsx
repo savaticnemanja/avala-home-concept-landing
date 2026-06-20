@@ -1,5 +1,7 @@
 import { Navigation } from '@/components/Navigation/Navigation';
 import { Footer } from '@/components/Footer/Footer';
+import { PageTracker } from '@/components/Analytics/PageTracker';
+import { ClickTracker } from '@/components/Analytics/ClickTracker';
 import { I18nProvider } from '@/i18n/I18nProvider';
 import { getDictionary } from '@/i18n/getDictionary';
 import { locales, SITE_URL } from '@/i18n/config';
@@ -54,6 +56,8 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <I18nProvider locale={locale} dictionary={dict}>
+      <PageTracker />
+      <ClickTracker />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

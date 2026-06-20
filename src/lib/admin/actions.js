@@ -145,7 +145,6 @@ export async function updateProject(formData) {
       ...localeFields(formData, 'subtitle'),
       ...localeFields(formData, 'badge'),
       ...localeFields(formData, 'description'),
-      areaLabel: (formData.get('areaLabel') ?? '').toString().trim(),
       totalAreaM2: formData.get('totalAreaM2') ? Number(formData.get('totalAreaM2')) : null,
       sitePlanTop: (formData.get('sitePlanTop') ?? '').toString().trim() || null,
       sitePlanLeft: (formData.get('sitePlanLeft') ?? '').toString().trim() || null,

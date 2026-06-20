@@ -69,7 +69,6 @@ model Project {
   descriptionRu String @default("")
   descriptionDe String @default("")
 
-  areaLabel     String  @default("")
   totalAreaM2   Float?
   sitePlanTop   String?
   sitePlanLeft  String?
@@ -126,4 +125,26 @@ model ProjectRoom {
   nameDe    String  @default("")
 
   @@index([projectId])
+}
+
+// Cookieless first-party analytics. Stores two kinds of events:
+//   type "visit" — name "" — one row per visitor per day (entry page kept).
+//   type "click" — name = tracked target — one row per visitor per target per day.
+// `visitorHash` is sha256(ip + ua + daily-rotating salt): no cookies, no PII, and
+// because it changes daily, the unique constraint below dedupes to "once per day".
+// That makes refreshes and repeat navigation free of charge.
+model PageView {
+  id          Int      @id @default(autoincrement())
+  type        String   @default("visit") // "visit" | "click"
+  name        String   @default("") // click target label; "" for visits
+  path        String   @default("")
+  locale      String   @default("")
+  referrer    String   @default("")
+  device      String   @default("") // "mobile" | "desktop"
+  visitorHash String   @default("")
+  createdAt   DateTime @default(now())
+
+  @@unique([visitorHash, type, name])
+  @@index([createdAt])
+  @@index([type])
 }

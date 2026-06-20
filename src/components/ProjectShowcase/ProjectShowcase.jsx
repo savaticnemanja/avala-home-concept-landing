@@ -67,13 +67,13 @@ const ProjectCard = ({ project, locale, t, href }) => {
               {title}
             </h3>
           </div>
-          {project.areaLabel && (
+          {project.totalAreaM2 != null && (
             <div className="text-right flex-shrink-0">
               <span
                 className="text-accent"
                 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.4rem', fontWeight: 400, lineHeight: 1 }}
               >
-                {project.areaLabel}
+                {project.totalAreaM2}
               </span>
               <span className="text-text-muted text-sm block">m²</span>
             </div>

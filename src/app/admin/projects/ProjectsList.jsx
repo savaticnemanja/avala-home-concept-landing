@@ -56,7 +56,7 @@ export function ProjectsList({ projects }) {
                     {p.titleSr || p.slug}
                   </p>
                   <p className="text-xs text-text-muted">
-                    {p.areaLabel ? `${p.areaLabel} m² · ` : ''}
+                    {p.totalAreaM2 != null ? `${p.totalAreaM2} m² · ` : ''}
                     {p._count.images} slika · {p._count.rooms} prostorija · {p._count.highlights} izdvojeno
                   </p>
                 </div>

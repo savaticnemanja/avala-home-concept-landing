@@ -1,11 +1,11 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import * as LuIcons from 'react-icons/lu';
 import { LuArrowLeft, LuTrash2, LuSave, LuPlus, LuStar, LuImage } from 'react-icons/lu';
 import { imageUrl } from '@/lib/imageUrl';
 import { HIGHLIGHT_ICONS } from '@/lib/admin/constants';
 import { LocaleFields } from '@/components/admin/LocaleFields';
+import { SitePlanEditor } from '@/components/admin/SitePlanEditor';
 import { ImageUploader } from '@/components/admin/ImageUploader';
 import { SubmitButton } from '@/components/admin/SubmitButton';
 import { Sortable, SortableItem, DragHandle } from '@/components/admin/Sortable';
@@ -40,11 +40,6 @@ const label = 'text-xs font-medium uppercase tracking-wide text-text-muted';
 
 const confirmSubmit = (msg) => (e) => {
   if (!confirm(msg)) e.preventDefault();
-};
-
-const Icon = ({ name, className }) => {
-  const Cmp = LuIcons[name] ?? LuIcons.LuDot;
-  return <Cmp className={className} />;
 };
 
 function Section({ title, desc, children, actions }) {
@@ -115,60 +110,57 @@ function ImageCard({ image, isCover }) {
 
 function HighlightRow({ highlight }) {
   return (
-    <SortableItem id={highlight.id} className={`${cardClass} p-3`}>
-      <form action={updateHighlight} className="flex flex-col gap-2">
-        <input type="hidden" name="id" value={highlight.id} />
-        <div className="flex items-center gap-2">
-          <DragHandle />
-          <span className="w-8 h-8 flex items-center justify-center rounded bg-accent/10 text-accent flex-shrink-0">
-            <Icon name={highlight.icon} className="w-4 h-4" />
-          </span>
-          <select name="icon" defaultValue={highlight.icon} className={`${input} max-w-[10rem]`}>
+    <SortableItem id={highlight.id} className={`${cardClass} p-2.5`}>
+      <div className="flex items-center gap-2">
+        <DragHandle />
+        <form action={updateHighlight} className="flex-1 min-w-0 flex items-center gap-2">
+          <input type="hidden" name="id" value={highlight.id} />
+          <select name="icon" defaultValue={highlight.icon} className={`${input} max-w-[6.5rem]`} aria-label="Ikonica">
             {HIGHLIGHT_ICONS.map((ic) => (
               <option key={ic} value={ic}>{ic.replace('Lu', '')}</option>
             ))}
           </select>
-          <input name="value" defaultValue={highlight.value} placeholder="Vrednost (npr. 139 m²)" className={input} />
-        </div>
-        <LocaleFields base="label" label="Naziv" values={highlight} required />
-        <div className="flex justify-end gap-2">
-          <SubmitButton className={btnAccent} pendingText="…">
-            <LuSave className="w-3.5 h-3.5" /> Sačuvaj
+          <input name="value" defaultValue={highlight.value} placeholder="139 m²" className={`${input} max-w-[6rem]`} />
+          <div className="flex-1 min-w-0">
+            <LocaleFields base="label" values={highlight} required placeholder="Naziv" />
+          </div>
+          <SubmitButton className={`${btnAccent} px-2.5`} pendingText="…" aria-label="Sačuvaj">
+            <LuSave className="w-3.5 h-3.5" />
           </SubmitButton>
-        </div>
-      </form>
-      <form action={deleteHighlight} onSubmit={confirmSubmit('Obrisati stavku?')} className="mt-2 flex justify-end">
-        <input type="hidden" name="id" value={highlight.id} />
-        <button type="submit" className={btnDanger}>
-          <LuTrash2 className="w-3.5 h-3.5" /> Obriši
-        </button>
-      </form>
+        </form>
+        <form action={deleteHighlight} onSubmit={confirmSubmit('Obrisati stavku?')}>
+          <input type="hidden" name="id" value={highlight.id} />
+          <button type="submit" aria-label="Obriši" className="p-1.5 text-text-muted hover:text-red-600 transition-colors">
+            <LuTrash2 className="w-4 h-4" />
+          </button>
+        </form>
+      </div>
     </SortableItem>
   );
 }
 
 function RoomRow({ room }) {
   return (
-    <SortableItem id={room.id} className={`${cardClass} p-3`}>
-      <form action={updateRoom} className="flex flex-col gap-2">
-        <input type="hidden" name="id" value={room.id} />
-        <div className="flex items-center gap-2">
-          <DragHandle />
-          <div className="flex-1">
-            <LocaleFields base="name" values={room} required placeholder="Naziv prostorije" />
+    <SortableItem id={room.id} className={`${cardClass} p-2.5`}>
+      <div className="flex items-center gap-2">
+        <DragHandle />
+        <form action={updateRoom} className="flex-1 min-w-0 flex items-center gap-2">
+          <input type="hidden" name="id" value={room.id} />
+          <div className="flex-1 min-w-0">
+            <LocaleFields base="name" values={room} required placeholder="Prostorija" />
           </div>
-          <input name="area" defaultValue={room.area} placeholder="12,00 m²" className={`${input} max-w-[8rem]`} />
-          <SubmitButton className={btnAccent} pendingText="…">
+          <input name="area" defaultValue={room.area} placeholder="m²" className={`${input} max-w-[6rem]`} />
+          <SubmitButton className={`${btnAccent} px-2.5`} pendingText="…" aria-label="Sačuvaj">
             <LuSave className="w-3.5 h-3.5" />
           </SubmitButton>
-        </div>
-      </form>
-      <form action={deleteRoom} onSubmit={confirmSubmit('Obrisati prostoriju?')} className="mt-2 flex justify-end">
-        <input type="hidden" name="id" value={room.id} />
-        <button type="submit" className="text-text-muted hover:text-red-600 text-xs inline-flex items-center gap-1">
-          <LuTrash2 className="w-3.5 h-3.5" /> Obriši
-        </button>
-      </form>
+        </form>
+        <form action={deleteRoom} onSubmit={confirmSubmit('Obrisati prostoriju?')}>
+          <input type="hidden" name="id" value={room.id} />
+          <button type="submit" aria-label="Obriši" className="p-1.5 text-text-muted hover:text-red-600 transition-colors">
+            <LuTrash2 className="w-4 h-4" />
+          </button>
+        </form>
+      </div>
     </SortableItem>
   );
 }
@@ -192,118 +184,111 @@ export function ProjectEditor({ project }) {
         {project.titleSr || project.slug}
       </h1>
 
-      {/* Main fields */}
-      <Section title="Osnovni podaci">
-        <form action={updateProject} className="flex flex-col gap-4">
-          <input type="hidden" name="id" value={project.id} />
-          <LocaleFields base="title" label="Naslov" values={project} required />
-          <LocaleFields base="subtitle" label="Podnaslov" values={project} />
-          <LocaleFields base="badge" label="Oznaka (badge)" values={project} />
-          <LocaleFields base="description" label="Opis" values={project} multiline />
+      {/* Row 1 — basic data | images */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
+        <Section title="Osnovni podaci">
+            <form action={updateProject} className="flex flex-col gap-4">
+              <input type="hidden" name="id" value={project.id} />
+              <LocaleFields base="title" label="Naslov" values={project} required />
+              <LocaleFields base="subtitle" label="Podnaslov" values={project} />
+              <LocaleFields base="badge" label="Oznaka (badge)" values={project} />
+              <LocaleFields base="description" label="Opis" values={project} multiline />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div className="flex flex-col gap-1.5">
-              <span className={label}>Kvadratura (labela)</span>
-              <input name="areaLabel" defaultValue={project.areaLabel} placeholder="139" className={input} />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <span className={label}>Ukupna površina (m²)</span>
-              <input name="totalAreaM2" type="number" step="0.01" defaultValue={project.totalAreaM2 ?? ''} placeholder="139" className={input} />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <span className={label}>Plan — top (%)</span>
-              <input name="sitePlanTop" defaultValue={project.sitePlanTop ?? ''} placeholder="34%" className={input} />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <span className={label}>Plan — left (%)</span>
-              <input name="sitePlanLeft" defaultValue={project.sitePlanLeft ?? ''} placeholder="72%" className={input} />
-            </div>
-          </div>
+              <div className="flex flex-col gap-1.5 max-w-[12rem]">
+                <span className={label}>Ukupna površina (m²)</span>
+                <input name="totalAreaM2" type="number" step="0.01" defaultValue={project.totalAreaM2 ?? ''} placeholder="139" className={input} />
+              </div>
 
-          <SubmitButton className={`${btnAccent} self-end`} pendingText="Čuvanje…">
-            <LuSave className="w-4 h-4" /> Sačuvaj podatke
-          </SubmitButton>
-        </form>
-      </Section>
+              <div className="flex flex-col gap-2 pt-1 border-t border-border">
+                <span className={`${label} pt-3`}>Plan lokacije (pin)</span>
+                <SitePlanEditor top={project.sitePlanTop} left={project.sitePlanLeft} order={project.order} />
+              </div>
 
-      {/* Images */}
-      <Section
-        title="Slike"
-        desc="Prva ili obeležena slika je naslovna. Prevucite za redosled."
-        actions={
-          <ImageUploader
-            onUploaded={(data) =>
-              createProjectImage({ projectId: project.id, ...data, isCover: !project.coverFilename })
+              <SubmitButton className={`${btnAccent} self-end`} pendingText="Čuvanje…">
+                <LuSave className="w-4 h-4" /> Sačuvaj podatke
+              </SubmitButton>
+            </form>
+          </Section>
+
+          <Section
+            title="Slike"
+            desc="Prva ili obeležena slika je naslovna. Prevucite za redosled."
+            actions={
+              <ImageUploader
+                onUploaded={(data) =>
+                  createProjectImage({ projectId: project.id, ...data, isCover: !project.coverFilename })
+                }
+              />
             }
-          />
-        }
-      >
-        {project.images.length === 0 ? (
-          <p className="text-sm text-text-muted flex items-center gap-2">
-            <LuImage className="w-4 h-4" /> Nema slika. Otpremite prvu.
-          </p>
-        ) : (
-          <Sortable ids={project.images.map((i) => i.id)} onReorder={(ids) => reorderProjectImages(ids)} layout="grid">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              {project.images.map((img) => (
-                <ImageCard key={img.id} image={img} isCover={project.coverFilename === img.filename} />
-              ))}
-            </div>
-          </Sortable>
-        )}
-      </Section>
+          >
+            {project.images.length === 0 ? (
+              <p className="text-sm text-text-muted flex items-center gap-2">
+                <LuImage className="w-4 h-4" /> Nema slika. Otpremite prvu.
+              </p>
+            ) : (
+              <Sortable ids={project.images.map((i) => i.id)} onReorder={(ids) => reorderProjectImages(ids)} layout="grid">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {project.images.map((img) => (
+                    <ImageCard key={img.id} image={img} isCover={project.coverFilename === img.filename} />
+                  ))}
+                </div>
+              </Sortable>
+            )}
+          </Section>
+      </div>
 
-      {/* Highlights */}
-      <Section
-        title="Izdvojeno (bullets)"
-        desc="Npr. neto površina, broj soba, bazen."
-        actions={
-          <form action={createHighlight}>
-            <input type="hidden" name="projectId" value={project.id} />
-            <button type="submit" className={btnAccent}>
-              <LuPlus className="w-3.5 h-3.5" /> Dodaj
-            </button>
-          </form>
-        }
-      >
-        {project.highlights.length === 0 ? (
-          <p className="text-sm text-text-muted">Nema izdvojenih stavki.</p>
-        ) : (
-          <Sortable ids={project.highlights.map((h) => h.id)} onReorder={(ids) => reorderHighlights(ids)}>
-            <div className="flex flex-col gap-3">
-              {project.highlights.map((h) => (
-                <HighlightRow key={h.id} highlight={h} />
-              ))}
-            </div>
-          </Sortable>
-        )}
-      </Section>
+      {/* Row 2 — highlights | area table */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
+          <Section
+            title="Izdvojeno (bullets)"
+            desc="Npr. neto površina, broj soba, bazen."
+            actions={
+              <form action={createHighlight}>
+                <input type="hidden" name="projectId" value={project.id} />
+                <button type="submit" className={btnAccent}>
+                  <LuPlus className="w-3.5 h-3.5" /> Dodaj
+                </button>
+              </form>
+            }
+          >
+            {project.highlights.length === 0 ? (
+              <p className="text-sm text-text-muted">Nema izdvojenih stavki.</p>
+            ) : (
+              <Sortable ids={project.highlights.map((h) => h.id)} onReorder={(ids) => reorderHighlights(ids)}>
+                <div className="flex flex-col gap-3">
+                  {project.highlights.map((h) => (
+                    <HighlightRow key={h.id} highlight={h} />
+                  ))}
+                </div>
+              </Sortable>
+            )}
+          </Section>
 
-      {/* Rooms */}
-      <Section
-        title="Tabela površina"
-        desc="Prostorije i njihove kvadrature."
-        actions={
-          <form action={createRoom}>
-            <input type="hidden" name="projectId" value={project.id} />
-            <button type="submit" className={btnAccent}>
-              <LuPlus className="w-3.5 h-3.5" /> Dodaj
-            </button>
-          </form>
-        }
-      >
-        {project.rooms.length === 0 ? (
-          <p className="text-sm text-text-muted">Nema prostorija.</p>
-        ) : (
-          <Sortable ids={project.rooms.map((r) => r.id)} onReorder={(ids) => reorderRooms(ids)}>
-            <div className="flex flex-col gap-3">
-              {project.rooms.map((r) => (
-                <RoomRow key={r.id} room={r} />
-              ))}
-            </div>
-          </Sortable>
-        )}
-      </Section>
+          <Section
+            title="Tabela površina"
+            desc="Prostorije i njihove kvadrature."
+            actions={
+              <form action={createRoom}>
+                <input type="hidden" name="projectId" value={project.id} />
+                <button type="submit" className={btnAccent}>
+                  <LuPlus className="w-3.5 h-3.5" /> Dodaj
+                </button>
+              </form>
+            }
+          >
+            {project.rooms.length === 0 ? (
+              <p className="text-sm text-text-muted">Nema prostorija.</p>
+            ) : (
+              <Sortable ids={project.rooms.map((r) => r.id)} onReorder={(ids) => reorderRooms(ids)}>
+                <div className="flex flex-col gap-3">
+                  {project.rooms.map((r) => (
+                    <RoomRow key={r.id} room={r} />
+                  ))}
+                </div>
+              </Sortable>
+            )}
+          </Section>
+      </div>
     </div>
   );
 }
