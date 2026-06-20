@@ -302,6 +302,7 @@ export default function OfferClient({ projects }) {
       <div className="hidden lg:flex" style={{ marginTop: '5rem', height: 'calc(100svh - 5rem)' }}>
         <div
           ref={catalogRef}
+          data-lenis-prevent
           className="w-[360px] xl:w-[400px] flex-shrink-0 overflow-y-auto border-r border-border bg-bg"
         >
           {catalogCards}
