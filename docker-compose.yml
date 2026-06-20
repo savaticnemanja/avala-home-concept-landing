@@ -11,9 +11,8 @@ services:
       - SESSION_SECRET=${SESSION_SECRET:?set SESSION_SECRET in .env}
     volumes:
       - db-data:/data
-      - uploads-data:/app/public/uploads
+      - /srv/avalahomeconcept.com/public/uploads:/app/public/uploads
     restart: unless-stopped
 
 volumes:
   db-data:
-  uploads-data:
