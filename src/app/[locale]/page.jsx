@@ -16,7 +16,6 @@ import { getDictionary } from '@/i18n/getDictionary';
 import { withLocale } from '@/i18n/config';
 import { prisma } from '@/lib/db';
 
-// Reads projects from the DB for the showcase, so render on demand.
 export const dynamic = 'force-dynamic';
 
 const ArrowIcon = () => (
@@ -27,7 +26,6 @@ export default async function HomePage({ params }) {
   const { locale } = await params;
   const dict = await getDictionary(locale);
 
-  // First 3 projects in the same order as the /offer page.
   const projects = await prisma.project.findMany({
     orderBy: { order: 'asc' },
     take: 3,

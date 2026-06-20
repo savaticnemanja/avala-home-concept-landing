@@ -6,7 +6,6 @@ import { pick } from '@/lib/localize';
 import { imageUrl } from '@/lib/imageUrl';
 import ProjectDetail from './ProjectDetail';
 
-// Content lives in the DB (may not exist at build), so render on demand.
 export const dynamic = 'force-dynamic';
 
 function getProject(slug) {

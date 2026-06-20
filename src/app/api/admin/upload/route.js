@@ -5,7 +5,6 @@ import { saveUpload } from '@/lib/uploads';
 export const runtime = 'nodejs';
 
 export async function POST(request) {
-  // Middleware already guards /api/admin/*, but re-check defensively.
   if (!(await getSession())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }

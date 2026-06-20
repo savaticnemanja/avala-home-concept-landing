@@ -3,7 +3,6 @@ import { jwtVerify } from 'jose';
 
 const COOKIE_NAME = 'ahc_admin';
 
-// Paths that must stay reachable without a session.
 const PUBLIC_ADMIN_PATHS = ['/admin/login'];
 const PUBLIC_API_PATHS = ['/api/admin/login'];
 
@@ -24,7 +23,6 @@ export async function middleware(request) {
   const token = request.cookies.get(COOKIE_NAME)?.value;
   const authed = await verify(token);
 
-  // Protect admin API routes (return 401 instead of redirecting).
   if (pathname.startsWith('/api/admin')) {
     if (PUBLIC_API_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))) {
       return NextResponse.next();
@@ -35,14 +33,12 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // Protect admin pages.
   if (pathname.startsWith('/admin')) {
     const isPublic = PUBLIC_ADMIN_PATHS.some(
       (p) => pathname === p || pathname.startsWith(`${p}/`),
     );
 
     if (isPublic) {
-      // Already logged in? Skip the login page.
       if (authed && pathname.startsWith('/admin/login')) {
         return NextResponse.redirect(new URL('/admin', request.url));
       }

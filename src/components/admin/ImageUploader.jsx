@@ -2,8 +2,6 @@
 import { useRef, useState } from 'react';
 import { LuUpload, LuLoader } from 'react-icons/lu';
 
-// Uploads one or more images to /api/admin/upload, then calls
-// `onUploaded({ filename, width, height })` (a server action) for each.
 export const ImageUploader = ({ onUploaded, label = 'Dodaj slike', multiple = true }) => {
   const inputRef = useRef(null);
   const [busy, setBusy] = useState(false);

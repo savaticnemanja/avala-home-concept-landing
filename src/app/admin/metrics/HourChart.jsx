@@ -1,4 +1,3 @@
-// Visits by hour of day (0–23), server local time. `hourly` is a length-24 array.
 export const HourChart = ({ hourly = [] }) => {
   const total = hourly.reduce((a, b) => a + b, 0);
   if (total === 0) {

@@ -3,7 +3,6 @@ import { mkdir, writeFile, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
 
-// Where uploaded files live on disk. Served statically from /uploads/<file>.
 export const UPLOAD_DIR = process.env.UPLOAD_DIR
   ? path.resolve(process.env.UPLOAD_DIR)
   : path.join(process.cwd(), 'public', 'uploads');
@@ -11,14 +10,10 @@ export const UPLOAD_DIR = process.env.UPLOAD_DIR
 export const ALLOWED_TYPES = ['image/webp', 'image/jpeg', 'image/png', 'image/avif'];
 export const MAX_BYTES = 12 * 1024 * 1024; // 12 MB (raw upload limit)
 
-// Every upload is normalised to an optimised WebP: best size/quality ratio
-// with universal modern-browser support. Tune these three knobs as needed.
-const MAX_EDGE = 2560; // px — longest side; bigger images are scaled down
-const WEBP_QUALITY = 88; // visually lossless for photos at a fraction of the size
-const WEBP_EFFORT = 6; // 0–6; higher = smaller file, slower encode
+const MAX_EDGE = 2560;
+const WEBP_QUALITY = 88;
+const WEBP_EFFORT = 6;
 
-// Save a File/Blob to the upload dir, re-encoded to an optimised WebP.
-// Returns { filename, width, height } of the stored (processed) image.
 export const saveUpload = async (file) => {
   if (!file || typeof file.arrayBuffer !== 'function') {
     throw new Error('No file provided.');
@@ -39,14 +34,12 @@ export const saveUpload = async (file) => {
     const oversized = meta.width > MAX_EDGE || meta.height > MAX_EDGE;
 
     ({ data, info } = await sharp(input)
-      .rotate() // bake in EXIF orientation, then metadata is dropped on output
+      .rotate()
       .resize({ width: MAX_EDGE, height: MAX_EDGE, fit: 'inside', withoutEnlargement: true })
       .webp({ quality: WEBP_QUALITY, effort: WEBP_EFFORT })
       .toBuffer({ resolveWithObject: true }));
 
-    // Re-encoding an already-optimised WebP can inflate it (and adds a
-    // generation of lossy loss). If it didn't need resizing or re-orienting,
-    // keep the smaller original bytes instead.
+    // Re-encoding an already-optimised WebP can inflate it; keep the original bytes if no processing was needed.
     if (
       file.type === 'image/webp' &&
       !oversized &&
@@ -67,7 +60,6 @@ export const saveUpload = async (file) => {
   return { filename, width: info.width, height: info.height };
 };
 
-// Remove an uploaded file by its stored filename (best effort).
 export const deleteUpload = async (filename) => {
   if (!filename) return;
   const safe = path.basename(filename);

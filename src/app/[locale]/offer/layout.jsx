@@ -3,7 +3,6 @@ import { SITE_URL, withLocale } from '@/i18n/config';
 import { prisma } from '@/lib/db';
 import { pick } from '@/lib/localize';
 
-// Queries the DB for JSON-LD, so render on demand (DB may not exist at build).
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }) {

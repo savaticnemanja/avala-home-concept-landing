@@ -12,10 +12,6 @@ import {
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-// Public, cookieless analytics beacon. Accepts:
-//   { type: "visit", path, referrer }  — recorded once per visitor per day
-//   { type: "click", path, name }      — recorded once per visitor/target per day
-// Always returns 204 so the client beacon never blocks navigation or errors.
 export async function POST(request) {
   const noContent = new NextResponse(null, { status: 204 });
 

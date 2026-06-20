@@ -28,7 +28,6 @@ export default async function AdminMetricsPage() {
   const localeLabel = (k) => LOCALE_LABELS[k] ?? (k || 'nepoznato');
   const deviceLabel = (k) => ({ mobile: 'Mobilni', desktop: 'Desktop' }[k] ?? (k || 'nepoznato'));
 
-  // Format page paths with readable names
   const pageLabel = (path) => {
     if (!path || path === '/') return 'Početna (/)';
     const name = {

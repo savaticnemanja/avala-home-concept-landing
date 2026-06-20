@@ -4,7 +4,6 @@ import { LuLanguages } from 'react-icons/lu';
 import { LOCALES, LOCALE_LABELS } from '@/lib/admin/constants';
 import { useActiveLocale } from './LocaleContext';
 
-// One control that switches the editing language for every field on the page.
 export const LocaleSwitcher = () => {
   const { activeLocale, setActiveLocale } = useActiveLocale();
   if (!setActiveLocale) return null;

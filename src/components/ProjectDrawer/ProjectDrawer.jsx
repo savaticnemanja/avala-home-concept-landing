@@ -108,7 +108,6 @@ export const ProjectDrawer = ({ project, onClose }) => {
   const highlights = active?.highlights ?? [];
   const rooms = active?.rooms ?? [];
 
-  // Ordered images (cover first), mapped to viewer entries.
   const orderedImages = active
     ? [...active.images].sort((a, b) => {
         if (a.filename === active.coverFilename) return -1;

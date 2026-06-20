@@ -92,7 +92,7 @@ const ProjectCard = ({ project, locale, t, href }) => {
         )}
 
         <Link
-          href={href(`/offer#${project.slug}`)}
+          href={href(`/offer/${project.slug}`)}
           className="flex items-center justify-between text-sm font-medium text-accent group mt-1"
           style={{ fontFamily: 'var(--font-body)', letterSpacing: '0.05em' }}
         >

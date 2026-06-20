@@ -64,7 +64,6 @@ export default function ProjectDetail({ project }) {
   const highlights = project.highlights ?? [];
   const rooms = project.rooms ?? [];
 
-  // Ordered images (cover first), mapped to viewer entries.
   const orderedImages = [...project.images].sort((a, b) => {
     if (a.filename === project.coverFilename) return -1;
     if (b.filename === project.coverFilename) return 1;

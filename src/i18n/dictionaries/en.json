@@ -364,6 +364,8 @@
     "eyebrow": "Our offer",
     "intro": "Browse our available house projects. Click a project to view its floor plan, 3D renders and square footage.",
     "viewDetails": "Detailed specifications",
+    "mapView": "Map",
+    "listView": "List",
     "rooms": "rooms",
     "terrace": "Terrace",
     "cards": [

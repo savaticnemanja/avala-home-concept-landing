@@ -26,7 +26,6 @@ const coverOf = (project) => {
   return (cover ?? project.images[0])?.filename ?? null;
 };
 
-// --- Map Pin ---
 const SitePlanPin = ({ project, title, to, onOpen, isActive }) => {
   if (!project.sitePlanTop || !project.sitePlanLeft) return null;
   return (
@@ -74,7 +73,6 @@ const SitePlanPin = ({ project, title, to, onOpen, isActive }) => {
   );
 };
 
-// --- Compact Catalog Card ---
 const CatalogCard = ({ project, locale, t, isActive, onHover, to, onOpen }) => {
   const title = pick(project, 'title', locale);
   const subtitle = pick(project, 'subtitle', locale);
@@ -158,7 +156,6 @@ const CatalogCard = ({ project, locale, t, isActive, onHover, to, onOpen }) => {
   );
 };
 
-// --- Map Panel ---
 const MapPanel = ({ projects, locale, href, activeId, openProject }) => (
   <div className="relative w-full h-full overflow-hidden">
     <Image
@@ -182,7 +179,6 @@ const MapPanel = ({ projects, locale, href, activeId, openProject }) => (
   </div>
 );
 
-// --- Shared IO setup ---
 const setupIO = (root, onActive) => {
   if (!root) return () => {};
   const obs = new IntersectionObserver(
@@ -198,7 +194,6 @@ const setupIO = (root, onActive) => {
   return () => obs.disconnect();
 };
 
-// --- Main ---
 export default function OfferClient({ projects }) {
   const { t, locale, href } = useI18n();
   const [selected, setSelected] = useState(null);
@@ -234,10 +229,8 @@ export default function OfferClient({ projects }) {
     }
   };
 
-  // Desktop catalog scroll sync
   useEffect(() => setupIO(catalogRef.current, setActiveId), [projects]);
 
-  // Mobile list scroll sync (re-runs when list tab becomes active)
   useEffect(() => {
     if (mobileView !== 'list') return;
     return setupIO(mobileCatalogRef.current, setActiveId);
@@ -268,12 +261,10 @@ export default function OfferClient({ projects }) {
 
   return (
     <>
-      {/* Mobile: full-height with map/list toggle */}
       <div
         className="lg:hidden flex flex-col"
         style={{ marginTop: '5rem', height: 'calc(100svh - 5rem)' }}
       >
-        {/* Content area */}
         <div className="flex-1 relative overflow-hidden">
           {mobileView === 'map' ? (
             <div className="absolute inset-0">{mapPanel}</div>
@@ -284,7 +275,6 @@ export default function OfferClient({ projects }) {
           )}
         </div>
 
-        {/* Bottom tab bar */}
         <div className="flex-shrink-0 flex border-t border-border bg-bg" style={{ height: '3.25rem' }}>
           <button
             type="button"
@@ -294,7 +284,7 @@ export default function OfferClient({ projects }) {
             }`}
           >
             <LuMap className="w-4 h-4" />
-            Mapa
+            {t('offer.mapView')}
           </button>
           <button
             type="button"
@@ -304,12 +294,11 @@ export default function OfferClient({ projects }) {
             }`}
           >
             <LuList className="w-4 h-4" />
-            Lista
+            {t('offer.listView')}
           </button>
         </div>
       </div>
 
-      {/* Desktop: fixed split */}
       <div className="hidden lg:flex" style={{ marginTop: '5rem', height: 'calc(100svh - 5rem)' }}>
         <div
           ref={catalogRef}

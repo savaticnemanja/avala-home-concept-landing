@@ -6,13 +6,11 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
-// Admin pages are always rendered server-side from the DB.
 export const dynamic = 'force-dynamic';
 
 export default async function AdminLayout({ children }) {
   const authed = await getSession();
 
-  // Not logged in (i.e. on /admin/login) — render the bare page, no shell.
   if (!authed) {
     return <div className="min-h-screen bg-bg">{children}</div>;
   }

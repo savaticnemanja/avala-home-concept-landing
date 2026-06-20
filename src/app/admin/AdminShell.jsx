@@ -23,7 +23,6 @@ const LINKS = [
   { href: '/admin/metrics', label: 'Posete', icon: LuChartColumn },
 ];
 
-// Routes that contain translatable fields — the language switcher shows there.
 const LOCALIZED = ['/admin/gallery', '/admin/projects'];
 
 const Brand = () => (
@@ -38,7 +37,6 @@ export const AdminShell = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Close the mobile drawer whenever the route changes.
   useEffect(() => setMenuOpen(false), [pathname]);
 
   const isActive = (link) => (link.exact ? pathname === link.href : pathname.startsWith(link.href));

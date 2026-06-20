@@ -7,19 +7,15 @@ import { requireSession } from '@/lib/auth';
 import { deleteUpload } from '@/lib/uploads';
 import { LOCALES } from '@/lib/admin/constants';
 
-// --- helpers ---------------------------------------------------------------
-
 const refresh = () => {
   revalidatePath('/admin');
   revalidatePath('/admin/gallery');
   revalidatePath('/admin/projects', 'layout');
-  // Public pages are force-dynamic, but revalidate anyway for safety.
   revalidatePath('/', 'layout');
 };
 
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
-// Pull per-locale columns from FormData for a field base, e.g. "name" -> { nameSr, nameEn, ... }
 const localeFields = (formData, base) => {
   const out = {};
   for (const loc of LOCALES) {
@@ -45,8 +41,6 @@ const slugify = (s) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     .slice(0, 60) || `item-${Date.now()}`;
-
-// --- gallery categories ----------------------------------------------------
 
 export async function createGalleryCategory(formData) {
   await requireSession();
@@ -82,8 +76,6 @@ export async function reorderGalleryCategories(ids) {
   );
   refresh();
 }
-
-// --- gallery images --------------------------------------------------------
 
 export async function createGalleryImage({ categoryId, filename, width, height }) {
   await requireSession();
@@ -121,8 +113,6 @@ export async function reorderGalleryImages(ids) {
   );
   refresh();
 }
-
-// --- projects --------------------------------------------------------------
 
 export async function createProject(formData) {
   await requireSession();
@@ -174,8 +164,6 @@ export async function reorderProjects(ids) {
   refresh();
 }
 
-// --- project images --------------------------------------------------------
-
 export async function createProjectImage({ projectId, filename, width, height, isCover }) {
   await requireSession();
   await prisma.projectImage.create({
@@ -212,7 +200,6 @@ export async function deleteProjectImage(formData) {
   await requireSession();
   const id = Number(formData.get('id'));
   const img = await prisma.projectImage.delete({ where: { id } });
-  // Clear cover if it pointed at this file.
   await prisma.project.updateMany({
     where: { id: img.projectId, coverFilename: img.filename },
     data: { coverFilename: null },
@@ -228,8 +215,6 @@ export async function reorderProjectImages(ids) {
   );
   refresh();
 }
-
-// --- project highlights ----------------------------------------------------
 
 export async function createHighlight(formData) {
   await requireSession();
@@ -267,8 +252,6 @@ export async function reorderHighlights(ids) {
   );
   refresh();
 }
-
-// --- project rooms ---------------------------------------------------------
 
 export async function createRoom(formData) {
   await requireSession();

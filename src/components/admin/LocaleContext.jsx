@@ -3,8 +3,6 @@
 import { createContext, useContext, useState } from 'react';
 import { LOCALES } from '@/lib/admin/constants';
 
-// Holds the single, page-wide editing locale. Every LocaleFields group reads
-// this so one switcher flips all translatable inputs at once.
 const LocaleContext = createContext(null);
 
 export const LocaleProvider = ({ children }) => {
@@ -16,5 +14,4 @@ export const LocaleProvider = ({ children }) => {
   );
 };
 
-// Falls back to the default locale if used outside a provider.
 export const useActiveLocale = () => useContext(LocaleContext) ?? { activeLocale: LOCALES[0] };

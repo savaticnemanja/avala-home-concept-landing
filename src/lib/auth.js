@@ -45,7 +45,6 @@ export const destroySession = async () => {
   store.delete(COOKIE_NAME);
 };
 
-// Verify a raw token string (used by middleware and server components).
 export const verifyToken = async (token) => {
   if (!token) return false;
   try {
@@ -56,7 +55,6 @@ export const verifyToken = async (token) => {
   }
 };
 
-// Read + verify the session from the cookie store (server components / actions).
 export const getSession = async () => {
   const store = await cookies();
   const token = store.get(COOKIE_NAME)?.value;

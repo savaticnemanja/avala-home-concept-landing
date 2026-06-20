@@ -1,6 +1,3 @@
-// Lightweight dependency-free bar chart for the daily visits series.
-// `series` is [{ day: 'YYYY-MM-DD', visits }] oldest-first.
-
 const fmtDay = (d) => {
   const [, mm, dd] = d.split('-');
   return `${dd}.${mm}`;
@@ -12,7 +9,6 @@ export const TrendChart = ({ series = [] }) => {
   }
 
   const max = Math.max(1, ...series.map((d) => d.visits));
-  // Label every ~6th day to avoid crowding.
   const step = Math.ceil(series.length / 6);
 
   return (

@@ -364,6 +364,8 @@
     "eyebrow": "Naša ponuda",
     "intro": "Pregledajte dostupne projekte kuća. Kliknite na projekat da vidite osnovu, 3D prikaze i kvadraturu.",
     "viewDetails": "Detaljne specifikacije",
+    "mapView": "Mapa",
+    "listView": "Lista",
     "rooms": "sobe",
     "terrace": "Terasa",
     "cards": [

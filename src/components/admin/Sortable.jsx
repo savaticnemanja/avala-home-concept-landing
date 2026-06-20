@@ -21,8 +21,6 @@ import { LuGripVertical } from 'react-icons/lu';
 
 const HandleContext = createContext(null);
 
-// Generic drag-to-reorder list. `ids` is an array of stable ids (numbers/strings).
-// `onReorder(newIds)` is called after a drop. Children are SortableItem nodes.
 export const Sortable = ({ ids, onReorder, layout = 'vertical', children }) => {
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
@@ -67,7 +65,6 @@ export const SortableItem = ({ id, className = '', children }) => {
   );
 };
 
-// Drag handle — place anywhere inside a SortableItem.
 export const DragHandle = ({ className = '' }) => {
   const ctx = useContext(HandleContext);
   return (

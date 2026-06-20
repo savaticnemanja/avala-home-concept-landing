@@ -1,6 +1,5 @@
 'use client';
 
-// Simple SVG donut chart with legend
 export const DonutChart = ({ data, colors }) => {
   const total = data.reduce((sum, d) => sum + d.value, 0);
   const COLORS = colors || [

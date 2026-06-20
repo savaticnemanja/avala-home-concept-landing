@@ -1,4 +1,3 @@
-// Locales managed in the admin (must match src/i18n/config.js order).
 export const LOCALES = ['sr', 'en', 'ru', 'de'];
 
 export const LOCALE_LABELS = {
@@ -8,7 +7,6 @@ export const LOCALE_LABELS = {
   de: 'Deutsch',
 };
 
-// Curated react-icons/lu names offered for project highlight bullets.
 export const HIGHLIGHT_ICONS = [
   'LuMaximize2',
   'LuBed',

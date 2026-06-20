@@ -364,6 +364,8 @@
     "eyebrow": "Unser Angebot",
     "intro": "Entdecken Sie unsere verfügbaren Hausprojekte. Klicken Sie auf ein Projekt, um Grundriss, 3D-Visualisierungen und Quadratmeter zu sehen.",
     "viewDetails": "Detaillierte Spezifikationen",
+    "mapView": "Karte",
+    "listView": "Liste",
     "rooms": "Zimmer",
     "terrace": "Terrasse",
     "cards": [

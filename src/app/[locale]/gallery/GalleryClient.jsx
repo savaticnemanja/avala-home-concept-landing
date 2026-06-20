@@ -25,7 +25,6 @@ export default function GalleryClient({ categories }) {
   const { t, dict, locale, href } = useI18n();
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // Only categories that have images become tabs; progress (videos) is always last.
   const tabs = useMemo(() => categories.filter((c) => c.images.length > 0), [categories]);
   const [activeTab, setActiveTab] = useState(() => (tabs[0]?.slug ?? PROGRESS_TAB));
 
